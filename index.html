@@ -103,7 +103,12 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .fl-text h3{font-size:clamp(23px,3vw,33px);font-weight:860;letter-spacing:-.02em;margin:12px 0 12px}
 .fl-text p{font-size:16px;color:var(--ink-soft);line-height:1.6;max-width:42ch}
 .fl-text .hint{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;font-weight:750;color:var(--ink-soft);background:var(--accent-soft);border:1px solid var(--card-border);padding:8px 13px;border-radius:999px}
-@media(max-width:820px){.flow-stage{min-height:0}.fl-slide{position:relative;grid-template-columns:1fr;opacity:1;transform:none;display:none;padding:30px}.fl-slide.active{display:grid}.fl-media{order:-1}}
+@media(max-width:820px){.flow-stage{min-height:0}
+  /* mobile: wszystkie kroki pionowo, nic nie schowane (zamiast karuzeli) */
+  .fl-slide{position:relative;grid-template-columns:1fr;opacity:1;transform:none;display:grid;padding:30px;border-top:1px solid var(--card-border)}
+  .fl-slide:first-child{border-top:0}
+  .fl-media{order:-1}
+  .fl-tabs{display:none}}
 
 .fl-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
 .fl-tab{position:relative;text-align:left;padding:14px 15px;border-radius:15px;background:var(--card);border:1.5px solid var(--card-border);cursor:pointer;font-family:var(--font);transition:.2s;overflow:hidden}
@@ -113,6 +118,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .fl-tab .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent)}
 .fl-tab.active .bar{width:100%;transition:width 3.2s linear}
 @media(max-width:680px){.fl-tabs{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.fl-tabs{display:none}}  /* mobile: kroki pionowo, zakładki zbędne */
 
 /* recreated watch scoring face (animated) */
 .wface{width:206px;aspect-ratio:206/250;border-radius:48px;background:#04101f;padding:11px;border:1px solid var(--sep-strong);box-shadow:var(--shadow-l)}
@@ -559,7 +565,8 @@ html[data-theme="light"] .lframe{background:#0B1730}
   function stop(){ if(timer){clearInterval(timer);timer=null;} }
   tabs.forEach(function(t,k){ t.addEventListener('click',function(){ go(k); start(); }); });
   var wt=document.getElementById('watch');
-  if(wt){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){start();}else{stop();watchAnim(false);} }); },{threshold:.2}).observe(wt); }
+  // karuzela tylko na desktopie — na mobile wszystkie kroki widoczne pionowo
+  if(wt && window.matchMedia('(min-width:821px)').matches){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){start();}else{stop();watchAnim(false);} }); },{threshold:.2}).observe(wt); }
 })();
 </script>
 </body>

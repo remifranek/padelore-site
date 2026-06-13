@@ -20,11 +20,21 @@ html[data-theme="light"] .wframe{background:#0B1730}
 html[data-theme="light"] .lframe{background:#0B1730}
 .app-ic{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 
-/* language switcher */
-.lang-sel{appearance:none;-webkit-appearance:none;font-family:var(--font);font-size:13px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:7px 26px 7px 11px;cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23889' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center}
-.lang-sel:hover{border-color:var(--primary)}
-@media(max-width:560px){.lang-sel{padding:7px 24px 7px 9px;font-size:12px}}
+/* language switcher (custom) */
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 11px;border-radius:12px;border:1.5px solid var(--sep-strong);background:transparent;color:var(--ink-soft);font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.4px;cursor:pointer;transition:.18s}
+.lang-btn:hover,.lang-btn[aria-expanded="true"]{color:var(--ink);border-color:var(--primary)}
+.lang-btn .chev{transition:transform .2s}
+.lang-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:188px;padding:6px;border-radius:16px;background:var(--card);border:1px solid var(--card-border);box-shadow:var(--shadow-l);display:none;flex-direction:column;gap:2px;z-index:60}
+.lang-menu.open{display:flex}
+.lang-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:transparent;color:var(--ink);font-family:var(--font);font-size:14px;font-weight:650;text-align:left;cursor:pointer;transition:.14s}
+.lang-opt:hover{background:var(--accent-soft)}
+.lang-opt .code{font-size:11px;font-weight:850;letter-spacing:.5px;color:var(--ink-faint)}
+.lang-opt[aria-selected="true"]{background:color-mix(in oklab,var(--primary) 12%,transparent)}
+.lang-opt[aria-selected="true"] .code{color:var(--primary-2)}
+@media(max-width:560px){.lang-btn{height:40px;padding:0 9px;font-size:12px}
+  .nav-in{padding:0 16px;gap:12px}.nav-right{gap:10px}.theme-btn{width:40px;height:40px}}
 
 /* hero composition */
 .hero-stage{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center}
@@ -151,14 +161,21 @@ html[data-theme="light"] .lframe{background:#0B1730}
       <a href="#forma" data-i18n="nav.form">Forma</a>
     </div>
     <div class="nav-right">
-      <select class="lang-sel" id="lang" data-i18n-aria="nav.lang" aria-label="Język">
-        <option value="pl">Polski</option>
-        <option value="en">English</option>
-        <option value="es">Español</option>
-        <option value="it">Italiano</option>
-        <option value="ru">Русский</option>
-        <option value="uk">Українська</option>
-      </select>
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="nav.lang" aria-label="Język">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langCode">PL</span>
+          <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="listbox" aria-label="Język">
+          <button class="lang-opt" role="option" data-l="pl">Polski<span class="code">PL</span></button>
+          <button class="lang-opt" role="option" data-l="en">English<span class="code">EN</span></button>
+          <button class="lang-opt" role="option" data-l="es">Español<span class="code">ES</span></button>
+          <button class="lang-opt" role="option" data-l="it">Italiano<span class="code">IT</span></button>
+          <button class="lang-opt" role="option" data-l="ru">Русский<span class="code">RU</span></button>
+          <button class="lang-opt" role="option" data-l="uk">Українська<span class="code">UA</span></button>
+        </div>
+      </div>
       <button class="theme-btn" id="theme" data-i18n-aria="nav.theme" aria-label="Przełącz motyw">
         <svg id="ic-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
       </button>
@@ -452,9 +469,24 @@ html[data-theme="light"] .lframe{background:#0B1730}
     document.querySelectorAll('[data-i18n-alt]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-alt'));if(v!=null)el.setAttribute('alt',v);});
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-aria'));if(v!=null)el.setAttribute('aria-label',v);});
   }
-  var lang=pick(), sel=document.getElementById('lang');
-  if(sel){ sel.value=lang; sel.addEventListener('change',function(){ lang=sel.value; localStorage.setItem(LKEY,lang); apply(lang); }); }
-  apply(lang);
+  var CODE={pl:'PL',en:'EN',es:'ES',it:'IT',ru:'RU',uk:'UA'};
+  var lang=pick();
+  var lbtn=document.getElementById('langBtn'), lmenu=document.getElementById('langMenu'),
+      lcode=document.getElementById('langCode'), lopts=[].slice.call(document.querySelectorAll('.lang-opt'));
+  function setLang(l){
+    lang=l; localStorage.setItem(LKEY,l);
+    if(lcode)lcode.textContent=CODE[l]||l.toUpperCase();
+    lopts.forEach(function(o){o.setAttribute('aria-selected',o.getAttribute('data-l')===l?'true':'false');});
+    apply(l);
+  }
+  function openMenu(o){ if(!lmenu)return; lmenu.classList.toggle('open',o); lbtn.setAttribute('aria-expanded',o?'true':'false'); }
+  if(lbtn){
+    lbtn.addEventListener('click',function(e){ e.stopPropagation(); openMenu(!lmenu.classList.contains('open')); });
+    lopts.forEach(function(o){ o.addEventListener('click',function(){ setLang(o.getAttribute('data-l')); openMenu(false); }); });
+    document.addEventListener('click',function(e){ if(!e.target.closest('.lang'))openMenu(false); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape')openMenu(false); });
+  }
+  setLang(lang);
 
   /* ----- theme ----- */
   var KEY='padelore.theme', root=document.documentElement, saved=localStorage.getItem(KEY);

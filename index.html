@@ -160,23 +160,43 @@ html[data-theme="light"] .lframe{background:#0B1730}
 @keyframes wf{0%{opacity:.10}100%{opacity:0}}
 
 /* ===== fence (tablica na płocie) — 1:1 z produkcją: landscape, MY/ONI, wordmark, serw ===== */
-.fenceboard{position:relative;width:100%;aspect-ratio:16/9;background:radial-gradient(120% 90% at 50% 0%,#0c1f12,#000 70%);border-radius:inherit;overflow:hidden;display:flex;flex-direction:column}
+.fenceboard{container-type:inline-size;position:relative;width:100%;aspect-ratio:16/9;background:radial-gradient(120% 90% at 50% 0%,#0c1f12,#000 70%);border-radius:inherit;overflow:hidden;display:flex;flex-direction:column}
 .fenceboard::before{content:"";position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(120,200,140,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,200,140,.05) 1px,transparent 1px);background-size:7% 12%}
-.fb-top{position:relative;display:flex;justify-content:center;padding-top:14%}
-.fb-pill{font-size:1.7vw;font-weight:800;color:rgba(255,255,255,.6);letter-spacing:.5px;font-variant-numeric:tabular-nums}
-.fb-wm{position:absolute;top:6%;left:50%;transform:translateX(-50%);display:none}
+.fb-top{position:relative;display:flex;justify-content:center;padding-top:13.5cqw}
+.fb-pill{font-size:4cqw;font-weight:800;color:rgba(255,255,255,.62);letter-spacing:.3px;font-variant-numeric:tabular-nums}
 .fb-cols{flex:1;display:grid;grid-template-columns:1fr 1fr;align-items:center}
-.fb-col{display:flex;flex-direction:column;align-items:center;gap:2%;position:relative}
-.fb-lbl{font-size:2vw;font-weight:850;letter-spacing:1px}
+.fb-col{display:flex;flex-direction:column;align-items:center;gap:2.2cqw;position:relative}
+.fb-lbl{font-size:5cqw;font-weight:850;letter-spacing:1px}
 .fb-col.my .fb-lbl{color:#38BDF8}.fb-col.oni .fb-lbl{color:#FACC15}
-.fb-ball{width:2.4vw;height:2.4vw;border-radius:50%;opacity:0}
-.fb-col.my .fb-ball{background:#38BDF8;box-shadow:0 0 12px #38BDF8}.fb-col.oni .fb-ball{background:#FACC15;box-shadow:0 0 12px #FACC15}
+.fb-ball{width:5cqw;height:5cqw;border-radius:50%;opacity:0}
+.fb-col.my .fb-ball{background:#38BDF8;box-shadow:0 0 3cqw #38BDF8}.fb-col.oni .fb-ball{background:#FACC15;box-shadow:0 0 3cqw #FACC15}
 .fb-ball.on{opacity:1}
-.fb-score{font-size:15vw;font-weight:880;line-height:.8;font-variant-numeric:tabular-nums}
+.fb-score{font-size:30cqw;font-weight:880;line-height:.78;font-variant-numeric:tabular-nums}
 .fb-col.my .fb-score{color:#38BDF8}.fb-col.oni .fb-score{color:#FACC15}
-.fb-wmark{position:absolute;top:7%;left:0;right:0;text-align:center;font-size:1.5vw;font-weight:800;letter-spacing:.4em;color:rgba(245,248,255,.45)}
-.fb-swap{position:absolute;bottom:5%;left:50%;transform:translateX(-50%);width:6%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:2vw}
-.hero-fence .fenceboard,.hero-fence .fb-pill,.hero-fence .fb-lbl,.hero-fence .fb-wmark{}
+.fb-wmark{position:absolute;top:6cqw;left:0;right:0;text-align:center;font-size:3.4cqw;font-weight:800;letter-spacing:.35em;color:rgba(245,248,255,.45)}
+.fb-swap{position:absolute;bottom:4.5cqw;left:50%;transform:translateX(-50%);width:8cqw;height:8cqw;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:4cqw}
+
+/* ===== in-play tournament board (1.2.0): pasek rund + karty E3b (odtworzone, zgodne z buildem 49) ===== */
+.rpills{display:flex;gap:5px;margin-bottom:9px}
+.rp{flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:5px 0;border-radius:9px;border:1.5px solid var(--al);background:rgba(180,210,255,.05);font-size:13px;font-weight:850;font-variant-numeric:tabular-nums;color:var(--af)}
+.rp i{font-size:6px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;font-style:normal;color:var(--af)}
+.rp.done{color:var(--green)}.rp.on{border-color:var(--lime);background:rgba(217,248,79,.12);color:var(--lime)}.rp.on i{color:var(--lime)}
+.rphead{display:flex;align-items:center;gap:7px;margin:0 1px 9px}
+.rphead .rt{font-size:15px;font-weight:860}.rphead .rt span{color:var(--af)}
+.rphead .wtok{font-size:7px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--lime);border:1px solid rgba(217,248,79,.5);border-radius:999px;padding:2px 6px}
+.e3c{background:var(--ac2);border:1px solid var(--al);border-radius:13px;padding:8px 9px 9px;margin-bottom:7px}
+.e3ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+.e3ch .kk{font-size:8.5px;font-weight:850;color:var(--sky);background:rgba(70,182,245,.16);border:1px solid rgba(70,182,245,.3);border-radius:7px;padding:2px 7px}
+.e3ch .ok{font-size:8px;font-weight:800;color:var(--green)}
+.e3g{display:grid;grid-template-columns:1fr auto 1fr;gap:7px;align-items:start}
+.e3g .sep{align-self:center;font-size:12px;font-weight:800;color:var(--af);padding-top:13px}
+.e3col{display:flex;flex-direction:column;gap:5px;min-width:0}
+.e3t{height:33px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:880;font-variant-numeric:tabular-nums}
+.e3t.wsky{background:var(--sky);color:#06243a}.e3t.wgold{background:var(--gold);color:#06243a}
+.e3t.lose{background:rgba(180,210,255,.08);color:var(--as)}
+.e3ip{display:flex;align-items:center;gap:4px;padding:3px 0;justify-content:center;border-radius:999px;font-size:9px;font-weight:800;color:var(--ai);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.e3ip.sky{border:1px solid rgba(70,182,245,.5);background:rgba(70,182,245,.12)}
+.e3ip.gold{border:1px solid rgba(244,193,59,.5);background:rgba(244,193,59,.12)}
 
 /* condensed benefits */
 .bstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -448,7 +468,30 @@ html[data-theme="light"] .lframe{background:#0B1730}
 
     <!-- 2: real live board -->
     <div class="scn flip reveal">
-      <div class="scn-media"><div class="device"><img src="assets/05-tournament.png" data-i18n-alt="tour.s2_alt" alt="Tablica turnieju na żywo — rundy i korty"></div></div>
+      <div class="scn-media"><div class="device ap"><div class="apscr">
+        <div class="rpills">
+          <div class="rp done">1<i data-i18n="mock.r_done">koniec</i></div>
+          <div class="rp on">2<i data-i18n="mock.r_now">gramy</i></div>
+          <div class="rp">3<i data-i18n="mock.r_plan">plan</i></div>
+        </div>
+        <div class="rphead"><span class="rt" data-i18n="mock.r_round">Runda 2 <span>/ 3</span></span><span class="wtok" data-i18n="mock.r_live">W toku</span></div>
+        <div class="e3c">
+          <div class="e3ch"><span class="kk" data-i18n="mock.r_court1">▦ Kort 1</span><span class="ok" data-i18n="mock.r_saved">✓ Zapisany</span></div>
+          <div class="e3g">
+            <div class="e3col"><div class="e3t wsky">11</div><span class="e3ip sky">Remi</span><span class="e3ip sky">Bartek</span></div>
+            <div class="sep">:</div>
+            <div class="e3col"><div class="e3t lose">10</div><span class="e3ip gold">Marek</span><span class="e3ip gold">Paweł</span></div>
+          </div>
+        </div>
+        <div class="e3c">
+          <div class="e3ch"><span class="kk" data-i18n="mock.r_court2">▦ Kort 2</span><span class="ok" style="color:var(--sky)" data-i18n="mock.r_fromwatch">⌚ Z zegarka</span></div>
+          <div class="e3g">
+            <div class="e3col"><div class="e3t lose">9</div><span class="e3ip sky">Ania</span><span class="e3ip sky">Magda</span></div>
+            <div class="sep">:</div>
+            <div class="e3col"><div class="e3t wgold">11</div><span class="e3ip gold">Tomek</span><span class="e3ip gold">Kasia</span></div>
+          </div>
+        </div>
+      </div></div></div>
       <div>
         <div class="scn-num" data-i18n="tour.s2_num">W TRAKCIE · TABLICA</div>
         <h3 data-i18n="tour.s2_h">Graj — apka liczy rundy</h3>
@@ -489,9 +532,9 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <div class="lr"><span class="rk">4</span><span class="av" style="background:#5E86E8">MW</span><span class="nm">Maja Wójcik</span><span class="wl">14-10</span><span class="pt">31</span></div>
             <div class="lr"><span class="rk">5</span><span class="av" style="background:#46B6F5">TL</span><span class="nm">Tomek Lis</span><span class="wl">13-11</span><span class="pt">29</span></div>
             <div class="lr"><span class="rk">6</span><span class="av" style="background:#4ADE80">ZK</span><span class="nm">Zofia Kim</span><span class="wl">12-12</span><span class="pt">26</span></div>
-            <div class="line" data-i18n="mock.l_threshold">próg klasyfikacji</div>
-            <div class="lr dim"><span class="rk">7</span><span class="av" style="background:#F472B6">PA</span><span class="nm">Piotr Adam</span><span class="wl" data-i18n="mock.l_pending">+2 do klasyf.</span><span class="pt">—</span></div>
+            <div class="lr"><span class="rk">7</span><span class="av" style="background:#F472B6">PA</span><span class="nm">Piotr Adam</span><span class="wl">11-13</span><span class="pt">24</span></div>
           </div>
+          <div class="lab" style="margin-top:10px;color:var(--lime);letter-spacing:.5px" data-i18n="mock.l_trueskill">⚡ Ranking liczony przez TrueSkill</div>
         </div></div>
       </div>
     </div>

@@ -283,6 +283,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
           <button class="lang-opt" role="option" data-l="en">English<span class="code">EN</span></button>
           <button class="lang-opt" role="option" data-l="es">Español<span class="code">ES</span></button>
           <button class="lang-opt" role="option" data-l="it">Italiano<span class="code">IT</span></button>
+          <button class="lang-opt" role="option" data-l="de">Deutsch<span class="code">DE</span></button>
           <button class="lang-opt" role="option" data-l="ru">Русский<span class="code">RU</span></button>
           <button class="lang-opt" role="option" data-l="uk">Українська<span class="code">UA</span></button>
         </div>
@@ -635,7 +636,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
 <script>
 (function(){
   /* ----- i18n ----- */
-  var LANGS=['pl','en','es','it','ru','uk'], LKEY='padelore.lang';
+  var LANGS=['pl','en','es','it','de','ru','uk'], LKEY='padelore.lang';
   function pick(){
     var s=localStorage.getItem(LKEY);
     if(s&&LANGS.indexOf(s)>-1)return s;

@@ -118,6 +118,23 @@ html[data-theme="light"] .lframe{background:#0B1730}
   .fl-text p{font-size:14.5px}
   .fl-slide.land .lframe{width:100%!important}}
 
+/* desktop: kompaktowa karuzela — całość (nagłówek → zakładki) mieści się w jednym ekranie, slajd nie tnie fence */
+@media(min-width:821px){
+  #watch{padding:34px 0}
+  #watch .sec-head{margin-bottom:14px}
+  #watch .sec-head .lead{font-size:16px;margin-top:6px}
+  .flow-stage{min-height:430px}
+  .fl-slide{padding:20px 38px;gap:22px}
+  .fl-media .device{width:162px}
+  .fl-media .wframe{width:134px!important}
+  .fl-slide.land .fl-text{margin:0 auto 6px!important}
+  .fl-slide.land .fl-text h3{font-size:24px;margin:8px 0 6px}
+  .fl-slide.land .fl-text p{font-size:14.5px}
+  .fl-slide.land .fl-media{margin-top:6px!important}
+  .fl-slide.land .lframe{width:340px!important}
+  .wpair{gap:16px}.wcol{gap:5px}.wface{width:150px}
+}
+
 .fl-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
 .fl-tab{position:relative;text-align:left;padding:14px 15px;border-radius:15px;background:var(--card);border:1.5px solid var(--card-border);cursor:pointer;font-family:var(--font);transition:.2s;overflow:hidden}
 .fl-tab.active{border-color:var(--primary);background:color-mix(in oklab,var(--primary) 10%,var(--card))}

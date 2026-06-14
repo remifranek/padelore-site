@@ -150,27 +150,27 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .wpair{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
 .wcol{display:flex;flex-direction:column;align-items:center;gap:9px}
 .wcap{font-size:11px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}
-.wface{width:184px;border-radius:46px;background:#1a1a1d;padding:9px;border:1px solid var(--sep-strong);box-shadow:var(--shadow-l)}
-.wface .scr{aspect-ratio:184/226;border-radius:38px;background:#000;display:flex;flex-direction:column;overflow:hidden;position:relative}
-.wzone{flex:1;display:grid;grid-template-columns:24px 1fr 14px;align-items:center;padding:0 12px;gap:2px}
+.wface{width:184px;border-radius:46px;background:#1a1a1d;padding:9px;border:1px solid var(--sep-strong);box-shadow:var(--shadow-l);container-type:inline-size}
+.wface .scr{aspect-ratio:184/226;border-radius:22cqw;background:#000;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.wzone{flex:1;display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:0 6cqw;gap:1.5cqw}
 .wzone.oni{background:radial-gradient(130% 80% at 50% 0%,rgba(250,204,21,.13),#000 72%)}
 .wzone.my{background:radial-gradient(130% 80% at 50% 100%,rgba(56,189,248,.13),#000 72%)}
-.wzone .lbl{font-size:11px;font-weight:850;letter-spacing:.3px}
+.wzone .lbl{font-size:6cqw;font-weight:850;letter-spacing:.2px}
 .wzone.oni .lbl{color:#FACC15}.wzone.my .lbl{color:#38BDF8}
 .wzone .ctr{text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
 .wzone .num{font-weight:880;line-height:.86;font-variant-numeric:tabular-nums}
 .wzone.oni .num{color:#FACC15}.wzone.my .num{color:#38BDF8}
-.wpoints .num{font-size:62px}
-.wsets .num{font-size:38px}
-.wzone .ball{width:10px;height:10px;border-radius:50%;justify-self:end;opacity:0;transition:opacity .25s}
+.wpoints .num{font-size:34cqw}
+.wsets .num{font-size:21cqw}
+.wzone .ball{width:5.5cqw;height:5.5cqw;border-radius:50%;justify-self:end;opacity:0;transition:opacity .25s}
 .wzone.oni .ball{background:#FACC15;box-shadow:0 0 7px #FACC15}
 .wzone.my .ball{background:#38BDF8;box-shadow:0 0 7px #38BDF8}
 .wzone .ball.on{opacity:1}
-.wbar{height:23px;display:flex;align-items:center;justify-content:center;gap:8px;background:#0b0b0c;border-block:1px solid rgba(255,255,255,.06)}
-.wbar .st{font-size:8.5px;font-weight:700;color:rgba(236,241,255,.55);font-variant-numeric:tabular-nums}
-.wbar .hr{font-size:8px;font-weight:800;color:#F472B6}
-.wgames{display:flex;gap:4px;justify-content:center;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums;color:rgba(236,241,255,.4)}
-.wgames .cur{padding:0 3px;border-radius:4px;border:1px solid currentColor}
+.wbar{height:13.5cqw;display:flex;align-items:center;justify-content:center;gap:4.5cqw;background:#0b0b0c;border-block:1px solid rgba(255,255,255,.06)}
+.wbar .st{font-size:5cqw;font-weight:700;color:rgba(236,241,255,.55);font-variant-numeric:tabular-nums}
+.wbar .hr{font-size:4.7cqw;font-weight:800;color:#F472B6}
+.wgames{display:flex;gap:2.4cqw;justify-content:center;font-size:5.6cqw;font-weight:800;font-variant-numeric:tabular-nums;color:rgba(236,241,255,.4)}
+.wgames .cur{padding:0 1.8cqw;border-radius:4px;border:1px solid currentColor}
 .wsets .wzone.oni .wgames .cur{color:#FACC15}.wsets .wzone.my .wgames .cur{color:#38BDF8}
 .wflash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
 .wflash.go{animation:wf .35s ease}

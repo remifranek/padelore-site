@@ -221,10 +221,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
   background-image:linear-gradient(rgba(180,210,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(180,210,255,.06) 1px,transparent 1px);background-size:44px 44px;
   mask-image:radial-gradient(ellipse at 50% 40%,#000,transparent 78%)}
 #pobierz .cta-band h2{color:#fff;position:relative}
-#pobierz .cta-band .lime{color:var(--accent)}
+#pobierz .cta-band .lime{color:#E0F75A}  /* pasek zawsze ciemny → lime niezależnie od motywu */
 #pobierz .cta-band p{color:rgba(236,241,255,.78)}
-#pobierz .cta-white{background:var(--accent);color:#0A1A33}
-#pobierz .cta-white:hover{background:var(--accent);box-shadow:0 16px 40px var(--glow)}
+#pobierz .cta-white{background:#E0F75A;color:#0A1A33}  /* lime + ciemny tekst — kontrast OK na ciemnym pasku w obu motywach */
+#pobierz .cta-white:hover{background:#EAFB6E;box-shadow:0 16px 40px rgba(224,247,90,.30)}
 </style>
 </head>
 <body>

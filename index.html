@@ -180,8 +180,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .fenceboard{container-type:inline-size;position:relative;width:100%;aspect-ratio:16/9;background:radial-gradient(120% 90% at 50% 0%,#0c1f12,#000 70%);border-radius:inherit;overflow:hidden;display:flex;flex-direction:column}
 .fenceboard::before{content:"";position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(120,200,140,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,200,140,.05) 1px,transparent 1px);background-size:7% 12%}
 .fb-top{position:relative;display:flex;justify-content:center;padding-top:13.5cqw}
-.fb-pill{font-size:4cqw;font-weight:800;color:rgba(255,255,255,.62);letter-spacing:.3px;font-variant-numeric:tabular-nums}
-.fb-cols{flex:1;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.fb-pill{display:inline-flex;align-items:center;gap:1.8cqw;font-size:4cqw;font-weight:800;color:rgba(255,255,255,.62);letter-spacing:.3px;font-variant-numeric:tabular-nums}
+.fb-pdot{width:2.4cqw;height:2.4cqw;border-radius:50%;background:#38BDF8;flex:none}
+.fb-cols{flex:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative}
+.fb-cols::after{content:"";position:absolute;top:20%;bottom:24%;left:50%;width:1px;background:rgba(245,248,255,.12)}
 .fb-col{display:flex;flex-direction:column;align-items:center;gap:2.2cqw;position:relative}
 .fb-lbl{font-size:5cqw;font-weight:850;letter-spacing:1px}
 .fb-col.my .fb-lbl{color:#38BDF8}.fb-col.oni .fb-lbl{color:#FACC15}
@@ -190,7 +192,8 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .fb-ball.on{opacity:1}
 .fb-score{font-size:30cqw;font-weight:880;line-height:.78;font-variant-numeric:tabular-nums}
 .fb-col.my .fb-score{color:#38BDF8}.fb-col.oni .fb-score{color:#FACC15}
-.fb-wmark{position:absolute;top:6cqw;left:0;right:0;text-align:center;font-size:3.4cqw;font-weight:800;letter-spacing:.35em;color:rgba(245,248,255,.45)}
+.fb-wmark{position:absolute;top:6cqw;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:2cqw;font-size:3.4cqw;font-weight:800;letter-spacing:.35em;color:rgba(245,248,255,.45)}
+.fb-wdot{width:2.6cqw;height:2.6cqw;border-radius:50%;background:#38BDF8;opacity:.8;flex:none}
 .fb-swap{position:absolute;bottom:4.5cqw;left:50%;transform:translateX(-50%);width:8cqw;height:8cqw;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:4cqw}
 
 /* ===== in-play tournament board (1.2.0): pasek rund + karty E3b (odtworzone, zgodne z buildem 49) ===== */
@@ -326,7 +329,8 @@ html[data-theme="light"] .lframe{background:#0B1730}
         <div class="device floaty"><img src="assets/01-home.png" data-i18n-alt="hero.alt_home" alt="Ekran główny Padelore" loading="eager"></div>
         <div class="wframe floaty" style="animation-delay:.7s"><img src="assets/watch-home.png" data-i18n-alt="hero.alt_watch" alt="Padelore na Apple Watch"></div>
         <div class="hero-fence floaty" style="animation-delay:1.1s"><div class="lframe"><div class="fenceboard">
-          <div class="fb-wmark">PADELORE</div>
+          <div class="fb-wmark"><span class="fb-wdot"></span>PADELORE</div>
+          <div class="fb-top"><span class="fb-pill"><span class="fb-pdot"></span><span data-i18n="mock.fb_round">Runda 2 z 3</span></span></div>
           <div class="fb-cols">
             <div class="fb-col my"><span class="fb-lbl">MY</span><span class="fb-ball on"></span><span class="fb-score">15</span></div>
             <div class="fb-col oni"><span class="fb-lbl">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>
@@ -407,8 +411,8 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <p style="margin:0 auto" data-i18n="watch.s4_p">Każdy tap z zegarka pojawia się na telefonie jako wielka tablica „fence". Postaw telefon na płocie — wszyscy widzą stan meczu.</p>
           </div>
           <div class="fl-media" style="margin-top:18px"><div class="lframe" style="width:560px;max-width:92vw"><div class="fenceboard">
-            <div class="fb-wmark">PADELORE</div>
-            <div class="fb-top"><span class="fb-pill">Set 1 · 0:28</span></div>
+            <div class="fb-wmark"><span class="fb-wdot"></span>PADELORE</div>
+            <div class="fb-top"><span class="fb-pill"><span class="fb-pdot"></span><span data-i18n="mock.fb_round">Runda 2 z 3</span></span></div>
             <div class="fb-cols">
               <div class="fb-col my"><span class="fb-lbl" data-i18n="watch.wface_my">MY</span><span class="fb-ball on"></span><span class="fb-score">15</span></div>
               <div class="fb-col oni"><span class="fb-lbl" data-i18n="watch.wface_oni">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>

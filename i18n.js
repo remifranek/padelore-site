@@ -73,6 +73,7 @@ pl: {
   "mock.r_done": "koniec", "mock.r_now": "gramy", "mock.r_plan": "plan", "mock.r_live": "W toku",
   "mock.r_round": "Runda 2 / 3", "mock.r_court1": "Kort 1", "mock.r_court2": "Kort 2", "mock.r_saved": "✓ Zapisany", "mock.r_fromwatch": "⌚ Z zegarka",
   "mock.l_trueskill": "⚡ Ranking liczony przez TrueSkill",
+    "mock.fb_round": "Runda 2 z 3",
   "form.kicker": "Twoja forma", "form.h2": "Trening, który się liczy.",
   "form.lead": "Osobno od ligi — Padelore śledzi Twoją formę: cele miesiąca, czas na korcie i dystans. Każdy mecz zapisuje się jako trening w HealthKit.",
   "form.pill1": "Cele miesiąca", "form.pill2": "Czas na korcie", "form.pill3": "Dystans",

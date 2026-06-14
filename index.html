@@ -135,11 +135,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
   .wpair{gap:16px}.wcol{gap:5px}.wface{width:150px}
 }
 
-/* desktop: sekcje z nav wypełniają ekran (krótkie centrują się, za wysokie lądują pod nav bez ucinania) */
-@media(min-width:821px){
-  #watch,#liga,#forma{min-height:100svh;display:flex;flex-direction:column;justify-content:safe center;box-sizing:border-box;padding-top:96px;padding-bottom:40px}
-}
-
 .fl-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
 .fl-tab{position:relative;text-align:left;padding:14px 15px;border-radius:15px;background:var(--card);border:1.5px solid var(--card-border);cursor:pointer;font-family:var(--font);transition:.2s;overflow:hidden}
 .fl-tab.active{border-color:var(--primary);background:color-mix(in oklab,var(--primary) 10%,var(--card))}

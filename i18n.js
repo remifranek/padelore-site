@@ -72,6 +72,7 @@ pl: {
   "mock.l_threshold": "próg klasyfikacji", "mock.l_pending": "+2 do klasyf.",
   "mock.r_done": "koniec", "mock.r_now": "gramy", "mock.r_plan": "plan", "mock.r_live": "W toku",
   "mock.r_round": "Runda 2", "mock.r_court1": "▦ KORT 1", "mock.r_court2": "▦ KORT 2", "mock.r_saved": "✓ Zapisany", "mock.r_fromwatch": "⌚ Z zegarka",
+    "mock.r_tname": "Klub Wisła · Czwartek","mock.r_hint": "⏳ Wpisz wyniki 1 pozostałego kortu",
     "mock.r_format": "Americano · suma 21","mock.r_court3": "▦ KORT 3","mock.r_enter": "✎ Wpisz wynik","mock.r_tab_courts": "Korty","mock.r_tab_table": "Tabela","mock.r_tab_stats": "Statystyki",
   "mock.l_trueskill": "⚡ Ranking liczony przez TrueSkill",
     "mock.fb_round": "Runda 2 z 3",

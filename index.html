@@ -198,6 +198,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
 
 /* ===== in-play tournament board (1.2.0): pasek rund + karty E3b (odtworzone, zgodne z buildem 49) ===== */
 /* tournament live board — 1:1 z 1.2.0 (court view): duże kolorowe cyfry, gracz=kropka+nazwa */
+.tnav{display:flex;align-items:center;gap:8px;margin:0 1px 9px}
+.tnav-b{font-size:16px;font-weight:800;color:var(--as);line-height:1}
+.tnav-t{flex:1;font-size:11px;font-weight:820;color:var(--ai);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tnav-m{font-size:14px;font-weight:800;color:var(--as);letter-spacing:1px}
 .th{display:flex;align-items:baseline;justify-content:space-between;margin:0 1px}
 .th-t{font-size:17px;font-weight:870}.th-t .m{color:var(--af);font-weight:820}
 .th-c{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:850;color:var(--sky)}
@@ -205,7 +209,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .th-sub{font-size:9.5px;font-weight:700;color:var(--af);margin:2px 1px 8px}
 .th-bar{height:3px;border-radius:2px;background:rgba(180,210,255,.14);margin:0 1px 11px;overflow:hidden}
 .th-bar span{display:block;height:100%;width:55%;background:var(--lime);border-radius:2px}
-.tc{background:var(--ac2);border:1px solid var(--al);border-radius:14px;padding:9px 11px 10px;margin-bottom:8px}
+.tc{background:var(--ac2);border:1px solid var(--al);border-radius:14px;padding:8px 11px 9px;margin-bottom:6px}
 .tc.act{border-color:rgba(217,248,79,.42)}
 .tc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
 .tc-k{display:inline-flex;align-items:center;gap:4px;font-size:8.5px;font-weight:850;letter-spacing:.4px;color:var(--sky);background:rgba(70,182,245,.14);border-radius:7px;padding:3px 8px}
@@ -213,12 +217,13 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .tc-watch{display:inline-flex;align-items:center;gap:3px;font-size:8px;font-weight:850;letter-spacing:.4px;color:var(--sky)}
 .tc-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .tc-col{min-width:0}
-.tc-s{font-size:30px;font-weight:880;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tc-s{font-size:28px;font-weight:880;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .tc-s.sky{color:var(--sky)}.tc-s.gold{color:var(--gold)}
-.tc-p{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:750;color:var(--ai);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc-p{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:750;color:var(--ai);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tc-p .d{width:6px;height:6px;border-radius:50%;flex:none}
 .tc-p .d.sky{background:var(--sky)}.tc-p .d.gold{background:var(--gold)}
 .tc-btn{margin-top:9px;width:100%;height:34px;border:0;border-radius:11px;background:var(--lime);color:#0A1A33;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:850;font-size:12px}
+.thint{display:flex;align-items:center;justify-content:center;gap:5px;font-size:8.5px;font-weight:700;color:var(--af);text-align:center;margin:5px 0 2px}
 .ttabs{margin-top:auto;display:flex;justify-content:space-around;padding-top:10px;border-top:1px solid var(--al)}
 .ttab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:8px;font-weight:800;color:var(--af)}
 .ttab.on{color:var(--lime)}
@@ -496,6 +501,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <!-- 2: real live board -->
     <div class="scn flip reveal">
       <div class="scn-media"><div class="device ap"><div class="apscr">
+        <div class="tnav"><span class="tnav-b">‹</span><span class="tnav-t" data-i18n="mock.r_tname">Klub Wisła · Czwartek</span><span class="tnav-m">⋯</span></div>
         <div class="th"><div class="th-t"><span data-i18n="mock.r_round">Runda 2</span> <span class="m">/ 11</span></div><div class="th-c">2/3</div></div>
         <div class="th-sub" data-i18n="mock.r_format">Americano · suma 21</div>
         <div class="th-bar"><span></span></div>
@@ -521,6 +527,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
           </div>
           <button class="tc-btn" data-i18n="mock.r_enter">✎ Wpisz wynik</button>
         </div>
+        <div class="thint"><span data-i18n="mock.r_hint">⏳ Wpisz wyniki 1 pozostałego kortu</span></div>
         <div class="ttabs">
           <div class="ttab on"><i>▦</i><span data-i18n="mock.r_tab_courts">Korty</span></div>
           <div class="ttab"><i>≣</i><span data-i18n="mock.r_tab_table">Tabela</span></div>

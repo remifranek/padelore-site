@@ -256,6 +256,60 @@ html[data-theme="light"] .lframe{background:#0B1730}
 #pobierz .cta-band p{color:rgba(236,241,255,.78)}
 #pobierz .cta-white{background:#E0F75A;color:#0A1A33}  /* lime + ciemny tekst — kontrast OK na ciemnym pasku w obu motywach */
 #pobierz .cta-white:hover{background:#EAFB6E;box-shadow:0 16px 40px rgba(224,247,90,.30)}
+
+/* ===== NEW: Match Story mockup (karta meczu) — fixed dark (ekran telefonu) w obu motywach ===== */
+.mcard{aspect-ratio:1320/2868;background:linear-gradient(180deg,#0C2350,#091B3D);border-radius:33px;overflow:hidden;color:#ECF1FF;display:flex;flex-direction:column;padding:26px 15px 16px;gap:11px}
+.mcard .eye{font-size:9px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:#E0F75A}  /* lime na stałe — karta zawsze ciemna w obu motywach */
+.mcard .recap{border-radius:15px;overflow:hidden;border:1px solid rgba(150,182,235,.18)}
+.mcard .recap .rt{padding:11px 13px;background:linear-gradient(150deg,rgba(74,222,128,.22),rgba(31,79,146,.4));display:flex;align-items:center;gap:8px}
+.mcard .recap .rb{font-size:8.5px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:#4ADE80;color:#04220f}
+.mcard .recap .rs{font-size:22px;font-weight:880;letter-spacing:-.04em;margin-left:auto;font-variant-numeric:tabular-nums}
+.mcard .recap .rm{padding:8px 13px;font-size:9.5px;font-weight:650;color:rgba(236,241,255,.6)}
+.mcard .card2{border-radius:15px;background:#13294e;border:1px solid rgba(150,182,235,.16);padding:12px 13px}
+.mcard .ch{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:850;letter-spacing:.8px;text-transform:uppercase;color:#ECF1FF;margin-bottom:9px}
+.mcard .ch .cx{margin-left:auto;font-size:8.5px;color:rgba(236,241,255,.42);font-weight:600;letter-spacing:0;text-transform:none}
+.mcard .effrow{display:flex;align-items:center;gap:13px}
+.mcard .ring{width:62px;height:62px;flex-shrink:0;position:relative}
+.mcard .ring .rv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mcard .ring .rn{font-size:22px;font-weight:880;letter-spacing:-.04em;line-height:1;color:#F59E0B}
+.mcard .ring .rl{font-size:7px;font-weight:850;letter-spacing:.5px;text-transform:uppercase;color:rgba(236,241,255,.42)}
+.mcard .effx .e1{font-size:11px;font-weight:800;color:#ECF1FF;line-height:1.3}
+.mcard .effx .e2{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;font-weight:800;color:#FB7185;background:rgba(251,113,133,.14);padding:3px 8px;border-radius:6px;margin-top:6px}
+.mcard .cad{margin-top:9px;display:flex;gap:3px}
+.mcard .cad i{flex:1;height:9px;border-radius:3px;background:#A78BFA}
+.mcard .cap{display:flex;gap:7px;padding:9px 10px;border-radius:11px;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.26);margin-top:10px;font-size:9.5px;line-height:1.4;color:#ECF1FF}
+.mcard .cap b{color:#C7B6FF}
+.mcard .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:auto}
+.mcard .gx{background:rgba(0,0,0,.18);border-radius:10px;padding:9px 4px;text-align:center}
+.mcard .gx b{display:block;font-size:15px;font-weight:870;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.mcard .gx span{font-size:7px;font-weight:750;letter-spacing:.3px;text-transform:uppercase;color:rgba(236,241,255,.42);margin-top:2px;display:block}
+
+/* ===== NEW: Ja stats mockup (rating + mapa) — fixed dark (ekran telefonu) w obu motywach ===== */
+.jacard{aspect-ratio:1320/2868;background:linear-gradient(180deg,#0C2350,#091B3D);border-radius:33px;overflow:hidden;color:#ECF1FF;display:flex;flex-direction:column;padding:26px 15px 16px;gap:11px}
+.jacard .eye{font-size:9px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:#E0F75A}  /* lime na stałe — karta zawsze ciemna w obu motywach */
+.jacard .lens{display:flex;background:rgba(0,0,0,.25);border-radius:11px;padding:3px}
+.jacard .lens .ls{flex:1;text-align:center;font-size:10px;font-weight:820;padding:7px 0;border-radius:8px;color:rgba(236,241,255,.6)}
+.jacard .lens .ls.on{background:rgba(224,247,90,.16);color:#E0F75A}
+.jacard .rhero{border-radius:15px;padding:13px;background:linear-gradient(150deg,rgba(74,222,128,.2),rgba(31,79,146,.42));border:1px solid rgba(74,222,128,.3);display:flex;align-items:center;gap:13px}
+.jacard .rhero .rnum{font-size:40px;font-weight:880;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+.jacard .rhero .rmeta .rl{font-size:8.5px;font-weight:850;letter-spacing:.8px;text-transform:uppercase;color:#4ADE80}
+.jacard .rhero .rmeta .rt{font-size:9px;font-weight:800;color:#4ADE80;background:rgba(74,222,128,.16);padding:3px 8px;border-radius:6px;display:inline-block;margin-top:5px}
+.jacard .rhero .arch{margin-left:auto;text-align:right}
+.jacard .rhero .arch .al{font-size:8px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:#A78BFA}
+.jacard .rhero .arch .an{font-size:13px;font-weight:870;letter-spacing:-.02em;line-height:1.05;margin-top:2px}
+.jacard .card2{border-radius:15px;background:#13294e;border:1px solid rgba(150,182,235,.16);padding:12px 13px;flex:1;display:flex;flex-direction:column}
+.jacard .ch{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:850;letter-spacing:.8px;text-transform:uppercase;color:#ECF1FF;margin-bottom:9px}
+.jacard .ch .cx{margin-left:auto;font-size:8.5px;color:rgba(236,241,255,.42);font-weight:600;letter-spacing:0;text-transform:none}
+.jacard .map{position:relative;flex:1;min-height:118px;border-radius:11px;background:rgba(0,0,0,.18);overflow:hidden}
+.jacard .map .q{position:absolute;width:50%;height:50%;padding:7px 8px;font-size:8px;font-weight:900;letter-spacing:.2px}
+.jacard .map .q1{top:0;left:0;color:#4ADE80;border-right:1px dashed rgba(150,182,235,.2);border-bottom:1px dashed rgba(150,182,235,.2)}
+.jacard .map .q2{top:0;left:50%;color:#E0F75A;text-align:right;border-bottom:1px dashed rgba(150,182,235,.2)}
+.jacard .map .q3{top:50%;left:0;color:#FB7185}
+.jacard .map .q4{top:50%;left:50%;color:#A78BFA;text-align:right}
+.jacard .map .dot{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
+.jacard .map .you{position:absolute;width:14px;height:14px;border-radius:50%;background:#ECF1FF;border:3px solid #E0F75A;transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(224,247,90,.18)}
+.jacard .mread{display:flex;gap:7px;padding:9px 10px;border-radius:11px;background:rgba(224,247,90,.08);border:1px solid rgba(224,247,90,.24);margin-top:9px;font-size:9.5px;line-height:1.4;color:#ECF1FF}
+.jacard .mread b{color:#E0F75A}
 </style>
 </head>
 <body>
@@ -267,9 +321,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
     <div class="nav-links">
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
+      <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>
-      <a href="#forma" data-i18n="nav.form">Forma</a>
+      <a href="#ja" data-i18n="nav.you">Ja</a>
     </div>
     <div class="nav-right">
       <div class="lang">
@@ -297,9 +352,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
       </button>
       <div class="nav-menu" id="navMenu" role="menu">
         <a href="#watch" role="menuitem" data-i18n="nav.watch">Apple Watch</a>
+        <a href="#mecz" role="menuitem" data-i18n="nav.match">Karta meczu</a>
         <a href="#turniej" role="menuitem" data-i18n="nav.tournament">Turniej</a>
         <a href="#liga" role="menuitem" data-i18n="nav.league">Liga</a>
-        <a href="#forma" role="menuitem" data-i18n="nav.form">Forma</a>
+        <a href="#ja" role="menuitem" data-i18n="nav.you">Ja</a>
         <div class="sep"></div>
         <a class="dl" href="https://apps.apple.com/app/id6778968043" role="menuitem" data-i18n="hero.cta_download">Pobierz na App Store</a>
       </div>
@@ -439,6 +495,65 @@ html[data-theme="light"] .lframe{background:#0B1730}
         <button class="fl-tab" data-go="1"><span class="tn" data-i18n="watch.tab2_n">KROK 2</span><b data-i18n="watch.tab2_b">Wybór zegarka</b><span class="bar"></span></button>
         <button class="fl-tab" data-go="2"><span class="tn" data-i18n="watch.tab3_n">KROK 3</span><b data-i18n="watch.tab3_b">Klikanie +1</b><span class="bar"></span></button>
         <button class="fl-tab" data-go="3"><span class="tn" data-i18n="watch.tab4_n">KROK 4</span><b data-i18n="watch.tab4_b">Fence na żywo</b><span class="bar"></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCH STORY (new) -->
+<section class="sec" id="mecz">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="mecz.kicker">Nowość · karta meczu</span>
+      <h2 class="h2" data-i18n="mecz.h2">Każdy mecz to teraz historia.</h2>
+      <p class="lead" data-i18n-html="mecz.lead_html">Apple Watch liczy nie tylko punkty — czyta też tętno i ruch. Po meczu Padelore składa to w jedną kartę: wynik, <b>Match Effort</b> (ile mecz kosztował), przebieg punkty × tętno i regenerację. Z dwóch danych, które już zbierasz — log punktów i Apple Health.</p>
+    </div>
+    <div class="scn reveal">
+      <div class="scn-media">
+        <div class="device"><div class="mcard">
+          <div class="eye" data-i18n="mock.m_eye">Karta meczu · Runda 5</div>
+          <div class="recap">
+            <div class="rt"><span class="rb" data-i18n="mock.m_win">Wygrana</span><span style="font-size:10px;font-weight:700" data-i18n="mock.m_winscore">13 do 8</span><span class="rs">13–8</span></div>
+            <div class="rm" data-i18n="mock.m_meta">vs Ania &amp; Kasia · Americano · 16:12</div>
+          </div>
+          <div class="card2">
+            <div class="ch">🔥 <span data-i18n="mock.m_effort">Match Effort</span><span class="cx" data-i18n="mock.m_effort_cx">88% maks. tętna</span></div>
+            <div class="effrow">
+              <div class="ring">
+                <svg viewBox="0 0 62 62" width="62" height="62"><circle cx="31" cy="31" r="25" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"/><circle cx="31" cy="31" r="25" fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="46" transform="rotate(-90 31 31)"/></svg>
+                <div class="rv"><div class="rn">71</div><div class="rl" data-i18n="mock.m_effort_l">Effort</div></div>
+              </div>
+              <div class="effx"><div class="e1" data-i18n="mock.m_effort_txt">Cięższy niż 68% Twoich meczów.</div><span class="e2">🫀 <span data-i18n="mock.m_peak">szczyt 171 bpm</span></span></div>
+            </div>
+          </div>
+          <div class="card2">
+            <div class="ch">📈 <span data-i18n="mock.m_chart">Punkty × tętno</span><span class="cx" data-i18n="mock.m_chart_cx">+ kadencja</span></div>
+            <svg viewBox="0 0 300 78" style="width:100%;display:block">
+              <path d="M8,58 L48,54 L88,46 L128,36 L168,30 L208,33 L248,38 L292,42 L292,74 L8,74 Z" fill="rgba(251,113,133,.14)"/>
+              <path d="M8,58 L48,54 L88,46 L128,36 L168,30 L208,33 L248,38 L292,42" fill="none" stroke="#FB7185" stroke-width="2"/>
+              <polyline points="8,64 56,62 104,48 152,30 208,18 292,10" fill="none" stroke="#46B6F5" stroke-width="2.4"/>
+              <polyline points="8,64 56,58 104,52 152,42 208,34 292,30" fill="none" stroke="#F4C13B" stroke-width="2.4"/>
+            </svg>
+            <div class="cad"><i style="opacity:.55"></i><i style="opacity:.62"></i><i style="opacity:.4"></i><i style="opacity:.28"></i><i style="opacity:.26"></i><i style="opacity:.5"></i><i style="opacity:.58"></i></div>
+            <div class="cap" data-i18n-html="mock.m_insight_html">💡 Szczyt <b>171 bpm</b> przy niskiej kadencji → to było <b>spięcie, nie bieganie</b>.</div>
+          </div>
+          <div class="grid3">
+            <div class="gx"><b style="color:#FB7185">154</b><span data-i18n="mock.m_avgbpm">śr bpm</span></div>
+            <div class="gx"><b style="color:#4ADE80">−32</b><span data-i18n="mock.m_regen">regen. bpm</span></div>
+            <div class="gx"><b style="color:#46B6F5">2 930</b><span data-i18n="mock.m_steps">kroki</span></div>
+          </div>
+        </div></div>
+      </div>
+      <div>
+        <div class="scn-num" data-i18n="mecz.num">PO MECZU · AUTOMATYCZNIE</div>
+        <h3 data-i18n="mecz.h3">Wynik to dopiero połowa historii</h3>
+        <p data-i18n="mecz.p">Ta sama wygrana 13:8 może być spacerkiem albo wojną — dopiero tętno to pokazuje. Karta meczu odpowiada na pytania, których nie ma żadna apka do padla.</p>
+        <ul class="scn-steps">
+          <li><span class="n">1</span><span data-i18n-html="mecz.li1_html"><b>Match Effort</b> — jedna liczba, ile mecz Cię kosztował.</span></li>
+          <li><span class="n">2</span><span data-i18n-html="mecz.li2_html"><b>Punkty × tętno</b> — kiedy rosła stawka i puls.</span></li>
+          <li><span class="n">3</span><span data-i18n-html="mecz.li3_html"><b>Regeneracja</b> — jak szybko wracasz między meczami.</span></li>
+        </ul>
+        <p class="muted" style="font-size:13.5px;margin-top:16px" data-i18n="mecz.privacy">Dane zdrowotne zostają na Twoim urządzeniu.</p>
       </div>
     </div>
   </div>
@@ -584,19 +699,55 @@ html[data-theme="light"] .lframe{background:#0B1730}
   </div>
 </section>
 
-<!-- FITNESS (osobno) -->
-<section class="sec-tight" id="forma">
+<!-- JA / TWOJA GRA (new, replaces fitness) -->
+<section class="sec" id="ja">
   <div class="wrap">
-    <div class="shots2 reveal">
+    <div class="band reveal">
       <div>
-        <span class="kicker" data-i18n="form.kicker">Twoja forma</span>
-        <h2 class="h2" style="margin:14px 0 14px" data-i18n="form.h2">Trening, który się liczy.</h2>
-        <p class="lead" data-i18n="form.lead">Osobno od ligi — Padelore śledzi Twoją formę: cele miesiąca, czas na korcie i dystans. Każdy mecz zapisuje się jako trening w HealthKit.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
-          <span class="pill" data-i18n="form.pill1">Cele miesiąca</span><span class="pill" data-i18n="form.pill2">Czas na korcie</span><span class="pill" data-i18n="form.pill3">Dystans</span>
-        </div>
+        <span class="eyebrow" data-i18n="ja.eyebrow">Nowość · Twoja gra</span>
+        <h2 class="h2" style="margin:16px 0 14px" data-i18n-html="ja.h2_html">Nie ile wygrałeś — <span style="color:var(--accent)">jak grasz.</span></h2>
+        <p class="lead" data-i18n-html="ja.lead_html">Ekran „Ja" składa wszystkie Twoje mecze w jeden profil. <b>Impact Rating</b> to liczba, którą śledzisz i podnosisz. <b>Mapa wynik × wysiłek</b> pokazuje Twój styl: kiedy masz łatwo, a kiedy wygrywasz drogo — i z kim grać dalej.</p>
+        <ul class="scn-steps" style="margin-top:22px">
+          <li><span class="n">1</span><span data-i18n-html="ja.li1_html"><b>Impact Rating</b> — jedna liczba z Twoich meczów, percentyl względem Ciebie.</span></li>
+          <li><span class="n">2</span><span data-i18n-html="ja.li2_html"><b>Mapa meczów</b> — dominacja, grind, waleczna porażka, słaby dzień.</span></li>
+          <li><span class="n">3</span><span data-i18n-html="ja.li3_html"><b>Aktywność</b> — cele, czas na korcie i dystans, jak dotąd, w drugiej zakładce.</span></li>
+        </ul>
       </div>
-      <div style="display:flex;justify-content:center"><div class="device"><img src="assets/06-stats.png" data-i18n-alt="form.alt" alt="Statystyki i forma — cele, czas na korcie, dystans"></div></div>
+      <div style="display:flex;justify-content:center">
+        <div class="device floaty"><div class="jacard">
+          <div class="eye" data-i18n="mock.j_eye">Ja · ostatnie 30 dni</div>
+          <div class="lens"><span class="ls on" data-i18n="mock.j_lens1">🪞 Jak gram</span><span class="ls" data-i18n="mock.j_lens2">🏃 Aktywność</span></div>
+          <div class="rhero">
+            <div class="rnum" style="color:#fff">21,4</div>
+            <div class="rmeta"><div class="rl" data-i18n="mock.j_rating">Impact Rating</div><div class="rt">▲ +2,7</div></div>
+            <div class="arch"><div class="al" data-i18n="mock.j_arch_l">Archetyp · top 8%</div><div class="an" data-i18n-html="mock.j_arch_n">Wojownik<br>końcówek</div></div>
+          </div>
+          <div class="card2">
+            <div class="ch">🗺️ <span data-i18n="mock.j_map">Mapa meczów</span><span class="cx" data-i18n="mock.j_map_cx">wynik × wysiłek</span></div>
+            <div class="map">
+              <div class="q q1" data-i18n="mock.j_q1">DOMINACJA</div>
+              <div class="q q2" data-i18n="mock.j_q2">GRIND</div>
+              <div class="q q3" data-i18n="mock.j_q3">OFF-DAY</div>
+              <div class="q q4" data-i18n="mock.j_q4">WALECZNA</div>
+              <span class="dot" style="left:21%;top:27%;width:7px;height:7px;background:#4ADE80"></span>
+              <span class="dot" style="left:31%;top:35%;width:7px;height:7px;background:#4ADE80"></span>
+              <span class="dot" style="left:64%;top:18%;width:8px;height:8px;background:#E0F75A"></span>
+              <span class="dot" style="left:73%;top:24%;width:9px;height:9px;background:#E0F75A"></span>
+              <span class="dot" style="left:82%;top:20%;width:7px;height:7px;background:#E0F75A"></span>
+              <span class="dot" style="left:68%;top:32%;width:10px;height:10px;background:#E0F75A"></span>
+              <span class="dot" style="left:79%;top:37%;width:8px;height:8px;background:#E0F75A"></span>
+              <span class="dot" style="left:61%;top:43%;width:8px;height:8px;background:#E0F75A"></span>
+              <span class="dot" style="left:86%;top:30%;width:8px;height:8px;background:#E0F75A"></span>
+              <span class="dot" style="left:27%;top:75%;width:7px;height:7px;background:#FB7185"></span>
+              <span class="dot" style="left:75%;top:68%;width:8px;height:8px;background:#A78BFA"></span>
+              <span class="dot" style="left:84%;top:75%;width:9px;height:9px;background:#A78BFA"></span>
+              <span class="dot" style="left:68%;top:81%;width:7px;height:7px;background:#A78BFA"></span>
+              <span class="you" style="left:71%;top:34%"></span>
+            </div>
+            <div class="mread" data-i18n-html="mock.j_read_html">🎯 <b>79% Twoich meczów to grind.</b> Wygrywasz, ale drogo.</div>
+          </div>
+        </div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -624,9 +775,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
     <div class="foot-links">
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
+      <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>
-      <a href="#forma" data-i18n="nav.form">Forma</a>
+      <a href="#ja" data-i18n="nav.you">Ja</a>
     </div>
     <small data-i18n="footer.copy">© 2026 Padelore · padel, który liczy się sam</small>
   </div>

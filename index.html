@@ -310,6 +310,40 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .jacard .map .you{position:absolute;width:14px;height:14px;border-radius:50%;background:#ECF1FF;border:3px solid #E0F75A;transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(224,247,90,.18)}
 .jacard .mread{display:flex;gap:7px;padding:9px 10px;border-radius:11px;background:rgba(224,247,90,.08);border:1px solid rgba(224,247,90,.24);margin-top:9px;font-size:9.5px;line-height:1.4;color:#ECF1FF}
 .jacard .mread b{color:#E0F75A}
+/* #graj — Jak grać (3 sposoby): kompozycja telefon-na-płocie + zegarek */
+.tw-stage{position:relative;width:100%;max-width:440px;aspect-ratio:4/3;
+  border-radius:26px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(120% 90% at 50% 8%, color-mix(in oklab,var(--primary) 22%,transparent), transparent 60%),
+    linear-gradient(160deg,var(--card),var(--card-2));
+  border:1px solid var(--card-border);box-shadow:var(--shadow-s)}
+.tw-stage::before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(var(--court-line) 1px,transparent 1px),linear-gradient(90deg,var(--court-line) 1px,transparent 1px);
+  background-size:30px 30px;
+  mask-image:radial-gradient(ellipse at 50% 42%,#000 0%,transparent 78%)}
+.tw-mount{position:absolute;top:14px;left:16px;font-size:11px;font-weight:750;color:var(--ink-faint);
+  display:inline-flex;align-items:center;gap:6px;z-index:4}
+.tw-fence{position:relative;width:62%;border-radius:18px;background:#05132b;padding:6px;
+  box-shadow:var(--shadow-l);border:1px solid var(--sep-strong);z-index:2}
+html[data-theme="light"] .tw-fence{background:#0E1730}
+.tw-fence img{width:100%;display:block;border-radius:13px}
+.tw-watch{position:absolute;right:13px;bottom:13px;width:30%;max-width:128px;border-radius:22px;
+  background:#05132b;padding:5px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong);z-index:3}
+html[data-theme="light"] .tw-watch{background:#0E1730}
+.tw-watch img{width:100%;display:block;border-radius:17px;aspect-ratio:1/1;object-fit:cover}
+.tw-flow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--accent);color:var(--on-accent);font-weight:900;font-size:16px;box-shadow:0 6px 18px var(--glow)}
+.tw-tag{position:absolute;bottom:12px;left:16px;z-index:4;font-size:11px;font-weight:800;
+  color:var(--on-accent);background:var(--accent);padding:5px 10px;border-radius:999px;box-shadow:0 4px 14px var(--glow)}
+.tw-dev{width:300px;border-radius:34px;background:#05132b;padding:9px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong)}
+html[data-theme="light"] .tw-dev{background:#0E1730}
+.tw-dev img{width:100%;display:block;border-radius:26px}
+.tw-kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.4px;
+  color:var(--primary-2);background:var(--accent-soft);border:1px solid var(--card-border);
+  padding:5px 11px;border-radius:999px;margin-bottom:14px}
+.tw-kick .n{width:18px;height:18px;border-radius:50%;background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}
 </style>
 </head>
 <body>
@@ -321,6 +355,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
     <div class="nav-links">
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
+      <a href="#graj" data-i18n="nav.play">Jak grać</a>
       <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>
@@ -352,6 +387,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
       </button>
       <div class="nav-menu" id="navMenu" role="menu">
         <a href="#watch" role="menuitem" data-i18n="nav.watch">Apple Watch</a>
+        <a href="#graj" role="menuitem" data-i18n="nav.play">Jak grać</a>
         <a href="#mecz" role="menuitem" data-i18n="nav.match">Karta meczu</a>
         <a href="#turniej" role="menuitem" data-i18n="nav.tournament">Turniej</a>
         <a href="#liga" role="menuitem" data-i18n="nav.league">Liga</a>
@@ -497,6 +533,75 @@ html[data-theme="light"] .lframe{background:#0B1730}
         <button class="fl-tab" data-go="3"><span class="tn" data-i18n="watch.tab4_n">KROK 4</span><b data-i18n="watch.tab4_b">Fence na żywo</b><span class="bar"></span></button>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- JAK GRAĆ — 3 sposoby (new) -->
+<section class="sec" id="graj">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="graj.kicker">Jak grać · trzy sposoby</span>
+      <h2 class="h2" data-i18n="graj.h2">Telefon staje na korcie. Ty grasz.</h2>
+      <p class="lead" data-i18n-html="graj.lead">Nie chowasz telefonu do torby — <b>stawiasz go na płocie</b>, żeby wynik widzieli wszyscy. Punktujesz z Apple Watch albo z telefonu. Wybierz sposób pod swój mecz.</p>
+    </div>
+
+    <!-- SCENARIUSZ 1 — zegarek → tablica na płocie -->
+    <div class="scn reveal">
+      <div class="scn-media">
+        <div class="tw-stage">
+          <span class="tw-mount" data-i18n="graj.mount">🔩 Uchwyt na kracie kortu</span>
+          <div class="tw-fence"><img src="assets/07-fence.png" alt="iPhone w poziomie na płocie — tablica wyniku MY 15 : ONI 12" data-i18n-alt="graj.s1_alt" loading="lazy"></div>
+          <div class="tw-flow">›</div>
+          <div class="tw-watch"><img src="assets/watch-home.png" alt="Apple Watch — start meczu Padelore" data-i18n-alt="graj.s1watch_alt" loading="lazy"></div>
+          <span class="tw-tag" data-i18n="graj.tag">🎾 Wynik na żywo z zegarka</span>
+        </div>
+      </div>
+      <div>
+        <span class="tw-kick"><span class="n">1</span><span data-i18n="graj.s1_kick">Najprostszy · prosto z zegarka</span></span>
+        <h3 data-i18n="graj.s1_h">Liczę z nadgarstka, telefon pokazuje wynik</h3>
+        <p data-i18n-html="graj.s1_p">Mój sposób na <b>Mexicano i Americano</b>. Zero konfiguracji — odpalam szybki mecz na zegarku, stawiam telefon na płocie i gram.</p>
+        <ul class="scn-steps">
+          <li><span class="n">1</span><span data-i18n="graj.s1_l1">Start meczu na Apple Watch — bez dotykania telefonu.</span></li>
+          <li><span class="n">2</span><span data-i18n="graj.s1_l2">Tapiesz punkt na nadgarstku, wynik leci na telefon.</span></li>
+          <li><span class="n">3</span><span data-i18n="graj.s1_l3">Telefon w poziomie = wielka tablica widoczna z całego kortu.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCENARIUSZ 2 — telefon: ustaw graczy (flip) -->
+    <div class="scn flip reveal">
+      <div class="scn-media">
+        <div class="tw-dev"><img src="assets/02-single-players.png" alt="Ekran Gracze 2v2 — dwie pary, lista kontaktów" data-i18n-alt="graj.s2_alt" loading="lazy"></div>
+      </div>
+      <div>
+        <span class="tw-kick"><span class="n">2</span><span data-i18n="graj.s2_kick">Z telefonu · pełna kontrola</span></span>
+        <h3 data-i18n="graj.s2_h">Ustawiam pary na telefonie, liczę gdzie chcę</h3>
+        <p data-i18n-html="graj.s2_p">Gdy chcę dograć składy ręcznie — wybieram graczy z kontaktów albo listy, ustawiam punktację, a potem liczę na telefonie <b>lub</b> przejmuję wynik na zegarek.</p>
+        <ul class="scn-steps">
+          <li><span class="n">1</span><span data-i18n="graj.s2_l1">Wybierasz pary i format na czytelnym ekranie kortu.</span></li>
+          <li><span class="n">2</span><span data-i18n="graj.s2_l2">Punktujesz na telefonie albo zegarek sam wchodzi w mecz.</span></li>
+          <li><span class="n">3</span><span data-i18n="graj.s2_l3">Wynik spójny telefon ⇄ Apple Watch przez cały mecz.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCENARIUSZ 3 — turniej -->
+    <div class="scn reveal">
+      <div class="scn-media">
+        <div class="tw-dev"><img src="assets/05-tournament.png" alt="Tablica turnieju — rundy, korty, badge Z zegarka" data-i18n-alt="graj.s3_alt" loading="lazy"></div>
+      </div>
+      <div>
+        <span class="tw-kick"><span class="n">3</span><span data-i18n="graj.s3_kick">Cała ekipa · turniej</span></span>
+        <h3 data-i18n="graj.s3_h">Wieczór dla paczki — apka prowadzi rundy</h3>
+        <p data-i18n-html="graj.s3_p">Americano albo Mexicano dla całej grupy: apka układa rundy i korty, a wyniki wpadają z telefonu <b>albo prosto z zegarków</b> grających — badge „Z zegarka" pokazuje, który kort liczy na nadgarstku.</p>
+        <ul class="scn-steps">
+          <li><span class="n">1</span><span data-i18n="graj.s3_l1">Kreator ustawia format, korty i punktację w kilku krokach.</span></li>
+          <li><span class="n">2</span><span data-i18n="graj.s3_l2">Każda runda rozpisana na korty — wpisujesz lub bierzesz z zegarka.</span></li>
+          <li><span class="n">3</span><span data-i18n="graj.s3_l3">Tabela i ranking TrueSkill aktualizują się same.</span></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -775,6 +880,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
     <div class="foot-links">
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
+      <a href="#graj" data-i18n="nav.play">Jak grać</a>
       <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>

@@ -4,6 +4,8 @@
 window.I18N = {
 
 pl: {
+  "cta.whatsapp": "Grupa WhatsApp",
+  "cta.beta": "Chcesz testować wersje beta przez TestFlight i zgłaszać uwagi oraz błędy? Dołącz do naszej grupy na WhatsApp.",
   "nav.play": "Jak grać",
   "graj.kicker": "Jak grać · trzy sposoby",
   "graj.h2": "Telefon zostaje na korcie. Ty grasz.",
@@ -214,6 +216,8 @@ pl: {
 },
 
 en: {
+  "cta.whatsapp": "WhatsApp group",
+  "cta.beta": "Want to test beta builds via TestFlight and report feedback and bugs? Join our WhatsApp group.",
   "nav.play": "How to play",
   "graj.kicker": "How to play · three ways",
   "graj.h2": "The phone goes on the court. You just play.",
@@ -434,6 +438,8 @@ en: {
 },
 
 es: {
+  "cta.whatsapp": "Grupo de WhatsApp",
+  "cta.beta": "¿Quieres probar las betas por TestFlight y enviar comentarios y errores? Únete a nuestro grupo de WhatsApp.",
   "nav.play": "Cómo jugar",
   "graj.kicker": "Cómo jugar · tres formas",
   "graj.h2": "El teléfono se queda en la pista. Tú juegas.",
@@ -654,6 +660,8 @@ es: {
 },
 
 it: {
+  "cta.whatsapp": "Gruppo WhatsApp",
+  "cta.beta": "Vuoi provare le beta su TestFlight e segnalare feedback e bug? Unisciti al nostro gruppo WhatsApp.",
   "nav.play": "Come giocare",
   "graj.kicker": "Come giocare · tre modi",
   "graj.h2": "Il telefono resta in campo. Tu giochi.",
@@ -874,6 +882,8 @@ it: {
 },
 
 de: {
+  "cta.whatsapp": "WhatsApp-Gruppe",
+  "cta.beta": "Willst du Beta-Versionen über TestFlight testen und Feedback und Bugs melden? Komm in unsere WhatsApp-Gruppe.",
   "nav.play": "So spielst du",
   "graj.kicker": "So spielst du · drei Wege",
   "graj.h2": "Das Handy steht am Platz. Du spielst.",
@@ -1145,6 +1155,8 @@ de: {
   },
 
 ru: {
+  "cta.whatsapp": "Группа в WhatsApp",
+  "cta.beta": "Хочешь тестировать бету через TestFlight и присылать отзывы и баги? Вступай в нашу группу в WhatsApp.",
   "nav.play": "Как играть",
   "graj.kicker": "Как играть · три способа",
   "graj.h2": "Телефон стоит на корте. Ты играешь.",
@@ -1365,6 +1377,8 @@ ru: {
 },
 
 uk: {
+  "cta.whatsapp": "Група в WhatsApp",
+  "cta.beta": "Хочеш тестувати бету через TestFlight і надсилати відгуки та баги? Долучайся до нашої групи у WhatsApp.",
   "nav.play": "Як грати",
   "graj.kicker": "Як грати · три способи",
   "graj.h2": "Телефон стоїть на корті. Ти граєш.",

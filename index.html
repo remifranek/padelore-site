@@ -344,6 +344,105 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   padding:5px 11px;border-radius:999px;margin-bottom:14px}
 .tw-kick .n{width:18px;height:18px;border-radius:50%;background:var(--primary);color:#fff;
   display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}
+
+/* ===== VS / razem z Playtomic ===== */
+.split{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:8px}
+@media(max-width:780px){.split{grid-template-columns:1fr;gap:14px}}
+.splitcol{border-radius:20px;padding:24px 22px;border:1px solid var(--card-border)}
+.splitcol.keep{background:var(--card);opacity:.92}
+.splitcol.add{background:
+  radial-gradient(420px 240px at 100% 0%, color-mix(in oklab,var(--accent) 14%,transparent), transparent 65%),
+  linear-gradient(160deg,color-mix(in oklab,var(--primary) 14%,var(--card)),var(--card-2));
+  border-color:color-mix(in oklab,var(--accent) 36%,var(--card-border))}
+.splitcol .sct{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:850;letter-spacing:.4px;text-transform:uppercase;margin-bottom:16px}
+.splitcol.keep .sct{color:var(--ink-soft)}
+.splitcol.add .sct{color:var(--ink)}
+.sct .dotk,.sct .dota{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.sct .dotk{background:var(--ink-faint)}
+.sct .dota{background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklab,var(--accent) 24%,transparent)}
+.sclist{list-style:none;display:flex;flex-direction:column;gap:12px}
+.sclist li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.45;color:var(--ink-soft)}
+.sclist li b{color:var(--ink);font-weight:750}
+.splitcol.keep .sclist li::before{content:"";position:absolute;left:2px;top:7px;width:11px;height:11px;border-radius:50%;border:2px solid var(--ink-faint)}
+.splitcol.add .sclist li::before{content:"";position:absolute;left:0;top:3px;width:15px;height:15px;border-radius:50%;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat}
+.splitplus{align-self:center;font-size:30px;font-weight:900;color:var(--accent);text-align:center}
+@media(max-width:780px){.splitplus{padding:2px 0}}
+.honest{max-width:64ch;margin:26px auto 0;text-align:center;font-size:15px;line-height:1.6;color:var(--ink-soft)}
+.honest b{color:var(--ink);font-weight:750}
+
+/* ===== NEW: Aktywność / Gdzie jesteś mockup (jacard + .ak) ===== */
+.jacard.ak .loadbars{display:flex;align-items:flex-end;gap:6px;height:88px;margin:2px 0}
+.jacard.ak .loadbars .lb{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#46B6F5,rgba(70,182,245,.28))}
+.jacard.ak .loadbars .lb.pk{background:linear-gradient(180deg,#F59E0B,rgba(245,158,11,.28))}
+.jacard.ak .wkx{display:flex;gap:6px;font-size:7px;font-weight:800;color:rgba(236,241,255,.4);text-transform:uppercase;letter-spacing:.3px;margin-top:5px}
+.jacard.ak .wkx span{flex:1;text-align:center}
+.jacard.ak .pctrow{display:flex;align-items:center;gap:13px}
+.jacard.ak .pcgauge{position:relative;width:62px;height:62px;flex-shrink:0}
+.jacard.ak .pcv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.jacard.ak .pcv b{font-size:20px;font-weight:880;letter-spacing:-.03em;color:#46B6F5}
+.jacard.ak .pcv span{font-size:6.5px;font-weight:800;color:rgba(236,241,255,.5);text-transform:uppercase;letter-spacing:.4px;margin-top:1px}
+.jacard.ak .tyv{display:inline-block;font-size:9px;font-weight:850;color:#4ADE80;background:rgba(74,222,128,.16);padding:3px 8px;border-radius:6px;margin-bottom:6px}
+.jacard.ak .cohort{position:relative;height:9px;border-radius:5px;background:rgba(0,0,0,.28);margin-top:10px;overflow:visible}
+.jacard.ak .cohort i{position:absolute;left:0;top:0;height:100%;border-radius:5px;background:linear-gradient(90deg,rgba(70,182,245,.25),#46B6F5)}
+.jacard.ak .cohort .me{position:absolute;top:-3px;width:3px;height:15px;border-radius:2px;background:#E0F75A;box-shadow:0 0 0 3px rgba(224,247,90,.2);transform:translateX(-50%)}
+
+/* ===== NEW: in-match point tagging — PointTagOverlay (Apple Watch · OLED) ===== */
+.twatch{position:relative;aspect-ratio:416/496;background:#000;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;color:#fff}
+.twatch .ttimer{height:3px;background:rgba(255,255,255,.10);flex-shrink:0}
+.twatch .ttimer i{display:block;height:100%;width:64%;background:#A78BFA}
+.twatch .quad{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;padding:2px}
+.twatch .cell{background:rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:6px}
+.twatch .cic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.twatch .cn{font-size:16px;font-weight:850;letter-spacing:-.01em;line-height:1}
+.twatch .cs{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.6);line-height:1}
+.twatch .cell.opp .cic{background:rgba(56,189,248,.16);color:#38BDF8}
+.twatch .cell.skip .cic{background:rgba(255,255,255,.10);color:rgba(255,255,255,.65)}
+.twatch .cell.skip .cn{color:rgba(255,255,255,.72)}
+.twatch .cell.skip .cs{color:rgba(255,255,255,.5)}
+.twatch .cell.me .cic{background:rgba(74,222,128,.16);color:#4ADE80}
+
+/* ===== NEW: tournament live board — rundy + korty + Z zegarka ===== */
+.tboard{aspect-ratio:1320/2868;background:linear-gradient(180deg,#0C2350,#091B3D);border-radius:30px;overflow:hidden;color:#ECF1FF;display:flex;flex-direction:column;padding:24px 13px 14px;gap:10px;
+  --af:rgba(236,241,255,.42);--as:rgba(236,241,255,.6);--ac:#13294e;--al:rgba(150,182,235,.16);--sky:#46B6F5;--green:#4ADE80}
+.tboard .thead .tn{font-size:18px;font-weight:870;letter-spacing:-.02em;line-height:1}
+.tboard .thead .tm{font-size:10px;font-weight:700;color:var(--as);margin-top:4px}
+.tboard .stand{border-radius:14px;background:rgba(0,0,0,.2);border:1px solid var(--al);padding:9px 11px}
+.tboard .stand .sh{display:flex;align-items:center;gap:6px;font-size:8.5px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:var(--af)}
+.tboard .stand .sh .lv{margin-left:auto;display:flex;align-items:center;gap:4px;color:#E94B3C}
+.tboard .stand .sh .lv i{width:5px;height:5px;border-radius:50%;background:#E94B3C}
+.tboard .stand .srow{display:flex;align-items:center;gap:8px;font-size:12.5px;margin-top:7px;font-variant-numeric:tabular-nums}
+.tboard .stand .srow .pos{width:15px;text-align:center;font-size:11px}
+.tboard .stand .srow .nm{font-weight:750}
+.tboard .stand .srow .pt{margin-left:auto;font-weight:850}
+.tboard .stand .srow.lead .nm,.tboard .stand .srow.lead .pt{color:var(--green)}
+.tboard .courts{display:flex;flex-direction:column;gap:8px}
+.tboard .court{border-radius:14px;background:var(--ac);border:1px solid var(--al)}
+.tboard .court.need{border-color:rgba(224,247,90,.42)}
+.tboard .ctop{display:flex;align-items:center;padding:8px 11px 7px}
+.tboard .kort{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:850;letter-spacing:.5px;color:var(--sky);background:rgba(70,182,245,.13);padding:3px 8px;border-radius:999px}
+.tboard .chip{margin-left:auto;display:inline-flex;align-items:center;gap:4px;font-size:8.5px;font-weight:800;letter-spacing:.3px}
+.tboard .chip.saved{color:var(--green)}
+.tboard .chip.watch{color:var(--sky);background:rgba(70,182,245,.14);padding:2px 7px;border-radius:999px}
+.tboard .chip.watch i{width:5px;height:5px;border-radius:50%;background:#E94B3C}
+.tboard .chip.enter{color:#E0F75A}
+.tboard .crow{display:flex;align-items:center;gap:9px;padding:6px 11px;border-top:1px solid rgba(150,182,235,.1)}
+.tboard .crow .tnm{font-size:12.5px;font-weight:740}
+.tboard .crow .tsc{margin-left:auto;font-size:17px;font-weight:870;font-variant-numeric:tabular-nums;color:var(--af);line-height:1}
+.tboard .crow.win .tnm{font-weight:860}
+.tboard .crow.win .tsc,.tboard .crow.live .tsc{color:#ECF1FF}
+
+/* ===== NEW: Skąd punkty teaser bars (post-match) ===== */
+.skb{border-radius:14px;background:var(--card);border:1px solid var(--card-border);padding:14px 15px;margin-top:20px;max-width:360px}
+.skb .skh{font-size:10.5px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:7px;margin-bottom:12px}
+.skb .skh .sx{margin-left:auto;font-size:9px;font-weight:800;letter-spacing:0;text-transform:none;color:var(--ink-faint)}
+.skb .skrow{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.skb .skrow:last-child{margin-bottom:0}
+.skb .skrow .lb{font-size:12px;font-weight:750;color:var(--ink);width:104px;flex-shrink:0}
+.skb .skv{flex:1;height:9px;border-radius:5px;background:var(--accent-soft);overflow:hidden}
+.skb .skv i{display:block;height:100%;border-radius:5px}
+.skb .skrow .n{font-size:12px;font-weight:850;color:var(--ink);width:16px;text-align:right;font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -354,8 +453,8 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   <div class="nav-in">
     <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
     <div class="nav-links">
+      <a href="#vs" data-i18n="nav.vs">Po co druga apka?</a>
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
-      <a href="#graj" data-i18n="nav.play">Jak grać</a>
       <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>
@@ -386,8 +485,8 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <div class="nav-menu" id="navMenu" role="menu">
+        <a href="#vs" role="menuitem" data-i18n="nav.vs">Po co druga apka?</a>
         <a href="#watch" role="menuitem" data-i18n="nav.watch">Apple Watch</a>
-        <a href="#graj" role="menuitem" data-i18n="nav.play">Jak grać</a>
         <a href="#mecz" role="menuitem" data-i18n="nav.match">Karta meczu</a>
         <a href="#turniej" role="menuitem" data-i18n="nav.tournament">Turniej</a>
         <a href="#liga" role="menuitem" data-i18n="nav.league">Liga</a>
@@ -444,6 +543,44 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
     </div>
   </div>
 </header>
+
+<!-- VS / RAZEM Z PLAYTOMIC (sales story) -->
+<section class="sec" id="vs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="vs.kicker">Po co druga apka do padla</span>
+      <h2 class="h2" data-i18n-html="vs.h2_html">Playtomic znajduje grę.<br>Padelore ją <span style="color:var(--accent)">rozumie</span>.</h2>
+      <p class="lead" data-i18n="vs.lead">Nie wymieniaj apki do rezerwacji — zostaw ją do tego, w czym jest dobra. Padelore zaczyna w sekundzie, w której wchodzisz na kort: liczy mecz z zegarka i po gwizdku pokazuje grę, której żaden booking nie widzi.</p>
+    </div>
+
+    <div class="split reveal">
+      <div class="splitcol keep">
+        <div class="sct"><span class="dotk"></span><span data-i18n="vs.keep_title">Zostaje przy Twojej apce</span></div>
+        <ul class="sclist">
+          <li data-i18n="vs.keep_1">Rezerwacja kortu i kluby w okolicy</li>
+          <li data-i18n="vs.keep_2">Szukanie graczy i open matchy</li>
+          <li data-i18n="vs.keep_3">Oficjalny poziom / level z meczów</li>
+          <li data-i18n="vs.keep_4">Społeczność i wydarzenia</li>
+        </ul>
+      </div>
+
+      <div class="splitplus">+</div>
+
+      <div class="splitcol add">
+        <div class="sct"><span class="dota"></span><span data-i18n="vs.add_title">Dochodzi z Padelore</span></div>
+        <ul class="sclist">
+          <li data-i18n-html="vs.add_1_html"><b>Liczenie z Apple Watch</b> — tap po gemie, wynik na żywo na kracie</li>
+          <li data-i18n-html="vs.add_2_html"><b>Karta meczu</b> — Match Effort, punkty × tętno, regeneracja</li>
+          <li data-i18n-html="vs.add_3_html"><b>Skąd punkty</b> — Twoje winnery, błędy, błędy rywali</li>
+          <li data-i18n-html="vs.add_4_html"><b>Jak grasz</b> — profil i rating z całej historii, nie tylko W/L</li>
+          <li data-i18n-html="vs.add_5_html"><b>Gdzie jesteś</b> — Ty vs Ty i wydolność względem rocznika</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="honest reveal" data-i18n-html="vs.honest_html">Padelore <b>nie rezerwuje kortów i nie szuka graczy</b> — i nie udaje, że to robi. Robi jedną rzecz, której nie robi nikt inny: zamienia każdy Twój mecz w dane, z których naprawdę się uczysz.</p>
+  </div>
+</section>
 
 <!-- WATCH FLOW (primary) -->
 <section class="sec" id="watch">
@@ -536,75 +673,6 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   </div>
 </section>
 
-<!-- JAK GRAĆ — 3 sposoby (new) -->
-<section class="sec" id="graj">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker" data-i18n="graj.kicker">Jak grać · trzy sposoby</span>
-      <h2 class="h2" data-i18n="graj.h2">Telefon staje na korcie. Ty grasz.</h2>
-      <p class="lead" data-i18n-html="graj.lead">Nie chowasz telefonu do torby — <b>stawiasz go na płocie</b>, żeby wynik widzieli wszyscy. Punktujesz z Apple Watch albo z telefonu. Wybierz sposób pod swój mecz.</p>
-    </div>
-
-    <!-- SCENARIUSZ 1 — zegarek → tablica na płocie -->
-    <div class="scn reveal">
-      <div class="scn-media">
-        <div class="tw-stage">
-          <span class="tw-mount" data-i18n="graj.mount">🔩 Uchwyt na kracie kortu</span>
-          <div class="tw-fence"><img src="assets/07-fence.png" alt="iPhone w poziomie na płocie — tablica wyniku MY 15 : ONI 12" data-i18n-alt="graj.s1_alt" loading="lazy"></div>
-          <div class="tw-flow">›</div>
-          <div class="tw-watch"><img src="assets/watch-home.png" alt="Apple Watch — start meczu Padelore" data-i18n-alt="graj.s1watch_alt" loading="lazy"></div>
-          <span class="tw-tag" data-i18n="graj.tag">🎾 Wynik na żywo z zegarka</span>
-        </div>
-      </div>
-      <div>
-        <span class="tw-kick"><span class="n">1</span><span data-i18n="graj.s1_kick">Najprostszy · prosto z zegarka</span></span>
-        <h3 data-i18n="graj.s1_h">Liczę z nadgarstka, telefon pokazuje wynik</h3>
-        <p data-i18n-html="graj.s1_p">Mój sposób, gdy idę na <b>turniej Mexicano albo Americano organizowany przez klub</b>. Zero konfiguracji — odpalam szybki mecz na zegarku, stawiam telefon na płocie i gram.</p>
-        <ul class="scn-steps">
-          <li><span class="n">1</span><span data-i18n="graj.s1_l1">Start meczu na Apple Watch — bez dotykania telefonu.</span></li>
-          <li><span class="n">2</span><span data-i18n="graj.s1_l2">Tapiesz punkt na nadgarstku, wynik leci na telefon.</span></li>
-          <li><span class="n">3</span><span data-i18n="graj.s1_l3">Telefon w poziomie = wielka tablica widoczna z całego kortu.</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- SCENARIUSZ 2 — telefon: ustaw graczy (flip) -->
-    <div class="scn flip reveal">
-      <div class="scn-media">
-        <div class="tw-dev"><img src="assets/02-single-players.png" alt="Ekran Gracze 2v2 — dwie pary, lista kontaktów" data-i18n-alt="graj.s2_alt" loading="lazy"></div>
-      </div>
-      <div>
-        <span class="tw-kick"><span class="n">2</span><span data-i18n="graj.s2_kick">Z telefonu · pełna kontrola</span></span>
-        <h3 data-i18n="graj.s2_h">Ustawiam pary na telefonie, liczę gdzie chcę</h3>
-        <p data-i18n-html="graj.s2_p">Gdy chcę dograć składy ręcznie — wybieram graczy z kontaktów albo listy, ustawiam punktację, a potem liczę na telefonie <b>lub</b> przejmuję wynik na zegarek.</p>
-        <ul class="scn-steps">
-          <li><span class="n">1</span><span data-i18n="graj.s2_l1">Wybierasz pary i format na czytelnym ekranie kortu.</span></li>
-          <li><span class="n">2</span><span data-i18n="graj.s2_l2">Punktujesz na telefonie albo zegarek sam wchodzi w mecz.</span></li>
-          <li><span class="n">3</span><span data-i18n="graj.s2_l3">Wynik spójny telefon ⇄ Apple Watch przez cały mecz.</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- SCENARIUSZ 3 — turniej -->
-    <div class="scn reveal">
-      <div class="scn-media">
-        <div class="tw-dev"><img src="assets/05-tournament.png" alt="Tablica turnieju — rundy, korty, badge Z zegarka" data-i18n-alt="graj.s3_alt" loading="lazy"></div>
-      </div>
-      <div>
-        <span class="tw-kick"><span class="n">3</span><span data-i18n="graj.s3_kick">Cała ekipa · turniej</span></span>
-        <h3 data-i18n="graj.s3_h">Wieczór dla paczki — apka prowadzi rundy</h3>
-        <p data-i18n-html="graj.s3_p">Americano albo Mexicano dla całej grupy: apka układa rundy i korty, a wyniki wpadają z telefonu <b>albo prosto z zegarków</b> grających — badge „Z zegarka" pokazuje, który kort liczy na nadgarstku.</p>
-        <ul class="scn-steps">
-          <li><span class="n">1</span><span data-i18n="graj.s3_l1">Kreator ustawia format, korty i punktację w kilku krokach.</span></li>
-          <li><span class="n">2</span><span data-i18n="graj.s3_l2">Każda runda rozpisana na korty — wpisujesz lub bierzesz z zegarka.</span></li>
-          <li><span class="n">3</span><span data-i18n="graj.s3_l3">Tabela i ranking TrueSkill aktualizują się same.</span></li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- MATCH STORY (new) -->
 <section class="sec" id="mecz">
   <div class="wrap">
@@ -659,6 +727,47 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
           <li><span class="n">3</span><span data-i18n-html="mecz.li3_html"><b>Regeneracja</b> — jak szybko wracasz między meczami.</span></li>
         </ul>
         <p class="muted" style="font-size:13.5px;margin-top:16px" data-i18n="mecz.privacy">Dane zdrowotne zostają na Twoim urządzeniu.</p>
+      </div>
+    </div>
+    <div class="scn flip reveal">
+      <div class="scn-media">
+        <div class="wframe" style="width:250px"><div class="twatch">
+          <div class="ttimer"><i></i></div>
+          <div class="quad">
+            <div class="cell opp">
+              <span class="cic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/><line x1="3" y1="12" x2="21" y2="12" stroke-opacity=".45"/></svg></span>
+              <span class="cn" data-i18n="twatch.opp_n">Rywale</span><span class="cs" data-i18n="twatch.opp_s">błąd</span>
+            </div>
+            <div class="cell skip">
+              <span class="cic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span>
+              <span class="cn" data-i18n="twatch.skip_n">Pomiń</span><span class="cs" data-i18n="twatch.skip_s">auto 4 s</span>
+            </div>
+            <div class="cell me">
+              <span class="cic"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6v1H4z"/></svg></span>
+              <span class="cn" data-i18n="twatch.me_n">Ja</span><span class="cs" data-i18n="twatch.me_s">winner</span>
+            </div>
+            <div class="cell me">
+              <span class="cic"><svg width="24" height="22" viewBox="0 0 26 24" fill="currentColor"><circle cx="9" cy="8" r="3.6"/><circle cx="17.5" cy="8.5" r="3"/><path d="M2.5 20c0-3.4 2.9-5.2 6.5-5.2s6.5 1.8 6.5 5.2v1H2.5z"/><path d="M16.6 14.9c2.7.15 5.4 1.7 5.4 4.6v1h-4.1"/></svg></span>
+              <span class="cn" data-i18n="twatch.partner_n">Partner</span><span class="cs" data-i18n="twatch.partner_s">winner</span>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div>
+        <div class="scn-num" data-i18n="twatch.num">NA ZEGARKU · 1 TAP</div>
+        <h3 data-i18n-html="twatch.h3_html">Nowość: zapisz, <span style="color:var(--accent)">dlaczego</span> padł punkt</h3>
+        <p data-i18n-html="twatch.p_html">Na padlowych forach wraca to samo: gracz wie, ile wygrał — ale nie wie, dlaczego. Żadna apka do padla tego nie liczy. Padelore odpowiada: po punkcie masz 4 sekundy, żeby jednym tapnięciem <b>na zegarku</b> oznaczyć źródło — Ja, partner czy rywale. Nie chcesz — pomijasz, wynik leci dalej.</p>
+        <ul class="scn-steps">
+          <li><span class="n">1</span><span data-i18n-html="twatch.li1_html"><b>Zdobyty punkt</b> — Twój winner, winner partnera albo błąd rywali.</span></li>
+          <li><span class="n">2</span><span data-i18n-html="twatch.li2_html"><b>Stracony punkt</b> — Twój błąd, błąd partnera albo winner rywali.</span></li>
+          <li><span class="n">3</span><span data-i18n-html="twatch.li3_html"><b>Zawsze opcjonalne</b> — 4 s i znika; tagujesz tyle punktów, ile chcesz.</span></li>
+        </ul>
+        <div class="skb">
+          <div class="skh">📊 <span data-i18n="twatch.skb_h">Po meczu: Skąd punkty</span><span class="sx" data-i18n="twatch.skb_hx">zdobyte · 13</span></div>
+          <div class="skrow"><span class="lb" data-i18n="twatch.skb_r1">Mój winner</span><span class="skv"><i style="width:54%;background:#4ADE80"></i></span><span class="n">7</span></div>
+          <div class="skrow"><span class="lb" data-i18n="twatch.skb_r2">Winner Kuby</span><span class="skv"><i style="width:31%;background:rgba(74,222,128,.55)"></i></span><span class="n">4</span></div>
+          <div class="skrow"><span class="lb" data-i18n="twatch.skb_r3">Błąd rywali</span><span class="skv"><i style="width:15%;background:#46B6F5"></i></span><span class="n">2</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -719,46 +828,38 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
       </div>
     </div>
 
-    <!-- 2: real live board -->
+    <!-- 2: real live board (tboard) -->
     <div class="scn flip reveal">
-      <div class="scn-media"><div class="device ap"><div class="apscr">
-        <div class="tnav"><span class="tnav-b">‹</span><span class="tnav-t" data-i18n="mock.r_tname">Klub Wisła · Czwartek</span><span class="tnav-m">⋯</span></div>
-        <div class="th"><div class="th-t"><span data-i18n="mock.r_round">Runda 2</span> <span class="m">/ 11</span></div><div class="th-c">2/3</div></div>
-        <div class="th-sub" data-i18n="mock.r_format">Americano · suma 21</div>
-        <div class="th-bar"><span></span></div>
-        <div class="tc">
-          <div class="tc-h"><span class="tc-k" data-i18n="mock.r_court1">▦ KORT 1</span><span class="tc-ok">✓</span></div>
-          <div class="tc-g">
-            <div class="tc-col"><div class="tc-s sky">11</div><div class="tc-p"><span class="d sky"></span>Remi</div><div class="tc-p"><span class="d sky"></span>Bartek</div></div>
-            <div class="tc-col"><div class="tc-s gold">10</div><div class="tc-p"><span class="d gold"></span>Marek</div><div class="tc-p"><span class="d gold"></span>Paweł</div></div>
+      <div class="scn-media"><div class="device"><div class="tboard">
+          <div class="thead"><div class="tn" data-i18n="tboard.title">Wieczór u Kuby</div><div class="tm" data-i18n="tboard.meta">Runda 3 / 7 · Americano · 5/6 wpisanych</div></div>
+          <div class="stand">
+            <div class="sh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h12v3a6 6 0 01-12 0V3zM4 5h2v1.5A3.5 3.5 0 014 9.3zM20 5h-2v1.5a3.5 3.5 0 002 2.8zM10 14h4l-.6 3.5h-2.8zM8 20.5h8v1.5H8z"/></svg><span data-i18n="tboard.stand_h">Tabela na żywo</span><span class="lv"><i></i><span data-i18n="tboard.live">LIVE</span></span></div>
+            <div class="srow lead"><span class="pos">🥇</span><span class="nm">Marek</span><span class="pt">38</span></div>
+            <div class="srow"><span class="pos">🥈</span><span class="nm" data-i18n="tboard.you">Ty</span><span class="pt">34</span></div>
+            <div class="srow"><span class="pos">🥉</span><span class="nm">Ola</span><span class="pt">31</span></div>
           </div>
-        </div>
-        <div class="tc">
-          <div class="tc-h"><span class="tc-k" data-i18n="mock.r_court2">▦ KORT 2</span><span class="tc-ok">✓</span></div>
-          <div class="tc-g">
-            <div class="tc-col"><div class="tc-s sky">21</div><div class="tc-p"><span class="d sky"></span>Ania</div><div class="tc-p"><span class="d sky"></span>Magda</div></div>
-            <div class="tc-col"><div class="tc-s gold">17</div><div class="tc-p"><span class="d gold"></span>Tomek</div><div class="tc-p"><span class="d gold"></span>Kasia</div></div>
+          <div class="courts">
+            <div class="court">
+              <div class="ctop"><span class="kort"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/></svg><span data-i18n="tboard.court1">KORT 1</span></span><span class="chip saved"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="tboard.saved">Zapisany</span></span></div>
+              <div class="crow win"><span class="tnm">Marek + Ania</span><span class="tsc">21</span></div>
+              <div class="crow"><span class="tnm" data-i18n="tboard.you_kuba">Ty + Kuba</span><span class="tsc">17</span></div>
+            </div>
+            <div class="court">
+              <div class="ctop"><span class="kort"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/></svg><span data-i18n="tboard.court2">KORT 2</span></span><span class="chip watch"><svg width="10" height="12" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="7" width="12" height="12" rx="3.2"/><path d="M8.5 7l.6-3.4h5.8l.6 3.4M8.5 19l.6 3.4h5.8l.6-3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="tboard.fromwatch">Z ZEGARKA</span><i></i></span></div>
+              <div class="crow live"><span class="tnm">Ola + Piotr</span><span class="tsc">15</span></div>
+              <div class="crow live"><span class="tnm">Tomek + Zosia</span><span class="tsc">12</span></div>
+            </div>
+            <div class="court need">
+              <div class="ctop"><span class="kort"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/></svg><span data-i18n="tboard.court3">KORT 3</span></span><span class="chip enter"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18.5l-.8 2.3 2.3-.8L19 8.5a1.9 1.9 0 00-2.7-2.7z"/></svg><span data-i18n="tboard.enter">Tapnij, aby wpisać</span></span></div>
+              <div class="crow"><span class="tnm">Basia + Janek</span><span class="tsc">—</span></div>
+              <div class="crow"><span class="tnm">Ewa + Wojtek</span><span class="tsc">—</span></div>
+            </div>
           </div>
-        </div>
-        <div class="tc act">
-          <div class="tc-h"><span class="tc-k" data-i18n="mock.r_court3">▦ KORT 3</span><span class="tc-watch" data-i18n="mock.r_fromwatch">⌚ Z zegarka</span></div>
-          <div class="tc-g">
-            <div class="tc-col"><div class="tc-s sky">0</div><div class="tc-p"><span class="d sky"></span>Karol</div><div class="tc-p"><span class="d sky"></span>Piotr</div></div>
-            <div class="tc-col"><div class="tc-s gold">0</div><div class="tc-p"><span class="d gold"></span>Iza</div><div class="tc-p"><span class="d gold"></span>Ola</div></div>
-          </div>
-          <button class="tc-btn" data-i18n="mock.r_enter">✎ Wpisz wynik</button>
-        </div>
-        <div class="thint"><span data-i18n="mock.r_hint">⏳ Wpisz wyniki 1 pozostałego kortu</span></div>
-        <div class="ttabs">
-          <div class="ttab on"><i>▦</i><span data-i18n="mock.r_tab_courts">Korty</span></div>
-          <div class="ttab"><i>≣</i><span data-i18n="mock.r_tab_table">Tabela</span></div>
-          <div class="ttab"><i>▤</i><span data-i18n="mock.r_tab_stats">Statystyki</span></div>
-        </div>
-      </div></div></div>
+        </div></div></div>
       <div>
         <div class="scn-num" data-i18n="tour.s2_num">W TRAKCIE · TABLICA</div>
         <h3 data-i18n="tour.s2_h">Graj — apka liczy rundy</h3>
-        <p data-i18n="tour.s2_p">Każda runda rozpisana na korty. Wpisujesz wynik na telefonie albo bierzesz go prosto z zegarka — badge „Z zegarka" pokazuje mecze liczone na nadgarstku.</p>
+        <p data-i18n-html="tour.s2_p_html">Każda runda rozpisana na korty. Wpisujesz wynik na telefonie albo bierzesz go prosto z zegarka — badge „Z zegarka" pokazuje mecze liczone na nadgarstku. <b>Obróć telefon poziomo</b> — staje się wielką tablicą na kracie, a wynik wpiszesz bez obracania go z powrotem.</p>
         <ul class="scn-steps">
           <li><span class="n">1</span><span data-i18n="tour.s2_li1">Rundy i korty układają się automatycznie.</span></li>
           <li><span class="n">2</span><span data-i18n="tour.s2_li2">Wynik z telefonu lub na żywo z Apple Watch.</span></li>
@@ -857,6 +958,55 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   </div>
 </section>
 
+<!-- AKTYWNOŚĆ / GDZIE JESTEŚ (new) -->
+<section class="sec" id="aktywnosc">
+  <div class="wrap">
+    <div class="band reveal">
+      <div>
+        <span class="eyebrow" data-i18n="akt.eyebrow">Nowość · Aktywność</span>
+        <h2 class="h2" style="margin:16px 0 14px" data-i18n-html="akt.h2_html">Nie tylko że grasz — <span style="color:var(--accent)">jak się trzymasz.</span></h2>
+        <p class="lead" data-i18n-html="akt.lead_html">Druga soczewka ekranu statystyk czyta Apple Health: obciążenie tydzień po tygodniu, tętno w strefach i regenerację. <b>„Gdzie jesteś"</b> pokazuje Cię dziś kontra Ciebie sprzed 3 miesięcy — i wydolność na tle Twojego rocznika.</p>
+        <ul class="scn-steps" style="margin-top:22px">
+          <li><span class="n">1</span><span data-i18n-html="akt.li1_html"><b>Obciążenie</b> — wysiłek × czas, tydzień po tygodniu, bez przeciążenia.</span></li>
+          <li><span class="n">2</span><span data-i18n-html="akt.li2_html"><b>Ty vs Ty</b> — forma dziś kontra 3 miesiące temu, nie kontra obcy ranking.</span></li>
+          <li><span class="n">3</span><span data-i18n-html="akt.li3_html"><b>Rocznik</b> — wydolność na tle graczy w Twoim wieku, gdy zbierze się próba.</span></li>
+        </ul>
+        <p class="muted" style="font-size:13.5px;margin-top:16px" data-i18n="akt.privacy">Dane zdrowotne zostają na Twoim urządzeniu.</p>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div class="device floaty"><div class="jacard ak">
+          <div class="eye" data-i18n="mock.ak_eye">Statystyki · Aktywność</div>
+          <div class="lens"><span class="ls" data-i18n="mock.ak_lens1">Jak gram</span><span class="ls on" data-i18n="mock.ak_lens2">Aktywność</span></div>
+          <div class="card2" style="flex:none">
+            <div class="ch">📊 <span data-i18n="mock.ak_load">Obciążenie</span><span class="cx" data-i18n="mock.ak_load_cx">ostatnie 6 tygodni</span></div>
+            <div class="loadbars">
+              <div class="lb" style="height:52%"></div>
+              <div class="lb" style="height:64%"></div>
+              <div class="lb pk" style="height:88%"></div>
+              <div class="lb" style="height:60%"></div>
+              <div class="lb" style="height:71%"></div>
+              <div class="lb" style="height:66%"></div>
+            </div>
+            <div class="wkx"><span data-i18n="mock.ak_w5">T-5</span><span data-i18n="mock.ak_w4">T-4</span><span data-i18n="mock.ak_w3">T-3</span><span data-i18n="mock.ak_w2">T-2</span><span data-i18n="mock.ak_w1">T-1</span><span data-i18n="mock.ak_w0">Ten</span></div>
+            <div class="mread" style="margin-top:9px" data-i18n-html="mock.ak_load_read_html">⚖️ <b>Równy rytm — bez tygodnia przeciążenia.</b> Obciążenie = wysiłek × czas.</div>
+          </div>
+          <div class="card2">
+            <div class="ch">📍 <span data-i18n="mock.ak_where">Gdzie jesteś</span><span class="cx" data-i18n="mock.ak_where_cx">Ty vs Ty · rocznik</span></div>
+            <div class="pctrow">
+              <div class="pcgauge"><svg viewBox="0 0 72 72" width="62" height="62"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7"/><circle cx="36" cy="36" r="30" fill="none" stroke="#46B6F5" stroke-width="7" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="60" transform="rotate(-90 36 36)"/></svg><div class="pcv"><b>68.</b><span data-i18n="mock.ak_pct">percentyl</span></div></div>
+              <div>
+                <div class="tyv" data-i18n="mock.ak_delta">▲ +6 pkt vs 3 mies. temu</div>
+                <div style="font-size:9.5px;color:rgba(236,241,255,.66);line-height:1.4" data-i18n-html="mock.ak_cohort_html">Twoja wydolność wyżej niż <b style="color:#ECF1FF">68%</b> graczy z rocznika 30–39.</div>
+                <div class="cohort"><i style="width:68%"></i><span class="me" style="left:68%"></span></div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="sec" id="pobierz">
   <div class="wrap">
@@ -879,12 +1029,13 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   <div class="wrap foot-in">
     <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
     <div class="foot-links">
+      <a href="#vs" data-i18n="nav.vs">Po co druga apka?</a>
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
-      <a href="#graj" data-i18n="nav.play">Jak grać</a>
       <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>
       <a href="#ja" data-i18n="nav.you">Ja</a>
+      <a href="#aktywnosc" data-i18n="nav.activity">Aktywność</a>
     </div>
     <small data-i18n="footer.copy">© 2026 Padelore · padel, który liczy się sam</small>
   </div>

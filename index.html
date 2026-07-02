@@ -475,6 +475,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
           <button class="lang-opt" role="option" data-l="de">Deutsch<span class="code">DE</span></button>
           <button class="lang-opt" role="option" data-l="ru">Русский<span class="code">RU</span></button>
           <button class="lang-opt" role="option" data-l="uk">Українська<span class="code">UA</span></button>
+          <button class="lang-opt" role="option" data-l="pt">Português<span class="code">PT</span></button>
         </div>
       </div>
       <button class="theme-btn" id="theme" data-i18n-aria="nav.theme" aria-label="Przełącz motyw">
@@ -1050,7 +1051,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
 <script>
 (function(){
   /* ----- i18n ----- */
-  var LANGS=['pl','en','es','it','de','ru','uk'], LKEY='padelore.lang';
+  var LANGS=['pl','en','es','it','de','ru','uk','pt'], LKEY='padelore.lang';
   function pick(){
     var s=localStorage.getItem(LKEY);
     if(s&&LANGS.indexOf(s)>-1)return s;
@@ -1066,7 +1067,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
     document.querySelectorAll('[data-i18n-alt]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-alt'));if(v!=null)el.setAttribute('alt',v);});
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-aria'));if(v!=null)el.setAttribute('aria-label',v);});
   }
-  var CODE={pl:'PL',en:'EN',es:'ES',it:'IT',ru:'RU',uk:'UA'};
+  var CODE={pl:'PL',en:'EN',es:'ES',it:'IT',ru:'RU',uk:'UA',pt:'PT'};
   var lang=pick();
   var lbtn=document.getElementById('langBtn'), lmenu=document.getElementById('langMenu'),
       lcode=document.getElementById('langCode'), lopts=[].slice.call(document.querySelectorAll('.lang-opt'));

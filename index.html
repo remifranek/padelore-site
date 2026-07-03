@@ -583,6 +583,34 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   </div>
 </section>
 
+<!-- HOW TO START (entry point - new section) -->
+<section class="sec" id="start" style="background:linear-gradient(180deg,var(--bg),var(--bg-2))">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="start.kicker">Od zera do meczu</span>
+      <h2 class="h2" data-i18n="start.h2">Otwórz, wybierz, graj.</h2>
+      <p class="lead" data-i18n="start.lead">Setup 15 sekund. Zero rejestracji, zero obowiązkowych profili. Tap «Graj» na głównym ekranie, dodaj graczy, wybierz kto liczy (Apple Watch lub telefon) — i grasz.</p>
+    </div>
+
+    <div class="scn reveal">
+      <div class="scn-media">
+        <div class="device"><img src="assets/01-home.png" data-i18n-alt="start.alt" alt="Ekran główny Padelore — hero JAK GRAM"></div>
+      </div>
+      <div>
+        <div class="scn-num" data-i18n="start.num">KROK 0 · WEJŚCIE</div>
+        <h3 data-i18n="start.h3">Główny ekran = punkt startu</h3>
+        <p data-i18n="start.p">Hero «JAK GRAM» pokazuje Twoją formę (Impact Rating, ostatnie mecze P/W). Poniżej karty: «Single Match» (pojedynczy mecz 2v2 lub 1v1) i «Turniej» (Americano/Mexicano dla grupy). Jeden tap = zaczynasz.</p>
+        <ul class="scn-steps">
+          <li><span class="n">1</span><span data-i18n-html="start.li1_html"><b>Graj</b> — wybierz kartę «Single Match» lub «Turniej».</span></li>
+          <li><span class="n">2</span><span data-i18n-html="start.li2_html"><b>Gracze</b> — dodaj z listy, kontaktów lub wpisz ręcznie.</span></li>
+          <li><span class="n">3</span><span data-i18n-html="start.li3_html"><b>Urządzenie</b> — liczysz na Apple Watch lub telefonie.</span></li>
+        </ul>
+        <p class="muted" style="font-size:13.5px;margin-top:16px" data-i18n="start.privacy">Wszystko offline. Ranking globalny opt-in (można wyłączyć).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WATCH FLOW (primary) -->
 <section class="sec" id="watch">
   <div class="wrap">
@@ -614,36 +642,15 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
           </div>
           <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch-home.png" data-i18n-alt="watch.s2_alt" alt="Apple Watch wykrywa aktywny mecz z telefonu"></div></div>
         </div>
-        <!-- 3 klikanie na zegarku (animated) -->
+        <!-- 3 klikanie na zegarku (real screenshot) -->
         <div class="fl-slide" data-i="2">
           <div class="fl-text">
             <div class="tag" data-i18n="watch.s3_tag">Krok 3 · Liczenie</div>
             <h3 data-i18n="watch.s3_h">Tapnij po każdym punkcie</h3>
-            <p data-i18n="watch.s3_p">Wielkie cyfry, wielkie pola dotyku. Kciukiem dobijasz punkt MY albo ONI — bez wyciągania telefonu z torby.</p>
-            <span class="hint" data-i18n="watch.s3_hint">👍 Liczysz na nadgarstku</span>
+            <p data-i18n="watch.s3_p">Wielkie cyfry, wielkie pola dotyku. Kciukiem dobijasz punkt MY albo ONI. Tętno w czasie rzeczywistym, czas do końca gema, serw oznaczony piłką — wszystko na nadgarstku.</p>
+            <span class="hint" data-i18n="watch.s3_hint">👍 Liczysz na nadgarstku · tętno live</span>
           </div>
-          <div class="fl-media">
-            <div class="wpair">
-              <div class="wcol">
-                <div class="wface wpoints"><div class="scr">
-                  <div class="wzone oni"><span class="lbl" data-i18n="watch.wface_oni">ONI</span><span class="ctr"><span class="num" id="poni">12</span></span><span class="ball on" id="boni"></span></div>
-                  <div class="wbar"><span class="hr">♥ 142</span><span class="st" data-i18n="watch.wface_points_bar">do 21 · 0:28</span><span class="st">↶</span></div>
-                  <div class="wzone my"><span class="lbl" data-i18n="watch.wface_my">MY</span><span class="ctr"><span class="num" id="pmy">14</span></span><span class="ball" id="bmy"></span></div>
-                  <div class="wflash" id="pflash"></div>
-                </div></div>
-                <span class="wcap" data-i18n="watch.wface_points_cap">Punkty · do 21</span>
-              </div>
-              <div class="wcol">
-                <div class="wface wsets"><div class="scr">
-                  <div class="wzone oni"><span class="lbl" data-i18n="watch.wface_oni">ONI</span><span class="ctr"><span class="num" id="soni">40</span><span class="wgames"><span>6</span><span>4</span><span class="cur">3</span></span></span><span class="ball" id="sboni"></span></div>
-                  <div class="wbar"><span class="st" data-i18n="watch.wface_sets_bar">Set 3 · 2:1 · 0:42</span></div>
-                  <div class="wzone my"><span class="lbl" data-i18n="watch.wface_my">MY</span><span class="ctr"><span class="wgames"><span>3</span><span>6</span><span class="cur">5</span></span><span class="num" id="smy">AD</span></span><span class="ball on" id="sbmy"></span></div>
-                  <div class="wflash" id="sflash"></div>
-                </div></div>
-                <span class="wcap" data-i18n="watch.wface_sets_cap">Sety · tenis</span>
-              </div>
-            </div>
-          </div>
+          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch-scoring.png" data-i18n-alt="watch.s3_alt" alt="Apple Watch live scoring — 14:12, tętno 142 bpm"></div></div>
         </div>
         <!-- 4 fence -->
         <div class="fl-slide land" data-i="3">
@@ -651,6 +658,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
             <div class="tag" data-i18n="watch.s4_tag">Krok 4 · Na żywo</div>
             <h3 data-i18n="watch.s4_h">Wynik na płocie — widoczny z całego kortu</h3>
             <p style="margin:0 auto" data-i18n="watch.s4_p">Każdy tap z zegarka pojawia się na telefonie jako wielka tablica „fence". Postaw telefon na płocie — wszyscy widzą stan meczu.</p>
+            <p class="muted" style="font-size:13.5px;margin:18px auto 0;max-width:560px" data-i18n="watch.s4_hint">Fence pojawia się automatycznie gdy ktoś otworzy aplikację na iPhone podczas trwającego meczu. Zero konfiguracji — wystarczy postawić telefon w poziomie.</p>
           </div>
           <div class="fl-media" style="margin-top:18px"><div class="lframe" style="width:560px;max-width:92vw"><div class="fenceboard">
             <div class="fb-wmark"><span class="fb-wdot"></span>PADELORE</div>

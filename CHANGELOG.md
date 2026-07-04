@@ -4,6 +4,14 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 
 ## [Unreleased]
 
+### Fixed
+- **Screeny 1.9.0 zgodne z realną produkcją** (feedback Remiego): seed kumulował kilkanaście
+  wystartowanych turniejów („NA ŻYWO" ×kilkanaście na Home) → przez to brakowało action cards
+  i ekrany nie odpowiadały appce. Zregenerowane z czystego stanu (1 aktywny turniej „Klub Wisła"):
+  01-home = greeting + JAK GRAM + 1 turniej + action cards (Pojedynczy mecz / Gram w turnieju),
+  wymuszony dark mode. Hero-watch: `watch-home` → `watch-scoring` (niebieski MY 14 — Remi: „nie ma niebieskiego").
+  Podmienione 01/02/03/05/06/08/09.
+
 ### Removed
 - **Martwy CSS/JS fake-ekranów** (SPEC-003 domknięte): ~260 linii nieużywanych stylów
   (`.apscr`/`.ap`, `.tboard`, `.twatch`, `.jacard`(+`.ak`), `.tw-*`, `.wface`/watch ScoreView,

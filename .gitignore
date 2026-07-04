@@ -1,2 +1,13 @@
 .vercel
 .extract
+
+# Backupy datowane i jednorazowe skrypty patchujące i18n (nie commitować — patrz SPEC-001)
+*.backup-*
+add-i18n-keys.py
+fix-tabs-i18n.py
+
+# Robocze podglądy redesignu
+preview-*.html
+
+# Stare screenshoty zastąpione nowymi (naming convention: -OLD nie trafia do repo)
+*-OLD.*

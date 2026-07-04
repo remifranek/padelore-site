@@ -6,7 +6,10 @@
 <title>Padelore — poznaj swoją grę w padla</title>
 <meta name="description" content="Towarzysz do padla obok apki do rezerwacji. Padelore liczy mecz z Apple Watch (wynik na żywo) i pokazuje, jak grasz — karta meczu, tętno i ruch, profil gracza. Americano, Mexicano, singiel, turniej.">
 <link rel="icon" href="assets/app-icon.png">
-<link rel="stylesheet" href="ds.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css?v=19">
 <style>
 /* ---- real-screenshot device frames ---- */
 .device{width:284px;max-width:78vw;border-radius:42px;background:#04101f;padding:9px;border:1px solid var(--sep-strong);box-shadow:var(--shadow-l)}
@@ -667,7 +670,6 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
               <div class="fb-col my"><span class="fb-lbl" data-i18n="watch.wface_my">MY</span><span class="fb-ball"></span><span class="fb-score">15</span></div>
               <div class="fb-col oni"><span class="fb-lbl" data-i18n="watch.wface_oni">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>
             </div>
-            <div class="fb-swap">⇄</div>
           </div></div></div>
         </div>
       </div>
@@ -740,27 +742,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
     </div>
     <div class="scn flip reveal">
       <div class="scn-media">
-        <div class="wframe" style="width:250px"><div class="twatch">
-          <div class="ttimer"><i></i></div>
-          <div class="quad">
-            <div class="cell opp">
-              <span class="cic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/><line x1="3" y1="12" x2="21" y2="12" stroke-opacity=".45"/></svg></span>
-              <span class="cn" data-i18n="twatch.opp_n">Rywale</span><span class="cs" data-i18n="twatch.opp_s">błąd</span>
-            </div>
-            <div class="cell skip">
-              <span class="cic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span>
-              <span class="cn" data-i18n="twatch.skip_n">Pomiń</span><span class="cs" data-i18n="twatch.skip_s">auto 4 s</span>
-            </div>
-            <div class="cell me">
-              <span class="cic"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6v1H4z"/></svg></span>
-              <span class="cn" data-i18n="twatch.me_n">Ja</span><span class="cs" data-i18n="twatch.me_s">winner</span>
-            </div>
-            <div class="cell me">
-              <span class="cic"><svg width="24" height="22" viewBox="0 0 26 24" fill="currentColor"><circle cx="9" cy="8" r="3.6"/><circle cx="17.5" cy="8.5" r="3"/><path d="M2.5 20c0-3.4 2.9-5.2 6.5-5.2s6.5 1.8 6.5 5.2v1H2.5z"/><path d="M16.6 14.9c2.7.15 5.4 1.7 5.4 4.6v1h-4.1"/></svg></span>
-              <span class="cn" data-i18n="twatch.partner_n">Partner</span><span class="cs" data-i18n="twatch.partner_s">winner</span>
-            </div>
-          </div>
-        </div></div>
+        <div class="wframe" style="width:250px"><img src="assets/watch-scoring.png" alt="Apple Watch — punktowanie meczu na żywo"></div>
       </div>
       <div>
         <div class="scn-num" data-i18n="twatch.num">NA ZEGARKU · 1 TAP</div>
@@ -806,24 +788,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
     <!-- 1: Option C (format + tryb z singlem) -->
     <div class="scn reveal">
       <div class="scn-media">
-        <div class="device ap"><div class="apscr">
-          <div class="eye" data-i18n="mock.t_eye">Nowy turniej · Krok 1 z 3</div>
-          <div class="h" data-i18n="mock.t_h">Format i tryb</div>
-          <div class="lab" data-i18n="mock.t_f_lab">01 · Format</div>
-          <div class="fg">
-            <div class="ft on"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0114-5.3L20 8M20 4v4h-4"/><path d="M20 12a8 8 0 01-14 5.3L4 16M4 20v-4h4"/></svg></span><b data-i18n="mock.t_americano">Americano</b><em data-i18n="mock.t_americano_d">Partnerzy rotują co rundę</em></div>
-            <div class="ft"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v18M17 3v18M7 8h10M7 13h10"/></svg></span><b data-i18n="mock.t_mexicano">Mexicano</b><em data-i18n="mock.t_mexicano_d">Kojarzenie wg formy</em></div>
-          </div>
-          <div class="lab" data-i18n="mock.t_mode_lab">02 · Tryb gry</div>
-          <div class="tg">
-            <div class="tt"><svg width="44" height="38" viewBox="0 0 46 40"><rect x="4" y="3" width="38" height="34" rx="3" fill="none" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><line x1="4" y1="20" x2="42" y2="20" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><circle cx="16" cy="11" r="3" fill="#46B6F5"/><circle cx="30" cy="11" r="3" fill="#F4C13B"/><circle cx="16" cy="29" r="3" fill="#4ADE80"/><circle cx="30" cy="29" r="3" fill="#F472B6"/><path d="M20.5 18.5a3 3 0 1 1 .6 3.4" fill="none" stroke="rgba(236,241,255,.8)" stroke-width="1.2" stroke-linecap="round"/></svg><b data-i18n="mock.t_indiv">Indywidualnie</b><em data-i18n="mock.t_indiv_d">Rotujesz partnerów</em></div>
-            <div class="tt"><svg width="44" height="38" viewBox="0 0 46 40"><rect x="4" y="3" width="38" height="34" rx="3" fill="none" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><line x1="4" y1="20" x2="42" y2="20" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><rect x="10" y="6" width="26" height="9" rx="4.5" fill="rgba(70,182,245,.25)" stroke="#46B6F5" stroke-width="1"/><rect x="10" y="25" width="26" height="9" rx="4.5" fill="rgba(244,193,59,.25)" stroke="#F4C13B" stroke-width="1"/><circle cx="16" cy="10.5" r="2.6" fill="#46B6F5"/><circle cx="30" cy="10.5" r="2.6" fill="#46B6F5"/><circle cx="16" cy="29.5" r="2.6" fill="#F4C13B"/><circle cx="30" cy="29.5" r="2.6" fill="#F4C13B"/></svg><b data-i18n="mock.t_pairs">Pary</b><em data-i18n="mock.t_pairs_d">Stały partner</em></div>
-            <div class="tt"><svg width="44" height="38" viewBox="0 0 46 40"><rect x="4" y="3" width="38" height="34" rx="3" fill="none" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><line x1="4" y1="20" x2="42" y2="20" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><circle cx="16" cy="11" r="3" fill="#46B6F5"/><circle cx="30" cy="11" r="3" fill="#F472B6"/><circle cx="16" cy="29" r="3" fill="#46B6F5"/><circle cx="30" cy="29" r="3" fill="#F472B6"/></svg><b data-i18n="mock.t_mix">Mix</b><em data-i18n="mock.t_mix_d">M + K</em></div>
-            <div class="tt on"><svg width="44" height="38" viewBox="0 0 46 40"><rect x="4" y="3" width="38" height="34" rx="3" fill="none" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><line x1="4" y1="20" x2="42" y2="20" stroke="rgba(150,182,235,.45)" stroke-width="1.2"/><circle cx="23" cy="11" r="3.2" fill="#46B6F5"/><circle cx="23" cy="29" r="3.2" fill="#F4C13B"/></svg><b data-i18n="mock.t_singles">Singiel</b><em data-i18n="mock.t_singles_d">1 na 1</em></div>
-          </div>
-          <div class="sum"><span class="l" data-i18n="mock.t_choice_l">Twój wybór</span><span class="v" data-i18n="mock.t_choice_v">Singiel · Americano</span></div>
-          <div class="cta" data-i18n="mock.t_cta">Dalej: Gracze →</div>
-        </div></div>
+        <div class="device"><img src="assets/screens-19/03-wizard-format.png" alt="Kreator turnieju — Format i tryb (Americano/Mexicano, singiel)"></div>
       </div>
       <div>
         <div class="scn-num" data-i18n="tour.s1_num">KROK 1 · KONFIGURACJA</div>
@@ -839,32 +804,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
 
     <!-- 2: real live board (tboard) -->
     <div class="scn flip reveal">
-      <div class="scn-media"><div class="device"><div class="tboard">
-          <div class="thead"><div class="tn" data-i18n="tboard.title">Wieczór u Kuby</div><div class="tm" data-i18n="tboard.meta">Runda 3 / 7 · Americano · 5/6 wpisanych</div></div>
-          <div class="stand">
-            <div class="sh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h12v3a6 6 0 01-12 0V3zM4 5h2v1.5A3.5 3.5 0 014 9.3zM20 5h-2v1.5a3.5 3.5 0 002 2.8zM10 14h4l-.6 3.5h-2.8zM8 20.5h8v1.5H8z"/></svg><span data-i18n="tboard.stand_h">Tabela na żywo</span><span class="lv"><i></i><span data-i18n="tboard.live">LIVE</span></span></div>
-            <div class="srow lead"><span class="pos">🥇</span><span class="nm">Marek</span><span class="pt">38</span></div>
-            <div class="srow"><span class="pos">🥈</span><span class="nm" data-i18n="tboard.you">Ty</span><span class="pt">34</span></div>
-            <div class="srow"><span class="pos">🥉</span><span class="nm">Ola</span><span class="pt">31</span></div>
-          </div>
-          <div class="courts">
-            <div class="court">
-              <div class="ctop"><span class="kort"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/></svg><span data-i18n="tboard.court1">KORT 1</span></span><span class="chip saved"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="tboard.saved">Zapisany</span></span></div>
-              <div class="crow win"><span class="tnm">Marek + Ania</span><span class="tsc">21</span></div>
-              <div class="crow"><span class="tnm" data-i18n="tboard.you_kuba">Ty + Kuba</span><span class="tsc">17</span></div>
-            </div>
-            <div class="court">
-              <div class="ctop"><span class="kort"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/></svg><span data-i18n="tboard.court2">KORT 2</span></span><span class="chip watch"><svg width="10" height="12" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="7" width="12" height="12" rx="3.2"/><path d="M8.5 7l.6-3.4h5.8l.6 3.4M8.5 19l.6 3.4h5.8l.6-3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="tboard.fromwatch">Z ZEGARKA</span><i></i></span></div>
-              <div class="crow live"><span class="tnm">Ola + Piotr</span><span class="tsc">15</span></div>
-              <div class="crow live"><span class="tnm">Tomek + Zosia</span><span class="tsc">12</span></div>
-            </div>
-            <div class="court need">
-              <div class="ctop"><span class="kort"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="12" y1="5" x2="12" y2="19"/></svg><span data-i18n="tboard.court3">KORT 3</span></span><span class="chip enter"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18.5l-.8 2.3 2.3-.8L19 8.5a1.9 1.9 0 00-2.7-2.7z"/></svg><span data-i18n="tboard.enter">Tapnij i wpisz wynik</span></span></div>
-              <div class="crow"><span class="tnm">Basia + Janek</span><span class="tsc">—</span></div>
-              <div class="crow"><span class="tnm">Ewa + Wojtek</span><span class="tsc">—</span></div>
-            </div>
-          </div>
-        </div></div></div>
+      <div class="scn-media"><div class="device"><img src="assets/screens-19/05-tournament.png" alt="Turniej na żywo — korty, wyniki, wynik z Apple Watch"></div></div>
       <div>
         <div class="scn-num" data-i18n="tour.s2_num">W TRAKCIE · TABLICA</div>
         <h3 data-i18n="tour.s2_h">Graj — apka liczy rundy</h3>
@@ -894,21 +834,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
         </ul>
       </div>
       <div style="display:flex;justify-content:center">
-        <div class="device ap floaty"><div class="apscr">
-          <div class="eye" data-i18n="mock.l_eye">Liga · Wtorkowa</div>
-          <div class="h" data-i18n="mock.l_h">Tabela sezonu</div>
-          <div class="lab" style="margin-top:12px" data-i18n="mock.l_sub">Po 8 z 12 sesji</div>
-          <div class="lt">
-            <div class="lr t1"><span class="md">🥇</span><span class="av" style="background:#F4C13B">RF</span><span class="nm">Remi Franek</span><span class="wl">18-6</span><span class="pt">42</span></div>
-            <div class="lr"><span class="md">🥈</span><span class="av" style="background:#C0C7D4">AN</span><span class="nm">Ania Nowak</span><span class="wl">16-8</span><span class="pt">38</span></div>
-            <div class="lr"><span class="md">🥉</span><span class="av" style="background:#CD7F32">KZ</span><span class="nm">Kuba Zięba</span><span class="wl">15-9</span><span class="pt">35</span></div>
-            <div class="lr"><span class="rk">4</span><span class="av" style="background:#5E86E8">MW</span><span class="nm">Maja Wójcik</span><span class="wl">14-10</span><span class="pt">31</span></div>
-            <div class="lr"><span class="rk">5</span><span class="av" style="background:#46B6F5">TL</span><span class="nm">Tomek Lis</span><span class="wl">13-11</span><span class="pt">29</span></div>
-            <div class="lr"><span class="rk">6</span><span class="av" style="background:#4ADE80">ZK</span><span class="nm">Zofia Kim</span><span class="wl">12-12</span><span class="pt">26</span></div>
-            <div class="lr"><span class="rk">7</span><span class="av" style="background:#F472B6">PA</span><span class="nm">Piotr Adam</span><span class="wl">11-13</span><span class="pt">24</span></div>
-          </div>
-          <div class="lab" style="margin-top:10px;color:var(--lime);letter-spacing:.5px" data-i18n="mock.l_trueskill">⚡ Ranking liczony przez TrueSkill</div>
-        </div></div>
+        <div class="device"><img src="assets/screens-19/08-standings.png" alt="Liga i ranking — tabela na żywo"></div>
       </div>
     </div>
   </div>
@@ -929,39 +855,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
         </ul>
       </div>
       <div style="display:flex;justify-content:center">
-        <div class="device floaty"><div class="jacard">
-          <div class="eye" data-i18n="mock.j_eye">Ja · ostatnie 30 dni</div>
-          <div class="lens"><span class="ls on" data-i18n="mock.j_lens1">🪞 Jak gram</span><span class="ls" data-i18n="mock.j_lens2">🏃 Aktywność</span></div>
-          <div class="rhero">
-            <div class="rnum" style="color:#fff">21,4</div>
-            <div class="rmeta"><div class="rl" data-i18n="mock.j_rating">Impact Rating</div><div class="rt">▲ +2,7</div></div>
-            <div class="arch"><div class="al" data-i18n="mock.j_arch_l">Archetyp · top 8%</div><div class="an" data-i18n-html="mock.j_arch_n">Wojownik<br>końcówek</div></div>
-          </div>
-          <div class="card2">
-            <div class="ch">🗺️ <span data-i18n="mock.j_map">Mapa meczów</span><span class="cx" data-i18n="mock.j_map_cx">wynik × wysiłek</span></div>
-            <div class="map">
-              <div class="q q1" data-i18n="mock.j_q1">DOMINACJA</div>
-              <div class="q q2" data-i18n="mock.j_q2">GRIND</div>
-              <div class="q q3" data-i18n="mock.j_q3">OFF-DAY</div>
-              <div class="q q4" data-i18n="mock.j_q4">WALECZNA</div>
-              <span class="dot" style="left:21%;top:27%;width:7px;height:7px;background:#4ADE80"></span>
-              <span class="dot" style="left:31%;top:35%;width:7px;height:7px;background:#4ADE80"></span>
-              <span class="dot" style="left:64%;top:18%;width:8px;height:8px;background:#E0F75A"></span>
-              <span class="dot" style="left:73%;top:24%;width:9px;height:9px;background:#E0F75A"></span>
-              <span class="dot" style="left:82%;top:20%;width:7px;height:7px;background:#E0F75A"></span>
-              <span class="dot" style="left:68%;top:32%;width:10px;height:10px;background:#E0F75A"></span>
-              <span class="dot" style="left:79%;top:37%;width:8px;height:8px;background:#E0F75A"></span>
-              <span class="dot" style="left:61%;top:43%;width:8px;height:8px;background:#E0F75A"></span>
-              <span class="dot" style="left:86%;top:30%;width:8px;height:8px;background:#E0F75A"></span>
-              <span class="dot" style="left:27%;top:75%;width:7px;height:7px;background:#FB7185"></span>
-              <span class="dot" style="left:75%;top:68%;width:8px;height:8px;background:#A78BFA"></span>
-              <span class="dot" style="left:84%;top:75%;width:9px;height:9px;background:#A78BFA"></span>
-              <span class="dot" style="left:68%;top:81%;width:7px;height:7px;background:#A78BFA"></span>
-              <span class="you" style="left:71%;top:34%"></span>
-            </div>
-            <div class="mread" data-i18n-html="mock.j_read_html">🎯 <b>79% Twoich meczów to grind.</b> Wygrywasz, ale drogo.</div>
-          </div>
-        </div></div>
+        <div class="device"><img src="assets/screens-19/06-stats.png" alt="Statystyki — Jak gram, Impact Rating, archetyp"></div>
       </div>
     </div>
   </div>
@@ -983,34 +877,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
         <p class="muted" style="font-size:13.5px;margin-top:16px" data-i18n="akt.privacy">Dane zdrowotne zostają na Twoim urządzeniu.</p>
       </div>
       <div style="display:flex;justify-content:center">
-        <div class="device floaty"><div class="jacard ak">
-          <div class="eye" data-i18n="mock.ak_eye">Statystyki · Aktywność</div>
-          <div class="lens"><span class="ls" data-i18n="mock.ak_lens1">Jak gram</span><span class="ls on" data-i18n="mock.ak_lens2">Aktywność</span></div>
-          <div class="card2" style="flex:none">
-            <div class="ch">📊 <span data-i18n="mock.ak_load">Obciążenie</span><span class="cx" data-i18n="mock.ak_load_cx">ostatnie 6 tygodni</span></div>
-            <div class="loadbars">
-              <div class="lb" style="height:52%"></div>
-              <div class="lb" style="height:64%"></div>
-              <div class="lb pk" style="height:88%"></div>
-              <div class="lb" style="height:60%"></div>
-              <div class="lb" style="height:71%"></div>
-              <div class="lb" style="height:66%"></div>
-            </div>
-            <div class="wkx"><span data-i18n="mock.ak_w5">T-5</span><span data-i18n="mock.ak_w4">T-4</span><span data-i18n="mock.ak_w3">T-3</span><span data-i18n="mock.ak_w2">T-2</span><span data-i18n="mock.ak_w1">T-1</span><span data-i18n="mock.ak_w0">Ten</span></div>
-            <div class="mread" style="margin-top:9px" data-i18n-html="mock.ak_load_read_html">⚖️ <b>Równy rytm — bez tygodnia przeciążenia.</b> Obciążenie = wysiłek × czas.</div>
-          </div>
-          <div class="card2">
-            <div class="ch">📍 <span data-i18n="mock.ak_where">Gdzie jesteś</span><span class="cx" data-i18n="mock.ak_where_cx">Ty vs Ty · rocznik</span></div>
-            <div class="pctrow">
-              <div class="pcgauge"><svg viewBox="0 0 72 72" width="62" height="62"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7"/><circle cx="36" cy="36" r="30" fill="none" stroke="#46B6F5" stroke-width="7" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="60" transform="rotate(-90 36 36)"/></svg><div class="pcv"><b>68.</b><span data-i18n="mock.ak_pct">percentyl</span></div></div>
-              <div>
-                <div class="tyv" data-i18n="mock.ak_delta">▲ +6 pkt vs 3 mies. temu</div>
-                <div style="font-size:9.5px;color:rgba(236,241,255,.66);line-height:1.4" data-i18n-html="mock.ak_cohort_html">Twoja wydolność wyżej niż <b style="color:#ECF1FF">68%</b> graczy z rocznika 30–39.</div>
-                <div class="cohort"><i style="width:68%"></i><span class="me" style="left:68%"></span></div>
-              </div>
-            </div>
-          </div>
-        </div></div>
+        <div class="device"><img src="assets/screens-19/09-activity.png" alt="Aktywność — czas na korcie, rytm tygodni, obciążenie z Apple Health"></div>
       </div>
     </div>
   </div>

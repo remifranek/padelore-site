@@ -1,6 +1,6 @@
 # SPEC-003 — Walidator parzystości i18n + sprzątanie martwego kodu
 
-**Status:** in-progress (walidator + sprzątanie martwych kluczy i18n — DONE; martwy CSS/JS — TODO)
+**Status:** done (2026-07-04) — walidator + martwe klucze i18n + martwy CSS/JS fake-ekranów (~260 linii) usunięte przy SPEC-004
 **Priorytet:** P1 (prewencja — organizacyjna przyczyna SPEC-001/002; zapobiega nawrotowi)
 **Utworzony:** 2026-07-03
 **Origin:** audyty 2026-07-03 (proces + reużywalność) po hotfixie i18n

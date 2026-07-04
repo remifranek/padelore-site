@@ -21,7 +21,6 @@ html[data-theme="light"] .wframe{background:#0B1730}
 .lframe{border-radius:24px;background:#04101f;padding:8px;border:1px solid var(--sep-strong);box-shadow:var(--shadow-l)}
 .lframe img{width:100%;display:block;border-radius:16px}
 html[data-theme="light"] .lframe{background:#0B1730}
-.app-ic{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 
 /* language switcher (custom) */
 .lang{position:relative}
@@ -58,43 +57,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .hero-fence{position:absolute;left:-44px;bottom:24px;z-index:3;width:330px;max-width:64vw;transform:rotate(-5deg)}
 @media(max-width:560px){.hero-fence{left:0;bottom:-6px;width:84vw}.hero-stage .wframe{right:-2px}}
 
-/* ===== recreated app screens (fixed dark, match real screenshots) ===== */
-.ap{--ab:#0A1E42;--ac:#16294e;--ac2:#102648;--al:rgba(150,182,235,.16);--ai:#ECF1FF;--as:rgba(236,241,255,.6);--af:rgba(236,241,255,.4);
-  --lime:#D9F84F;--sky:#46B6F5;--gold:#F4C13B;--green:#4ADE80;--pink:#F472B6;--p:#5E86E8}
-.apscr{aspect-ratio:1320/2868;background:linear-gradient(180deg,#0C2350,#091B3D);border-radius:33px;overflow:hidden;color:var(--ai);display:flex;flex-direction:column;padding:30px 15px 14px}
-.ap .eye{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--lime)}
-.ap .h{font-size:20px;font-weight:860;letter-spacing:-.02em;margin-top:1px}
-.ap .lab{font-size:9px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:var(--af);margin:13px 0 7px}
-.ap .fg{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.ap .ft{padding:10px;border-radius:13px;background:var(--ac);border:1.5px solid var(--al)}
-.ap .ft.on{border-color:var(--lime);background:rgba(217,248,79,.08)}
-.ap .ft .ic{width:28px;height:28px;border-radius:9px;background:rgba(94,134,232,.2);display:flex;align-items:center;justify-content:center;color:var(--p);margin-bottom:6px}
-.ap .ft.on .ic{background:rgba(217,248,79,.16);color:var(--lime)}
-.ap .ft b{font-size:13px;font-weight:850;display:block}
-.ap .ft em{font-size:9px;color:var(--af);line-height:1.25;display:block;margin-top:2px;font-style:normal}
-.ap .tg{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.ap .tt{padding:8px 6px 9px;border-radius:12px;background:var(--ac);border:1.5px solid var(--al);display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
-.ap .tt.on{border-color:var(--lime);background:rgba(217,248,79,.08)}
-.ap .tt b{font-size:11.5px;font-weight:820}
-.ap .tt em{font-size:8px;color:var(--af);font-style:normal}
-.ap .sum{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:9px 11px;border-radius:11px;background:var(--ac);border:1px solid var(--al)}
-.ap .sum .l{font-size:8px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--af)}
-.ap .sum .v{font-weight:850;font-size:11.5px}
-.ap .cta{margin-top:9px;height:42px;border-radius:13px;background:var(--lime);color:#0A1A33;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:850;font-size:13.5px}
-/* league table */
-.ap .lt{display:flex;flex-direction:column;gap:5px}
-.ap .lr{display:flex;align-items:center;gap:8px;padding:8px 9px;border-radius:11px;background:var(--ac);border:1px solid var(--al)}
-.ap .lr.t1{background:linear-gradient(100deg,rgba(244,193,59,.18),transparent);border-color:rgba(244,193,59,.32)}
-.ap .lr .rk{width:15px;font-weight:850;font-size:12px;color:var(--af);text-align:center}
-.ap .lr .md{font-size:14px;width:15px;text-align:center}
-.ap .lr .av{width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:850;color:#08152e}
-.ap .lr .nm{flex:1;font-size:12px;font-weight:750}
-.ap .lr .wl{font-size:9.5px;color:var(--as);font-variant-numeric:tabular-nums}
-.ap .lr .pt{font-size:13px;font-weight:850;color:var(--lime);font-variant-numeric:tabular-nums;width:30px;text-align:right}
-.ap .line{display:flex;align-items:center;gap:8px;margin:3px 2px;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--af)}
-.ap .line::before,.ap .line::after{content:"";height:1px;flex:1;background:var(--al)}
-.ap .lr.dim{opacity:.5}
-
 /* ===== watch flow ===== */
 .flow{margin-top:8px}
 .flow-stage{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--card),var(--card-2));border:1px solid var(--card-border);box-shadow:var(--shadow-s);min-height:580px}
@@ -115,8 +77,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
   /* dociśnij media, żeby krok mieścił się w jednym ekranie telefonu */
   .fl-slide .device{width:208px;max-width:62vw}
   .fl-slide .wframe{width:150px!important}
-  .fl-slide .wpair{gap:14px}
-  .fl-slide .wface{width:150px}
   .fl-text h3{font-size:clamp(21px,5.5vw,26px);margin:8px 0 8px}
   .fl-text p{font-size:14.5px}
   .fl-slide.land .lframe{width:100%!important}}
@@ -135,7 +95,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
   .fl-slide.land .fl-text p{font-size:14.5px}
   .fl-slide.land .fl-media{margin-top:6px!important}
   .fl-slide.land .lframe{width:340px!important}
-  .wpair{gap:16px}.wcol{gap:5px}.wface{width:150px}
 }
 
 .fl-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
@@ -147,37 +106,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .fl-tab.active .bar{width:100%;transition:width 3.2s linear}
 @media(max-width:680px){.fl-tabs{grid-template-columns:1fr 1fr}}
 @media(max-width:820px){.fl-tabs{display:none}}  /* mobile: kroki pionowo, zakładki zbędne */
-
-/* recreated watch scoring face (animated) */
-/* ===== watch ScoreView (1:1 z apką) — czarny ekran, ONI góra (gold) / MY dół (sky), pasek statusu ===== */
-.wpair{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
-.wcol{display:flex;flex-direction:column;align-items:center;gap:9px}
-.wcap{font-size:11px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}
-.wface{width:184px;border-radius:46px;background:#1a1a1d;padding:9px;border:1px solid var(--sep-strong);box-shadow:var(--shadow-l);container-type:inline-size}
-.wface .scr{aspect-ratio:184/226;border-radius:22cqw;background:#000;display:flex;flex-direction:column;overflow:hidden;position:relative}
-.wzone{flex:1;display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:0 6cqw;gap:1.5cqw}
-.wzone.oni{background:radial-gradient(130% 80% at 50% 0%,rgba(250,204,21,.13),#000 72%)}
-.wzone.my{background:radial-gradient(130% 80% at 50% 100%,rgba(56,189,248,.13),#000 72%)}
-.wzone .lbl{font-size:6cqw;font-weight:850;letter-spacing:.2px}
-.wzone.oni .lbl{color:#FACC15}.wzone.my .lbl{color:#38BDF8}
-.wzone .ctr{text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
-.wzone .num{font-weight:880;line-height:.86;font-variant-numeric:tabular-nums}
-.wzone.oni .num{color:#FACC15}.wzone.my .num{color:#38BDF8}
-.wpoints .num{font-size:34cqw}
-.wsets .num{font-size:21cqw}
-.wzone .ball{width:5.5cqw;height:5.5cqw;border-radius:50%;justify-self:end;opacity:0;transition:opacity .25s}
-.wzone.oni .ball{background:#FACC15;box-shadow:0 0 7px #FACC15}
-.wzone.my .ball{background:#38BDF8;box-shadow:0 0 7px #38BDF8}
-.wzone .ball.on{opacity:1}
-.wbar{height:13.5cqw;display:flex;align-items:center;justify-content:center;gap:4.5cqw;background:#0b0b0c;border-block:1px solid rgba(255,255,255,.06)}
-.wbar .st{font-size:5cqw;font-weight:700;color:rgba(236,241,255,.55);font-variant-numeric:tabular-nums}
-.wbar .hr{font-size:4.7cqw;font-weight:800;color:#F472B6}
-.wgames{display:flex;gap:2.4cqw;justify-content:center;font-size:5.6cqw;font-weight:800;font-variant-numeric:tabular-nums;color:rgba(236,241,255,.4)}
-.wgames .cur{padding:0 1.8cqw;border-radius:4px;border:1px solid currentColor}
-.wsets .wzone.oni .wgames .cur{color:#FACC15}.wsets .wzone.my .wgames .cur{color:#38BDF8}
-.wflash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
-.wflash.go{animation:wf .35s ease}
-@keyframes wf{0%{opacity:.10}100%{opacity:0}}
 
 /* ===== fence (tablica na płocie) — 1:1 z produkcją: landscape, MY/ONI, wordmark, serw ===== */
 .fenceboard{container-type:inline-size;position:relative;width:100%;aspect-ratio:2/1;background:radial-gradient(130% 100% at 50% -8%,#1A4685,#0E2A55 52%,#0A1F40);border-radius:inherit;overflow:hidden;display:flex;flex-direction:column}
@@ -199,39 +127,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .fb-wdot{width:2.6cqw;height:2.6cqw;border-radius:50%;background:#DCF94F;opacity:.9;flex:none}
 .fb-swap{position:absolute;bottom:4.5cqw;left:50%;transform:translateX(-50%);width:8cqw;height:8cqw;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:4cqw}
 
-/* ===== in-play tournament board (1.2.0): pasek rund + karty E3b (odtworzone, zgodne z buildem 49) ===== */
-/* tournament live board — 1:1 z 1.2.0 (court view): duże kolorowe cyfry, gracz=kropka+nazwa */
-.tnav{display:flex;align-items:center;gap:8px;margin:0 1px 9px}
-.tnav-b{font-size:16px;font-weight:800;color:var(--as);line-height:1}
-.tnav-t{flex:1;font-size:11px;font-weight:820;color:var(--ai);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tnav-m{font-size:14px;font-weight:800;color:var(--as);letter-spacing:1px}
-.th{display:flex;align-items:baseline;justify-content:space-between;margin:0 1px}
-.th-t{font-size:17px;font-weight:870}.th-t .m{color:var(--af);font-weight:820}
-.th-c{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:850;color:var(--sky)}
-.th-c::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sky)}
-.th-sub{font-size:9.5px;font-weight:700;color:var(--af);margin:2px 1px 8px}
-.th-bar{height:3px;border-radius:2px;background:rgba(180,210,255,.14);margin:0 1px 11px;overflow:hidden}
-.th-bar span{display:block;height:100%;width:55%;background:var(--lime);border-radius:2px}
-.tc{background:var(--ac2);border:1px solid var(--al);border-radius:14px;padding:8px 11px 9px;margin-bottom:6px}
-.tc.act{border-color:rgba(217,248,79,.42)}
-.tc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
-.tc-k{display:inline-flex;align-items:center;gap:4px;font-size:8.5px;font-weight:850;letter-spacing:.4px;color:var(--sky);background:rgba(70,182,245,.14);border-radius:7px;padding:3px 8px}
-.tc-ok{width:17px;height:17px;border-radius:50%;background:rgba(217,248,79,.18);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex:none}
-.tc-watch{display:inline-flex;align-items:center;gap:3px;font-size:8px;font-weight:850;letter-spacing:.4px;color:var(--sky)}
-.tc-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tc-col{min-width:0}
-.tc-s{font-size:28px;font-weight:880;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.tc-s.sky{color:var(--sky)}.tc-s.gold{color:var(--gold)}
-.tc-p{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:750;color:var(--ai);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tc-p .d{width:6px;height:6px;border-radius:50%;flex:none}
-.tc-p .d.sky{background:var(--sky)}.tc-p .d.gold{background:var(--gold)}
-.tc-btn{margin-top:9px;width:100%;height:34px;border:0;border-radius:11px;background:var(--lime);color:#0A1A33;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:850;font-size:12px}
-.thint{display:flex;align-items:center;justify-content:center;gap:5px;font-size:8.5px;font-weight:700;color:var(--af);text-align:center;margin:5px 0 2px}
-.ttabs{margin-top:auto;display:flex;justify-content:space-around;padding-top:10px;border-top:1px solid var(--al)}
-.ttab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:8px;font-weight:800;color:var(--af)}
-.ttab.on{color:var(--lime)}
-.ttab i{font-size:13px;font-style:normal;line-height:1}
-
 /* condensed benefits */
 .bstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:900px){.bstrip{grid-template-columns:repeat(2,1fr)}}
@@ -240,10 +135,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .bmini .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:color-mix(in oklab,var(--tint,#5980E6) 18%,transparent);color:var(--tint,#5980E6);border:1px solid color-mix(in oklab,var(--tint,#5980E6) 30%,transparent)}
 .bmini h4{font-size:16px;font-weight:820;margin-bottom:6px}
 .bmini p{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
-
-/* two-up */
-.shots2{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
-@media(max-width:780px){.shots2{grid-template-columns:1fr;gap:30px}}
 
 /* ===== recolored CTA — court-navy + lime ===== */
 #pobierz .cta-band{background:
@@ -287,67 +178,6 @@ html[data-theme="light"] .lframe{background:#0B1730}
 .mcard .gx b{display:block;font-size:15px;font-weight:870;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .mcard .gx span{font-size:7px;font-weight:750;letter-spacing:.3px;text-transform:uppercase;color:rgba(236,241,255,.42);margin-top:2px;display:block}
 
-/* ===== NEW: Ja stats mockup (rating + mapa) — fixed dark (ekran telefonu) w obu motywach ===== */
-.jacard{aspect-ratio:1320/2868;background:linear-gradient(180deg,#0C2350,#091B3D);border-radius:33px;overflow:hidden;color:#ECF1FF;display:flex;flex-direction:column;padding:26px 15px 16px;gap:11px}
-.jacard .eye{font-size:9px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:#E0F75A}  /* lime na stałe — karta zawsze ciemna w obu motywach */
-.jacard .lens{display:flex;background:rgba(0,0,0,.25);border-radius:11px;padding:3px}
-.jacard .lens .ls{flex:1;text-align:center;font-size:10px;font-weight:820;padding:7px 0;border-radius:8px;color:rgba(236,241,255,.6)}
-.jacard .lens .ls.on{background:rgba(224,247,90,.16);color:#E0F75A}
-.jacard .rhero{border-radius:15px;padding:13px;background:linear-gradient(150deg,rgba(74,222,128,.2),rgba(31,79,146,.42));border:1px solid rgba(74,222,128,.3);display:flex;align-items:center;gap:13px}
-.jacard .rhero .rnum{font-size:40px;font-weight:880;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
-.jacard .rhero .rmeta .rl{font-size:8.5px;font-weight:850;letter-spacing:.8px;text-transform:uppercase;color:#4ADE80}
-.jacard .rhero .rmeta .rt{font-size:9px;font-weight:800;color:#4ADE80;background:rgba(74,222,128,.16);padding:3px 8px;border-radius:6px;display:inline-block;margin-top:5px}
-.jacard .rhero .arch{margin-left:auto;text-align:right}
-.jacard .rhero .arch .al{font-size:8px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:#A78BFA}
-.jacard .rhero .arch .an{font-size:13px;font-weight:870;letter-spacing:-.02em;line-height:1.05;margin-top:2px}
-.jacard .card2{border-radius:15px;background:#13294e;border:1px solid rgba(150,182,235,.16);padding:12px 13px;flex:1;display:flex;flex-direction:column}
-.jacard .ch{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:850;letter-spacing:.8px;text-transform:uppercase;color:#ECF1FF;margin-bottom:9px}
-.jacard .ch .cx{margin-left:auto;font-size:8.5px;color:rgba(236,241,255,.42);font-weight:600;letter-spacing:0;text-transform:none}
-.jacard .map{position:relative;flex:1;min-height:118px;border-radius:11px;background:rgba(0,0,0,.18);overflow:hidden}
-.jacard .map .q{position:absolute;width:50%;height:50%;padding:7px 8px;font-size:8px;font-weight:900;letter-spacing:.2px}
-.jacard .map .q1{top:0;left:0;color:#4ADE80;border-right:1px dashed rgba(150,182,235,.2);border-bottom:1px dashed rgba(150,182,235,.2)}
-.jacard .map .q2{top:0;left:50%;color:#E0F75A;text-align:right;border-bottom:1px dashed rgba(150,182,235,.2)}
-.jacard .map .q3{top:50%;left:0;color:#FB7185}
-.jacard .map .q4{top:50%;left:50%;color:#A78BFA;text-align:right}
-.jacard .map .dot{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
-.jacard .map .you{position:absolute;width:14px;height:14px;border-radius:50%;background:#ECF1FF;border:3px solid #E0F75A;transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(224,247,90,.18)}
-.jacard .mread{display:flex;gap:7px;padding:9px 10px;border-radius:11px;background:rgba(224,247,90,.08);border:1px solid rgba(224,247,90,.24);margin-top:9px;font-size:9.5px;line-height:1.4;color:#ECF1FF}
-.jacard .mread b{color:#E0F75A}
-/* #graj — Jak grać (3 sposoby): kompozycja telefon-na-płocie + zegarek */
-.tw-stage{position:relative;width:100%;max-width:440px;aspect-ratio:4/3;
-  border-radius:26px;overflow:hidden;display:flex;align-items:center;justify-content:center;
-  background:
-    radial-gradient(120% 90% at 50% 8%, color-mix(in oklab,var(--primary) 22%,transparent), transparent 60%),
-    linear-gradient(160deg,var(--card),var(--card-2));
-  border:1px solid var(--card-border);box-shadow:var(--shadow-s)}
-.tw-stage::before{content:"";position:absolute;inset:0;opacity:.5;
-  background-image:linear-gradient(var(--court-line) 1px,transparent 1px),linear-gradient(90deg,var(--court-line) 1px,transparent 1px);
-  background-size:30px 30px;
-  mask-image:radial-gradient(ellipse at 50% 42%,#000 0%,transparent 78%)}
-.tw-mount{position:absolute;top:14px;left:16px;font-size:11px;font-weight:750;color:var(--ink-faint);
-  display:inline-flex;align-items:center;gap:6px;z-index:4}
-.tw-fence{position:relative;width:62%;border-radius:18px;background:#05132b;padding:6px;
-  box-shadow:var(--shadow-l);border:1px solid var(--sep-strong);z-index:2}
-html[data-theme="light"] .tw-fence{background:#0E1730}
-.tw-fence img{width:100%;display:block;border-radius:13px}
-.tw-watch{position:absolute;right:13px;bottom:13px;width:30%;max-width:128px;border-radius:22px;
-  background:#05132b;padding:5px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong);z-index:3}
-html[data-theme="light"] .tw-watch{background:#0E1730}
-.tw-watch img{width:100%;display:block;border-radius:17px;aspect-ratio:1/1;object-fit:cover}
-.tw-flow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
-  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:var(--accent);color:var(--on-accent);font-weight:900;font-size:16px;box-shadow:0 6px 18px var(--glow)}
-.tw-tag{position:absolute;bottom:12px;left:16px;z-index:4;font-size:11px;font-weight:800;
-  color:var(--on-accent);background:var(--accent);padding:5px 10px;border-radius:999px;box-shadow:0 4px 14px var(--glow)}
-.tw-dev{width:300px;border-radius:34px;background:#05132b;padding:9px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong)}
-html[data-theme="light"] .tw-dev{background:#0E1730}
-.tw-dev img{width:100%;display:block;border-radius:26px}
-.tw-kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.4px;
-  color:var(--primary-2);background:var(--accent-soft);border:1px solid var(--card-border);
-  padding:5px 11px;border-radius:999px;margin-bottom:14px}
-.tw-kick .n{width:18px;height:18px;border-radius:50%;background:var(--primary);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}
-
 /* ===== VS / razem z Playtomic ===== */
 .split{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:8px}
 @media(max-width:780px){.split{grid-template-columns:1fr;gap:14px}}
@@ -375,67 +205,6 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
 .honest{max-width:64ch;margin:26px auto 0;text-align:center;font-size:15px;line-height:1.6;color:var(--ink-soft)}
 .honest b{color:var(--ink);font-weight:750}
 
-/* ===== NEW: Aktywność / Gdzie jesteś mockup (jacard + .ak) ===== */
-.jacard.ak .loadbars{display:flex;align-items:flex-end;gap:6px;height:88px;margin:2px 0}
-.jacard.ak .loadbars .lb{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#46B6F5,rgba(70,182,245,.28))}
-.jacard.ak .loadbars .lb.pk{background:linear-gradient(180deg,#F59E0B,rgba(245,158,11,.28))}
-.jacard.ak .wkx{display:flex;gap:6px;font-size:7px;font-weight:800;color:rgba(236,241,255,.4);text-transform:uppercase;letter-spacing:.3px;margin-top:5px}
-.jacard.ak .wkx span{flex:1;text-align:center}
-.jacard.ak .pctrow{display:flex;align-items:center;gap:13px}
-.jacard.ak .pcgauge{position:relative;width:62px;height:62px;flex-shrink:0}
-.jacard.ak .pcv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-.jacard.ak .pcv b{font-size:20px;font-weight:880;letter-spacing:-.03em;color:#46B6F5}
-.jacard.ak .pcv span{font-size:6.5px;font-weight:800;color:rgba(236,241,255,.5);text-transform:uppercase;letter-spacing:.4px;margin-top:1px}
-.jacard.ak .tyv{display:inline-block;font-size:9px;font-weight:850;color:#4ADE80;background:rgba(74,222,128,.16);padding:3px 8px;border-radius:6px;margin-bottom:6px}
-.jacard.ak .cohort{position:relative;height:9px;border-radius:5px;background:rgba(0,0,0,.28);margin-top:10px;overflow:visible}
-.jacard.ak .cohort i{position:absolute;left:0;top:0;height:100%;border-radius:5px;background:linear-gradient(90deg,rgba(70,182,245,.25),#46B6F5)}
-.jacard.ak .cohort .me{position:absolute;top:-3px;width:3px;height:15px;border-radius:2px;background:#E0F75A;box-shadow:0 0 0 3px rgba(224,247,90,.2);transform:translateX(-50%)}
-
-/* ===== NEW: in-match point tagging — PointTagOverlay (Apple Watch · OLED) ===== */
-.twatch{position:relative;aspect-ratio:416/496;background:#000;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;color:#fff}
-.twatch .ttimer{height:3px;background:rgba(255,255,255,.10);flex-shrink:0}
-.twatch .ttimer i{display:block;height:100%;width:64%;background:#A78BFA}
-.twatch .quad{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;padding:2px}
-.twatch .cell{background:rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:6px}
-.twatch .cic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.twatch .cn{font-size:16px;font-weight:850;letter-spacing:-.01em;line-height:1}
-.twatch .cs{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.6);line-height:1}
-.twatch .cell.opp .cic{background:rgba(56,189,248,.16);color:#38BDF8}
-.twatch .cell.skip .cic{background:rgba(255,255,255,.10);color:rgba(255,255,255,.65)}
-.twatch .cell.skip .cn{color:rgba(255,255,255,.72)}
-.twatch .cell.skip .cs{color:rgba(255,255,255,.5)}
-.twatch .cell.me .cic{background:rgba(74,222,128,.16);color:#4ADE80}
-
-/* ===== NEW: tournament live board — rundy + korty + Z zegarka ===== */
-.tboard{aspect-ratio:1320/2868;background:linear-gradient(180deg,#0C2350,#091B3D);border-radius:30px;overflow:hidden;color:#ECF1FF;display:flex;flex-direction:column;padding:24px 13px 14px;gap:10px;
-  --af:rgba(236,241,255,.42);--as:rgba(236,241,255,.6);--ac:#13294e;--al:rgba(150,182,235,.16);--sky:#46B6F5;--green:#4ADE80}
-.tboard .thead .tn{font-size:18px;font-weight:870;letter-spacing:-.02em;line-height:1}
-.tboard .thead .tm{font-size:10px;font-weight:700;color:var(--as);margin-top:4px}
-.tboard .stand{border-radius:14px;background:rgba(0,0,0,.2);border:1px solid var(--al);padding:9px 11px}
-.tboard .stand .sh{display:flex;align-items:center;gap:6px;font-size:8.5px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:var(--af)}
-.tboard .stand .sh .lv{margin-left:auto;display:flex;align-items:center;gap:4px;color:#E94B3C}
-.tboard .stand .sh .lv i{width:5px;height:5px;border-radius:50%;background:#E94B3C}
-.tboard .stand .srow{display:flex;align-items:center;gap:8px;font-size:12.5px;margin-top:7px;font-variant-numeric:tabular-nums}
-.tboard .stand .srow .pos{width:15px;text-align:center;font-size:11px}
-.tboard .stand .srow .nm{font-weight:750}
-.tboard .stand .srow .pt{margin-left:auto;font-weight:850}
-.tboard .stand .srow.lead .nm,.tboard .stand .srow.lead .pt{color:var(--green)}
-.tboard .courts{display:flex;flex-direction:column;gap:8px}
-.tboard .court{border-radius:14px;background:var(--ac);border:1px solid var(--al)}
-.tboard .court.need{border-color:rgba(224,247,90,.42)}
-.tboard .ctop{display:flex;align-items:center;padding:8px 11px 7px}
-.tboard .kort{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:850;letter-spacing:.5px;color:var(--sky);background:rgba(70,182,245,.13);padding:3px 8px;border-radius:999px}
-.tboard .chip{margin-left:auto;display:inline-flex;align-items:center;gap:4px;font-size:8.5px;font-weight:800;letter-spacing:.3px}
-.tboard .chip.saved{color:var(--green)}
-.tboard .chip.watch{color:var(--sky);background:rgba(70,182,245,.14);padding:2px 7px;border-radius:999px}
-.tboard .chip.watch i{width:5px;height:5px;border-radius:50%;background:#E94B3C}
-.tboard .chip.enter{color:#E0F75A}
-.tboard .crow{display:flex;align-items:center;gap:9px;padding:6px 11px;border-top:1px solid rgba(150,182,235,.1)}
-.tboard .crow .tnm{font-size:12.5px;font-weight:740}
-.tboard .crow .tsc{margin-left:auto;font-size:17px;font-weight:870;font-variant-numeric:tabular-nums;color:var(--af);line-height:1}
-.tboard .crow.win .tnm{font-weight:860}
-.tboard .crow.win .tsc,.tboard .crow.live .tsc{color:#ECF1FF}
-
 /* ===== NEW: Skąd punkty teaser bars (post-match) ===== */
 .skb{border-radius:14px;background:var(--card);border:1px solid var(--card-border);padding:14px 15px;margin-top:20px;max-width:360px}
 .skb .skh{font-size:10.5px;font-weight:850;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:7px;margin-bottom:12px}
@@ -454,7 +223,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
+    <a class="brand" href="#top" aria-label="Padelore">Padel<span class="brand-ball" aria-hidden="true"></span>re</a>
     <div class="nav-links">
       <a href="#vs" data-i18n="nav.vs">Po co druga apka?</a>
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
@@ -908,7 +677,7 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
 <!-- FOOTER -->
 <footer class="foot">
   <div class="wrap foot-in">
-    <a class="brand" href="#top"><img class="app-ic" src="assets/app-icon.png" alt="Padelore">Padelore</a>
+    <a class="brand" href="#top" aria-label="Padelore">Padel<span class="brand-ball" aria-hidden="true"></span>re</a>
     <div class="foot-links">
       <a href="#vs" data-i18n="nav.vs">Po co druga apka?</a>
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
@@ -989,40 +758,18 @@ html[data-theme="light"] .tw-dev{background:#0E1730}
   // watch flow
   var slides=[].slice.call(document.querySelectorAll('.fl-slide'));
   var tabs=[].slice.call(document.querySelectorAll('.fl-tab'));
-  var i=0, timer=null, wtimer=null;
-  function wflash(id){var f=document.getElementById(id);if(f){f.classList.remove('go');void f.offsetWidth;f.classList.add('go');}}
-  function watchAnim(on){
-    if(!on){ if(wtimer){clearInterval(wtimer);wtimer=null;} return; }
-    if(wtimer) return;
-    var pmy=11,poni=9,serveP=true;                 // tryb PUNKTY (do 21)
-    var seq=['0','15','30','40','AD'],si=2;          // tryb SETY (gem tenisowy)
-    var $=function(id){return document.getElementById(id);};
-    wtimer=setInterval(function(){
-      // punkty: dobicie punktu (głównie MY), zmiana serwującego
-      if(Math.random()<0.62){pmy++;} else {poni++;}
-      if(pmy>21||poni>21){pmy=11;poni=9;}
-      if($('pmy'))$('pmy').textContent=pmy; if($('poni'))$('poni').textContent=poni;
-      serveP=!serveP;
-      if($('bmy'))$('bmy').classList.toggle('on',serveP); if($('boni'))$('boni').classList.toggle('on',!serveP);
-      wflash('pflash');
-      // sety: gem tenisowy MY rośnie 0→15→30→40→AD→(gem)
-      si++; if(si>=seq.length)si=0;
-      if($('smy'))$('smy').textContent=seq[si];
-      wflash('sflash');
-    },1100);
-  }
+  var i=0, timer=null;
   function go(n){
     i=n;
     slides.forEach(function(s,k){s.classList.toggle('active',k===n);});
     tabs.forEach(function(t,k){t.classList.toggle('active',k===n);});
-    watchAnim(n===2);
   }
   function start(){ stop(); timer=setInterval(function(){ go((i+1)%slides.length); },3200); }
   function stop(){ if(timer){clearInterval(timer);timer=null;} }
   tabs.forEach(function(t,k){ t.addEventListener('click',function(){ go(k); start(); }); });
   var wt=document.getElementById('watch');
   // karuzela tylko na desktopie — na mobile wszystkie kroki widoczne pionowo
-  if(wt && window.matchMedia('(min-width:821px)').matches){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){start();}else{stop();watchAnim(false);} }); },{threshold:.2}).observe(wt); }
+  if(wt && window.matchMedia('(min-width:821px)').matches){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){start();}else{stop();} }); },{threshold:.2}).observe(wt); }
 })();
 </script>
 </body>

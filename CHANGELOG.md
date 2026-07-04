@@ -4,7 +4,14 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 
 ## [Unreleased]
 
+### Removed
+- **Martwy CSS/JS fake-ekranów** (SPEC-003 domknięte): ~260 linii nieużywanych stylów
+  (`.apscr`/`.ap`, `.tboard`, `.twatch`, `.jacard`(+`.ak`), `.tw-*`, `.wface`/watch ScoreView,
+  `.shots2`, `.app-ic`) + martwy JS `watchAnim()`/`wflash()` (sterowały nieistniejącymi
+  #pmy/#poni/#smy). Karuzela `.fl-*`, `.fenceboard`, `.mcard`, `.split*`, `.skb*` zostają.
+
 ### Changed
+- **Logo → wordmark „Padel●re"** (żółta kulka zamiast „o", jak w appce 1.9.0) zamiast ikona+tekst.
 - **Restyle landingu na design system appki 1.9.0** (SPEC-004): font Bricolage Grotesque
   + Nunito (numerale), hero grad ujednolicony do ball-yellow `--accent`. 7 ręcznie budowanych
   fake HTML-owych ekranów zastąpionych prawdziwymi zrzutami z produkcji 1.9.0 w ramkach iPhone

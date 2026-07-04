@@ -100,7 +100,8 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.04;font-weight:860}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:saturate(160%) blur(16px);
   background:var(--nav-bg);border-bottom:1px solid var(--sep)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;gap:24px}
-.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:880;letter-spacing:-.03em}
+.brand{display:inline-flex;align-items:center;gap:0;font-size:22px;font-weight:880;letter-spacing:-.03em;color:var(--text)}
+.brand-ball{display:inline-block;width:.62em;height:.62em;margin:0 .015em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F4FF8A,#D7E817 60%,#9fb016);box-shadow:0 0 12px rgba(224,247,90,.55);position:relative;top:.055em}
 .nav-links{display:flex;gap:26px;margin-left:24px}
 .nav-links a{font-size:14.5px;font-weight:650;color:var(--ink-soft)}
 .nav-links a:hover{color:var(--ink)}

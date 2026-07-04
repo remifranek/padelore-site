@@ -9,8 +9,12 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
   wystartowanych turniejów („NA ŻYWO" ×kilkanaście na Home) → przez to brakowało action cards
   i ekrany nie odpowiadały appce. Zregenerowane z czystego stanu (1 aktywny turniej „Klub Wisła"):
   01-home = greeting + JAK GRAM + 1 turniej + action cards (Pojedynczy mecz / Gram w turnieju),
-  wymuszony dark mode. Hero-watch: `watch-home` → `watch-scoring` (niebieski MY 14 — Remi: „nie ma niebieskiego").
-  Podmienione 01/02/03/05/06/08/09.
+  wymuszony dark mode. Podmienione 01/02/03/05/06/08/09.
+- **Realny watch-home 1.9.0** (feedback Remiego): stary `watch-home.png` pokazywał niebieski przycisk
+  „History", którego w produkcji nie ma — ekran główny zegarka 1.9.0 to żółty „▶ Play" + ciemna
+  „History" (żółty tekst), tylko żółty + czarny. Zregenerowane ze świeżego builda `PadelMatchProWatch`
+  na watch-sim. Hero-watch wrócił na `watch-home` (poprzedni swap na `watch-scoring` był z błędnego
+  odczytania „nie ma niebieskiego").
 
 ### Removed
 - **Martwy CSS/JS fake-ekranów** (SPEC-003 domknięte): ~260 linii nieużywanych stylów

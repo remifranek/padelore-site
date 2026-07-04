@@ -5,6 +5,10 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Fixed
+- **#ja pokazuje „Jak gram" (Impact Rating), nie Aktywność**: batch11 `06-stats` wyszedł
+  identyczny z `09-activity` (oba = zakładka Aktywność) → #ja duplikowało #aktywnosc i gubiło
+  Impact Rating/archetyp. Zrzut przełączony na segment „Jak gram" (IMPACT RATING 0/100, ARCHETYP
+  Wszechstronny, MAPA WYNIK×WYSIŁEK).
 - **Screeny 1.9.0 zgodne z realną produkcją** (feedback Remiego): seed kumulował kilkanaście
   wystartowanych turniejów („NA ŻYWO" ×kilkanaście na Home) → przez to brakowało action cards
   i ekrany nie odpowiadały appce. Zregenerowane z czystego stanu (1 aktywny turniej „Klub Wisła"):

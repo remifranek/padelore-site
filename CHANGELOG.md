@@ -5,6 +5,14 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Fixed
+- **Native-review 7 tłumaczeń (107 poprawek)**: przegląd każdego bloku językowego przez
+  natywnego copywritera vs polski oryginał. Naprawione kalki, nienaturalne kolokacje, błędy
+  terminologii i AI-slop. Najczęstsze: terminologia padlowa „liczyć"→„segnare/anotar/вести
+  рахунок" (es/it), spójność „Round/тур"→„Turno/раунд" (it/ru/uk), kolizja „karta meczu vs
+  mapa" (de „Match-Matrix", ru/uk „картка матча"), cudzysłowy per-locale (« » es/it/ru/uk/pt,
+  „ " de, " " en), błędne tagi kroków (pt/ru „Konfiguracja"→„Gracze/Urządzenie"), „apostas"→
+  „tensão" (pt), „Linse/лінза"→„Ansicht/вкладка" (de/uk), „П/П"→„В/П" (ru). Parzystość 302×8
+  zachowana, składnia i walidator zielone.
 - **#ja pokazuje „Jak gram" (Impact Rating), nie Aktywność**: batch11 `06-stats` wyszedł
   identyczny z `09-activity` (oba = zakładka Aktywność) → #ja duplikowało #aktywnosc i gubiło
   Impact Rating/archetyp. Zrzut przełączony na segment „Jak gram" (IMPACT RATING 0/100, ARCHETYP

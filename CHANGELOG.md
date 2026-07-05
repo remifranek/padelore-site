@@ -5,6 +5,13 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Fixed
+- **Fakt: czas na powód punktu 4 → 10 sekund** (feedback Remiego): `twatch.p_html`
+  („Skąd punkty" — tagowanie źródła punktu na zegarku) mówił „masz 4 sekundy", realnie
+  w appce okno to 10 sekund. Poprawione w 8 językach (z odmianą: PL „4 sekundy"→„10 sekund",
+  RU/UK „секунды/секунди"→„секунд") + statyczny fallback HTML.
+- **Spójność „fence": „na płocie" → „na kracie"** w kroku 4 (`watch.s4_h`, `watch.s4_p`):
+  reszta strony konsekwentnie mówi „tablica na kracie" (hero, #vs, #turniej ×3), a krok 4
+  wyłamywał się „na płocie" („płot" = wiejskie ogrodzenie, brzmi obco dla kortu padla).
 - **Audyt polskiego źródła (10 poprawek)**: przegląd bloku PL (którego wcześniej nie
   audytowałem — traktowany jako źródło). Naprawione: cudzysłowy «» → polskie „ " w start.*
   (spadek po SPEC-002, gdy start.* siedziały w bloku es); anglicyzmy „Setup"→„Gotowe",

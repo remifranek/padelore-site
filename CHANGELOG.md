@@ -5,6 +5,11 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Fixed
+- **#mecz: realna karta meczu zamiast makiety `.mcard`** (zasada handoffu): fałszywa
+  HTML-owa makieta karty meczu (Match Effort ring, punkty×tętno SVG) zastąpiona realnym
+  zrzutem `SingleMatchSummaryView` — WYGRANA 2-1, przebieg setów, kluczowe momenty (szczyt
+  tętna 171), koszt meczu (WYSIŁEK), strefy tętna. Możliwe dzięki dodaniu pełnego timeline
+  (HR+punkty+kroki) do seed-meczu w padelwatch-pro. Usunięto 15 kluczy `mock.m_*`, dodano `mecz.card_alt`.
 - **Native-review 7 tłumaczeń (107 poprawek)**: przegląd każdego bloku językowego przez
   natywnego copywritera vs polski oryginał. Naprawione kalki, nienaturalne kolokacje, błędy
   terminologii i AI-slop. Najczęstsze: terminologia padlowa „liczyć"→„segnare/anotar/вести

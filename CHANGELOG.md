@@ -5,6 +5,13 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Fixed
+- **Audyt polskiego źródła (10 poprawek)**: przegląd bloku PL (którego wcześniej nie
+  audytowałem — traktowany jako źródło). Naprawione: cudzysłowy «» → polskie „ " w start.*
+  (spadek po SPEC-002, gdy start.* siedziały w bloku es); anglicyzmy „Setup"→„Gotowe",
+  „Tap"→„Tapnij"; „dobijasz punkty" → „zaliczasz punkty" (×3 — „dobić" w padlu = smecz,
+  dwuznaczne); „na iPhone" → „na iPhonie"; „Z dwóch danych… log punktów" → „Wszystko z danych…
+  logu punktów"; „poziom / level" → „poziom (level)"; „pokazuje Cię dziś kontra Ciebie" →
+  „zestawia Cię dziś z Tobą". Walidator + node --check zielone.
 - **#mecz: realna karta meczu zamiast makiety `.mcard`** (zasada handoffu): fałszywa
   HTML-owa makieta karty meczu (Match Effort ring, punkty×tętno SVG) zastąpiona realnym
   zrzutem `SingleMatchSummaryView` — WYGRANA 2-1, przebieg setów, kluczowe momenty (szczyt

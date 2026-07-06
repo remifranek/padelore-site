@@ -204,6 +204,9 @@ html[data-theme="light"] .cta-band{background:linear-gradient(135deg,#1B49B8,#2F
 .cta-band p{color:rgba(255,255,255,.86);font-size:18px;margin:16px auto 30px;max-width:46ch}
 .cta-white{background:#fff;color:#0E2A55}
 .cta-white:hover{background:#fff;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+/* Ghost button na ciemnym banerze CTA — biały w obu motywach (w light --ink robi się ciemny → nieczytelny na niebieskim tle) */
+.cta-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
+.cta-band .btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.14)}
 
 /* ---- footer ---- */
 .foot{border-top:1px solid var(--sep);padding:48px 0 60px}

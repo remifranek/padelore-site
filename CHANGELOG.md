@@ -5,6 +5,11 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Fixed
+- **Fix: przycisk „Grupa WhatsApp" nieczytelny w light mode** (feedback Remiego):
+  `.btn-ghost` w banerze CTA brał `color:var(--ink)`, który w light robi się ciemny granat
+  (#0E1730) — a baner jest zawsze niebieski/ciemny (biały tekst h2/p). Ciemny tekst na ciemnym
+  = niewidoczny. Dodany scoped override `.cta-band .btn-ghost{color:#fff}` (biały w obu
+  motywach, jak reszta banera). Bump `ds.css?v=19→20`.
 - **Fakt: czas na powód punktu 4 → 10 sekund** (feedback Remiego): `twatch.p_html`
   („Skąd punkty" — tagowanie źródła punktu na zegarku) mówił „masz 4 sekundy", realnie
   w appce okno to 10 sekund. Poprawione w 8 językach (z odmianą: PL „4 sekundy"→„10 sekund",

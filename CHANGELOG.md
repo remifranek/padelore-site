@@ -85,6 +85,11 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
   #pmy/#poni/#smy). Karuzela `.fl-*`, `.fenceboard`, `.mcard`, `.split*`, `.skb*` zostają.
 
 ### Changed
+- **Cut-30% leadów — 11 akapitów odchudzonych w 8 językach** (feedback Remiego „czy nie
+  za dużo tekstu"): najdłuższe leady/akapity skrócone o ~20-25% bez zmiany tezy i faktów
+  (hero.lead 58→36 słów, twatch/mecz/tour/league/vs/ja/akt/watch.s2/s4). Usunięty filler
+  i powtórzona teza booking↔Padelore. PL napisany ręcznie, 7 języków przez natywnych
+  tłumaczy skróconej wersji. Struktura sekcji bez zmian (decyzja Remiego: tylko leady, bez scalania).
 - **Logo → wordmark „Padel●re"** (żółta kulka zamiast „o", jak w appce 1.9.0) zamiast ikona+tekst.
 - **Restyle landingu na design system appki 1.9.0** (SPEC-004): font Bricolage Grotesque
   + Nunito (numerale), hero grad ujednolicony do ball-yellow `--accent`. 7 ręcznie budowanych

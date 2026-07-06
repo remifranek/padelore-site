@@ -4,6 +4,14 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 
 ## [Unreleased]
 
+### Added
+- **Sekcja „Akcesoria · na kort" (`#uchwyt`)** (SPEC-005, prośba Remiego): rozszerzalny grid
+  kart z polecanymi uchwytami na telefon na kort (wsparcie feature Fence). Pierwszy produkt:
+  GIMADD (magnetyczny, neodymowy, ~204 zł). Zdjęcie hostowane lokalnie (`assets/mounts/`), i18n
+  7 kluczy `acc.*` × 8 języków, `ds.css?v=21` (`.mount-*`). Dodanie kolejnego uchwytu = kopia
+  1 karty + 1 klucz i18n (instrukcja w SPEC-005 i komentarzu HTML). Zweryfikowane dark + light.
+
+
 ### Fixed
 - **Fix: przycisk „Grupa WhatsApp" nieczytelny w light mode** (feedback Remiego):
   `.btn-ghost` w banerze CTA brał `color:var(--ink)`, który w light robi się ciemny granat

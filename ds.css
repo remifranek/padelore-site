@@ -220,3 +220,17 @@ html[data-theme="light"] .cta-band{background:linear-gradient(135deg,#1B49B8,#2F
 .stack-sm{display:flex;flex-direction:column;gap:6px}
 .row{display:flex;align-items:center;gap:10px}
 .tabnum{font-variant-numeric:tabular-nums}
+
+/* ===== Akcesoria: uchwyty na kort (rozszerzalne karty produktów) ===== */
+.mount-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,320px));gap:20px;justify-content:center;max-width:940px;margin:0 auto}
+.mount-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--card-border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-s);transition:.2s ease;text-decoration:none;color:inherit}
+.mount-card:hover{transform:translateY(-4px);border-color:var(--primary);box-shadow:var(--shadow-l)}
+.mount-pic{aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px}
+.mount-pic img{max-width:100%;max-height:100%;object-fit:contain}
+.mount-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.mount-badge{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--cta-ink);background:var(--accent);padding:3px 10px;border-radius:999px}
+.mount-name{font-weight:800;font-size:18px;color:var(--ink)}
+.mount-desc{font-size:14px;color:var(--ink-soft);line-height:1.5;flex:1}
+.mount-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;padding-top:12px;border-top:1px solid var(--card-border)}
+.mount-price{font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.mount-cta{font-size:14px;font-weight:750;color:var(--primary-2);white-space:nowrap}

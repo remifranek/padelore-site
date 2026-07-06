@@ -13,6 +13,14 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 
 
 ### Fixed
+- **Fix terminologii „ogrodzenie kortu" w IT/PT/RU/UK (34 poprawki)** — mój błąd: ogrodzenie
+  obwodowe kortu (na którym stawiasz telefon jako tablicę) było tłumaczone jako „net/siatka do
+  gry": IT „rete", PT „rede" (systemowo w całym bloku — nie tylko nowa sekcja), miejscami RU/UK
+  „сетка/сітка". Chrome auto-translate IT/PT „rete/rede"→„network" → stąd „put phone on the network".
+  Naprawione natywnie: IT→„recinzione", PT→„vedação", RU→„ограждение", UK→„огорожа"; tab4_b
+  IT/PT→„Fence" (nazwa funkcji). RU/UK „сетка za formą"=drabinka turniejowa zostawione (poprawne).
+  Objęte: acc.*, hero.lead, watch.s4_*, watch.tab4_b, vs.add_1, tour.s2. Klucze `acc.*` napisane
+  przeze mnie bez natywnego przeglądu — proces naprawiony (native-review także dla PL/nowych kluczy).
 - **Fix: przycisk „Grupa WhatsApp" nieczytelny w light mode** (feedback Remiego):
   `.btn-ghost` w banerze CTA brał `color:var(--ink)`, który w light robi się ciemny granat
   (#0E1730) — a baner jest zawsze niebieski/ciemny (biały tekst h2/p). Ciemny tekst na ciemnym

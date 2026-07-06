@@ -13,6 +13,16 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 
 
 ### Fixed
+- **Pełny audyt 8 języków (native, ~55 poprawek)**: przegląd każdego bloku pod kątem
+  terminologii padlowej + naturalności + zrozumiałości. Najważniejsze: (1) **odzyskany zgubiony
+  fence-fix UK** `hero.lead` „на сітці"→„на огорожі" (poprzedni regex urwał się na wewn. `\"`,
+  a weryfikacja przegapiła przez deklinację сітці≠сітк); (2) `twatch.li3_html` „4 s"→„10 s" w 8
+  językach (spójność z 10-sekundowym oknem tagowania); (3) **«» → cudzysłowy narodowe w EN/DE
+  start.*** (ten sam spadek po SPEC-002 co PL — EN „", DE „"); (4) terminy: EN „fills the game"→
+  „finds you a game", IT „segnala"→„segna"/„gioco"→„game"/„round"→„turno", PT duplas↔pares (zamienione),
+  DE „füllt das Match"→„findet die Mitspieler"/„Holen"→„Download"; (5) „soczewka/lens/lente"→
+  „zakładka/tab" w tłumaczeniach (jasność); (6) RU „Куба"(=kraj)→„Макс", „ход очки"→„динамика",
+  spójność „Forma"→„Aktywność"/„Attività"/„Atividade" (nazwa zakładki). Parytet 8× + walidator zielone.
 - **Fix terminologii „ogrodzenie kortu" w IT/PT/RU/UK (34 poprawki)** — mój błąd: ogrodzenie
   obwodowe kortu (na którym stawiasz telefon jako tablicę) było tłumaczone jako „net/siatka do
   gry": IT „rete", PT „rede" (systemowo w całym bloku — nie tylko nowa sekcja), miejscami RU/UK

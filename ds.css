@@ -125,10 +125,6 @@ html[data-theme="light"] .ball{background:radial-gradient(circle at 34% 30%, #EA
 .hero h1{margin:18px 0 22px}
 .hero .grad{color:var(--accent)}
 .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-.hero-meta{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
-.hero-meta .m{display:flex;flex-direction:column;gap:3px}
-.hero-meta .m b{font-size:26px;font-weight:880;letter-spacing:-.02em}
-.hero-meta .m span{font-size:12.5px;font-weight:650;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.6px}
 
 .hero-blobs{position:absolute;inset:-10% -10% auto -10%;height:120%;z-index:-1;filter:blur(10px);pointer-events:none}
 

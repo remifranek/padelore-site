@@ -13,6 +13,13 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 
 
 ### Fixed
+- **#ja + #aktywnosc: realne, bogate zrzuty statystyk zamiast pustego stanu** (feedback
+  Remiego „ekran suchy bez danych, nie pokazuje jak działa analityka"): pusty onboarding
+  (Impact 0, „Budujemy Twój profil") zastąpiony wypełnionym stanem — Jak gram: Impact 33/100,
+  archetyp „Egzekutor", DOWÓD 11/15, „Skąd punkty" 100% otagowanych (55%/+10/45%); Aktywność:
+  6:24 h na korcie, 31 meczów, rytm 2 tygodni, obciążenie 35 · 130/168 · strefy 48%/52%.
+  Wymagało bogatego seeda w padelwatch-pro (PR #183, TASK-464: 31 meczów z timeline+tagami,
+  guard HealthKit) + rig łapiący oba segmenty soczewki. Zregenerowane w PL na symulatorze.
 - **Pełny audyt 8 języków (native, ~55 poprawek)**: przegląd każdego bloku pod kątem
   terminologii padlowej + naturalności + zrozumiałości. Najważniejsze: (1) **odzyskany zgubiony
   fence-fix UK** `hero.lead` „на сітці"→„на огорожі" (poprzedni regex urwał się na wewn. `\"`,

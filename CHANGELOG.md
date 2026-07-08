@@ -5,6 +5,10 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Added
+- **Wybór języka przez URL (`?lang=xx`)** (prośba Remiego): parametr `?lang=en` (lub `pl/es/it/de/ru/uk/pt`)
+  wymusza język niezależnie od localStorage i języka przeglądarki — deterministyczny link do
+  udostępniania (np. `padelore.app/?lang=en` pokaże angielski nawet polskiemu odbiorcy). Priorytet:
+  URL → localStorage → język przeglądarki → `en`. Nieznany kod ignorowany (fallback bez zmian.)
 - **Sekcja „Akcesoria · na kort" (`#uchwyt`)** (SPEC-005, prośba Remiego): rozszerzalny grid
   kart z polecanymi uchwytami na telefon na kort (wsparcie feature Fence). Pierwszy produkt:
   GIMADD (magnetyczny, neodymowy, ~204 zł). Zdjęcie hostowane lokalnie (`assets/mounts/`), i18n

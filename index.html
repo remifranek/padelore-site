@@ -685,6 +685,8 @@ html[data-theme="light"] .lframe{background:#0B1730}
   /* ----- i18n ----- */
   var LANGS=['pl','en','es','it','de','ru','uk','pt'], LKEY='padelore.lang';
   function pick(){
+    var q=((location.search.match(/[?&]lang=([a-z]{2})/i)||[])[1]||'').toLowerCase();
+    if(q&&LANGS.indexOf(q)>-1)return q;
     var s=localStorage.getItem(LKEY);
     if(s&&LANGS.indexOf(s)>-1)return s;
     var n=(navigator.language||'en').slice(0,2).toLowerCase();

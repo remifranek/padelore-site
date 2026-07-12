@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPEC-006 · Preview — animacja „krok po kroku"</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --card:#163E78; --card-2:#12356A; --surface:#0E2A55; --elevated:#1F4F92;
+  --ink:#F5F8FF; --ink-soft:rgba(245,248,255,.64); --ink-faint:rgba(245,248,255,.44);
+  --primary:#5980E6; --primary-2:#6E92F0; --accent:#E0F75A; --on-accent:#0A1A33;
+  --green:#4ADE80; --pink:#F472B6; --sky:#38BDF8; --orange:#FB923C;
+  --card-border:rgba(180,210,255,.20); --sep:rgba(180,210,255,.16); --sep-strong:rgba(180,210,255,.30);
+  --page:#081C39; --page-2:#0A2247;
+  --primary-glow:rgba(89,128,230,.35); --glow:rgba(224,247,90,.30);
+  --shadow-l:0 24px 70px rgba(2,10,26,.6); --shadow-s:0 1px 2px rgba(3,12,30,.4),0 6px 18px rgba(3,12,30,.35);
+  --font:"Bricolage Grotesque",-apple-system,system-ui,sans-serif;
+  --font-score:"Nunito",ui-rounded,system-ui,sans-serif;
+  --chassis:#05132b;
+}
+html[data-theme="light"]{
+  --card:#FFFFFF; --card-2:#F7F9FC; --surface:#F4F6FA; --elevated:#EEF2F9;
+  --ink:#0E1730; --ink-soft:rgba(14,23,48,.64); --ink-faint:rgba(14,23,48,.46);
+  --primary:#1B49B8; --primary-2:#2F6BE0; --accent:#1B49B8; --on-accent:#FFFFFF;
+  --card-border:#E2E8F2; --sep:#E6EBF3; --sep-strong:#D7DEEA;
+  --page:#EEF2F9; --page-2:#F7F9FC; --primary-glow:rgba(27,73,184,.20); --glow:rgba(27,73,184,.16);
+  --shadow-l:0 24px 60px rgba(20,40,90,.14); --shadow-s:0 1px 2px rgba(20,40,90,.06),0 6px 18px rgba(20,40,90,.08);
+  --chassis:#0E1730;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:
+  radial-gradient(900px 500px at 15% -5%, var(--primary-glow), transparent 60%),
+  radial-gradient(700px 500px at 100% 10%, var(--glow), transparent 55%),
+  linear-gradient(180deg,var(--page),var(--page-2));
+  min-height:100vh;padding:40px 20px 70px;-webkit-font-smoothing:antialiased}
+
+.preview-note{max-width:900px;margin:0 auto 10px;font-size:12px;color:var(--ink-faint);letter-spacing:.4px;text-transform:uppercase;font-weight:800}
+.theme-btn{position:fixed;top:18px;right:18px;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--sep-strong);background:var(--card);color:var(--ink);font-size:19px;cursor:pointer;z-index:20}
+
+/* ---- section ---- */
+.demo{max-width:1000px;margin:0 auto;text-align:center}
+.demo .kicker{font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--primary-2)}
+.demo h2{font-size:clamp(28px,4.4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:14px 0 14px}
+.demo h2 .hl{color:var(--accent)}
+html[data-theme="light"] .demo h2 .hl{color:var(--primary)}
+.demo .lead{font-size:clamp(16px,1.7vw,19px);color:var(--ink-soft);max-width:56ch;margin:0 auto;line-height:1.55;font-weight:450}
+
+/* ---- stage ---- */
+.stage{margin:44px auto 0;display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,64px);
+  min-height:600px;position:relative}
+.dev{position:relative;transition:transform .55s cubic-bezier(.3,.8,.3,1),opacity .55s,filter .55s}
+.dev.dim{opacity:.34;transform:scale(.82);filter:saturate(.6)}
+.dev-label{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;
+  letter-spacing:1.2px;text-transform:uppercase;color:var(--primary-2);white-space:nowrap;opacity:0;transition:opacity .4s}
+.dev.on .dev-label{opacity:1}
+
+/* phone */
+.phone{width:270px;border-radius:40px;background:var(--chassis);padding:10px;box-shadow:var(--shadow-l);
+  border:1px solid var(--sep-strong);position:relative}
+.phone .glass{border-radius:31px;overflow:hidden;background:var(--surface);position:relative;height:558px}
+.phone .notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:24px;background:var(--chassis);border-radius:0 0 15px 15px;z-index:8}
+
+/* watch */
+.watch{width:196px}
+.watch .case{border-radius:52px;background:var(--chassis);padding:12px 10px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong)}
+.watch .glass{border-radius:42px;overflow:hidden;background:#000;position:relative;height:236px}
+.watch .band-top,.watch .band-bot{height:26px;margin:0 auto;width:120px;background:linear-gradient(180deg,#1a2c4d,#0f1d36);border-radius:14px}
+.watch .band-top{margin-bottom:-6px}.watch .band-bot{margin-top:-6px}
+
+/* ---- scenes (cross-fade) ---- */
+.scene{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none;display:flex;flex-direction:column}
+.scene.show{opacity:1}
+
+/* phone scene chrome */
+.p-pad{padding:40px 14px 14px;flex:1;display:flex;flex-direction:column;gap:11px}
+.p-top{display:flex;align-items:center;justify-content:space-between;padding:2px 2px 4px}
+.p-logo{font-weight:800;font-size:15px;letter-spacing:-.02em}
+.p-logo b{color:var(--accent)}
+html[data-theme="light"] .p-logo b{color:var(--primary)}
+.p-dot3{color:var(--ink-faint);font-size:15px;letter-spacing:1px}
+
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:13px 14px;text-align:left}
+.card.primary{background:linear-gradient(135deg,var(--primary),var(--sky));border:none;color:#fff;box-shadow:0 10px 26px var(--primary-glow)}
+html[data-theme="light"] .card.primary{background:linear-gradient(135deg,#1B49B8,#2F6BE0)}
+.card .ttl{font-size:15px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:7px}
+.card .sub{font-size:11.5px;color:var(--ink-soft);margin-top:3px;line-height:1.35}
+.card.primary .sub{color:rgba(255,255,255,.82)}
+.eybrow{font-size:9px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--primary-2)}
+
+.team{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:12px;background:var(--elevated);margin-top:8px}
+.team .tag{font-size:9px;font-weight:800;letter-spacing:.6px;padding:2px 7px;border-radius:20px;text-transform:uppercase}
+.team.me .tag{background:var(--accent);color:var(--on-accent)}
+.team.opp .tag{background:rgba(244,114,182,.22);color:var(--pink)}
+html[data-theme="light"] .team.opp .tag{background:rgba(219,39,119,.12);color:#db2777}
+.team .names{font-size:13px;font-weight:700}
+.avs{display:flex;margin-left:auto}
+.av{width:22px;height:22px;border-radius:50%;background:var(--primary);border:2px solid var(--card);margin-left:-7px;font-size:9px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center}
+.av:nth-child(2){background:var(--sky)}
+
+.btn-go{margin-top:auto;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:15px;text-align:center;
+  padding:14px;border-radius:14px;box-shadow:0 8px 22px var(--glow)}
+
+/* handoff scene */
+.handoff{align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px}
+.handoff .arc{font-size:56px;line-height:1}
+.handoff .big{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.handoff .sm{font-size:12.5px;color:var(--ink-soft);max-width:20ch}
+.handoff .flyer{font-size:30px;animation:fly 1.5s ease-in-out infinite}
+@keyframes fly{0%,100%{transform:translateX(-8px)}50%{transform:translateX(8px)}}
+
+/* match card scene */
+.mc-hero{background:linear-gradient(150deg,var(--card),var(--card-2));border-radius:16px;padding:15px;text-align:center;border:1px solid var(--card-border)}
+.mc-res{font-family:var(--font-score);font-weight:900;font-size:40px;letter-spacing:-.02em;line-height:1}
+.mc-res .win{color:var(--green)} .mc-res .sep{color:var(--ink-faint);margin:0 6px}
+.mc-tag{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--green);margin-top:4px}
+.mc-row{display:flex;gap:9px;margin-top:11px}
+.mc-stat{flex:1;background:var(--card);border:1px solid var(--card-border);border-radius:13px;padding:11px 8px;text-align:center}
+.mc-stat .n{font-family:var(--font-score);font-weight:900;font-size:22px}
+.mc-stat .n.acc{color:var(--accent)} html[data-theme="light"] .mc-stat .n.acc{color:var(--primary)}
+.mc-stat .l{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--ink-faint);margin-top:2px}
+.mc-eff{margin-top:11px;background:var(--card);border:1px solid var(--card-border);border-radius:13px;padding:11px 13px;display:flex;align-items:center;gap:11px;text-align:left}
+.mc-ring{width:44px;height:44px;border-radius:50%;background:conic-gradient(var(--accent) 72%,var(--sep) 0);display:grid;place-items:center;flex:none}
+html[data-theme="light"] .mc-ring{background:conic-gradient(var(--primary) 72%,var(--sep) 0)}
+.mc-ring i{width:34px;height:34px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-style:normal;font-family:var(--font-score);font-weight:900;font-size:14px}
+.mc-eff .et{font-size:12.5px;font-weight:800}.mc-eff .es{font-size:10.5px;color:var(--ink-soft);margin-top:1px}
+
+/* watch scenes */
+.w-scene{position:absolute;inset:0;opacity:0;transition:opacity .4s;display:flex;flex-direction:column;color:#fff;background:#000}
+.w-scene.show{opacity:1}
+.w-stat{padding:6px 12px 0;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.7);font-weight:700}
+.w-play{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.w-play .brand{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--accent)}
+.w-play .pbtn{background:var(--accent);color:var(--on-accent);font-weight:800;font-size:17px;padding:12px 30px;border-radius:26px;display:flex;align-items:center;gap:7px}
+.w-play .hint{font-size:10px;color:rgba(255,255,255,.5)}
+/* watch score */
+.w-score{flex:1;display:grid;grid-template-rows:1fr auto 1fr;text-align:center}
+.w-side{display:flex;align-items:center;justify-content:center;position:relative}
+.w-side .lbl{position:absolute;top:8px;left:0;right:0;font-size:9px;font-weight:800;letter-spacing:1px;color:rgba(255,255,255,.55)}
+.w-side.oni{background:rgba(244,114,182,.12)}
+.w-side.my{background:rgba(224,247,90,.10)}
+.w-num{font-family:var(--font-score);font-weight:900;font-size:52px;line-height:1;transition:transform .3s}
+.w-num.my{color:var(--accent)} .w-num.oni{color:#fff}
+.w-bar{padding:5px 0;font-size:9px;color:rgba(255,255,255,.5);font-weight:700;letter-spacing:.5px}
+.w-pop{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-score);font-weight:900;font-size:20px;color:var(--accent);opacity:0}
+/* watch attribution */
+.w-att{flex:1;display:flex;flex-direction:column;padding:12px 10px;gap:7px}
+.w-att .q{font-size:12px;font-weight:800;text-align:center;margin-bottom:2px}
+.w-opt{background:rgba(255,255,255,.08);border-radius:12px;padding:9px 11px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px}
+.w-opt.hot{background:var(--accent);color:var(--on-accent)}
+.w-opt .ic{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.2);flex:none}
+.w-opt.hot .ic{background:rgba(10,26,51,.25)}
+
+/* ---- tap indicator ---- */
+.tap{position:absolute;width:34px;height:34px;pointer-events:none;z-index:12;opacity:0;transition:opacity .25s;
+  transform:translate(-50%,-50%)}
+.tap.on{opacity:1}
+.tap .ring{position:absolute;inset:0;border-radius:50%;border:2.5px solid var(--accent);animation:tapring 1.4s ease-out infinite}
+html[data-theme="light"] .tap .ring{border-color:var(--primary)}
+.tap .dot{position:absolute;inset:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--glow)}
+html[data-theme="light"] .tap .dot{background:var(--primary)}
+@keyframes tapring{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.1);opacity:0}}
+
+/* ---- caption + controls ---- */
+.cap{margin:38px auto 0;max-width:520px;min-height:74px}
+.cap .badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1px;
+  text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:4px 12px;border-radius:20px}
+.cap .txt{font-size:clamp(16px,2vw,20px);font-weight:650;margin-top:13px;line-height:1.4;color:var(--ink);transition:opacity .3s}
+.cap .txt b{font-weight:800}
+
+.progress{max-width:340px;height:3px;border-radius:3px;background:var(--sep);margin:22px auto 0;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--accent);border-radius:3px}
+html[data-theme="light"] .progress i{background:var(--primary)}
+
+.dots{display:flex;gap:9px;justify-content:center;margin-top:20px}
+.dots button{width:9px;height:9px;border-radius:50%;border:none;background:var(--sep-strong);cursor:pointer;padding:0;transition:.25s}
+.dots button.act{background:var(--accent);width:26px;border-radius:6px}
+html[data-theme="light"] .dots button.act{background:var(--primary)}
+
+.ctrls{margin-top:22px;display:flex;gap:10px;justify-content:center}
+.ctrls button{background:var(--card);border:1.5px solid var(--sep-strong);color:var(--ink);font-family:var(--font);
+  font-weight:700;font-size:13px;padding:9px 16px;border-radius:11px;cursor:pointer;display:flex;align-items:center;gap:7px}
+.ctrls button:hover{border-color:var(--primary)}
+
+@media(max-width:620px){
+  .stage{flex-direction:column;gap:34px;min-height:0}
+  .dev.dim{display:none}
+  .phone{width:230px}.phone .glass{height:476px}
+}
+@media(prefers-reduced-motion:reduce){.tap .ring,.handoff .flyer{animation:none}}
+</style>
+</head>
+<body>
+<button class="theme-btn" id="themeBtn" title="Dark / light">🌙</button>
+<div class="preview-note">SPEC-006 · Preview — animacja onboardingu (nie na live)</div>
+
+<section class="demo">
+  <span class="kicker">Jak to działa</span>
+  <h2>Zobacz, co <span class="hl">nacisnąć</span> — krok po kroku.</h2>
+  <p class="lead">Od pustego ekranu do karty meczu. Najpierw telefon, potem zegarek — dokładnie tam, gdzie przyłożyć palec.</p>
+
+  <div class="stage" id="stage">
+    <!-- PHONE -->
+    <div class="dev phone-wrap on" id="devPhone">
+      <div class="dev-label">Telefon</div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="glass" id="phoneGlass">
+
+          <!-- p1 home -->
+          <div class="scene show" data-scene="p1">
+            <div class="p-pad">
+              <div class="p-top"><span class="p-logo">Padel<b>o</b>re</span><span class="p-dot3">•••</span></div>
+              <div class="card primary" data-tap="p1">
+                <div class="ttl">🎾 Nowy mecz</div>
+                <div class="sub">Szybki mecz — ustaw pary i graj</div>
+              </div>
+              <div class="card">
+                <div class="ttl" style="font-size:13px">🏆 Turniej</div>
+                <div class="sub">Americano, Mexicano — pełna konfiguracja</div>
+              </div>
+              <div class="card" style="margin-top:auto">
+                <div class="eybrow">Jak gram · top 48%</div>
+                <div class="ttl" style="font-size:14px;margin-top:3px">Impact 33 · Egzekutor</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- p2 pairs -->
+          <div class="scene" data-scene="p2">
+            <div class="p-pad">
+              <div class="p-top"><span class="p-logo">Kto gra?</span><span class="p-dot3">2 / 2</span></div>
+              <div class="team me"><span class="tag">My</span><span class="names">Ty · Kuba</span>
+                <span class="avs"><span class="av">T</span><span class="av">K</span></span></div>
+              <div class="team opp"><span class="tag">Oni</span><span class="names">Adam · Piotr</span>
+                <span class="avs"><span class="av">A</span><span class="av">P</span></span></div>
+              <div class="card" style="margin-top:10px">
+                <div class="eybrow">Format</div>
+                <div class="ttl" style="font-size:13px;margin-top:2px">Do 21 · złoty punkt</div>
+              </div>
+              <div class="btn-go" data-tap="p2">Start ▸</div>
+            </div>
+          </div>
+
+          <!-- p3 handoff -->
+          <div class="scene" data-scene="p3">
+            <div class="p-pad handoff">
+              <div class="flyer">⌚</div>
+              <div class="big">Mecz jest na zegarku</div>
+              <div class="sm">Podnieś nadgarstek — resztę policzysz stamtąd</div>
+            </div>
+          </div>
+
+          <!-- f1 match card -->
+          <div class="scene" data-scene="f1">
+            <div class="p-pad">
+              <div class="p-top"><span class="p-logo">Karta meczu</span><span class="p-dot3">✓</span></div>
+              <div class="mc-hero">
+                <div class="mc-res"><span class="win">21</span><span class="sep">:</span><span>8</span></div>
+                <div class="mc-tag">▲ pewna wygrana</div>
+              </div>
+              <div class="mc-row">
+                <div class="mc-stat"><div class="n acc">33</div><div class="l">Impact</div></div>
+                <div class="mc-stat"><div class="n">148</div><div class="l">Śr. tętno</div></div>
+                <div class="mc-stat"><div class="n">6:24</div><div class="l">Czas</div></div>
+              </div>
+              <div class="mc-eff">
+                <div class="mc-ring"><i>72</i></div>
+                <div><div class="et">Match Effort 72</div><div class="es">Ile ten mecz Cię kosztował</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- WATCH -->
+    <div class="dev watch dim" id="devWatch">
+      <div class="dev-label">Zegarek</div>
+      <div class="case">
+        <div class="band-top"></div>
+        <div class="glass" id="watchGlass">
+
+          <!-- w1 play -->
+          <div class="w-scene show" data-scene="w1">
+            <div class="w-stat"><span>21:31</span><span>􀋉</span></div>
+            <div class="w-play">
+              <div class="brand">PADELORE</div>
+              <div class="pbtn" data-tap="w1">▶ Graj</div>
+              <div class="hint">Ty · Kuba vs Adam · Piotr</div>
+            </div>
+          </div>
+
+          <!-- w2 score -->
+          <div class="w-scene" data-scene="w2">
+            <div class="w-score">
+              <div class="w-side oni"><span class="lbl">ONI</span><span class="w-num oni">0</span></div>
+              <div class="w-bar">tapnij swój wynik ↓</div>
+              <div class="w-side my" data-tap="w2"><span class="lbl">MY</span><span class="w-num my" id="myNum">0</span>
+                <span class="w-pop" id="wpop">+1</span></div>
+            </div>
+          </div>
+
+          <!-- w3 attribution -->
+          <div class="w-scene" data-scene="w3">
+            <div class="w-att">
+              <div class="q">Kto zdobył punkt?</div>
+              <div class="w-opt hot" data-tap="w3"><span class="ic"></span>Ja — winner</div>
+              <div class="w-opt"><span class="ic"></span>Kuba — winner</div>
+              <div class="w-opt"><span class="ic"></span>Błąd rywali</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="band-bot"></div>
+      </div>
+    </div>
+
+    <!-- tap indicator (moves) -->
+    <div class="tap" id="tap"><span class="ring"></span><span class="dot"></span></div>
+  </div>
+
+  <div class="cap">
+    <span class="badge" id="capBadge">Krok 1 / 7 · Telefon</span>
+    <div class="txt" id="capTxt"></div>
+  </div>
+  <div class="progress"><i id="prog"></i></div>
+  <div class="dots" id="dots"></div>
+  <div class="ctrls">
+    <button id="playBtn">⏸ Pauza</button>
+    <button id="restartBtn">↻ Od nowa</button>
+  </div>
+</section>
+
+<script>
+const STEPS = [
+  {dev:'phone', scene:'p1', tap:'p1', badge:'Telefon', txt:'Otwórz Padelore i wybierz <b>Nowy mecz</b>.'},
+  {dev:'phone', scene:'p2', tap:'p2', badge:'Telefon', txt:'Ustaw pary — Ty, partner, rywale — i naciśnij <b>Start</b>.'},
+  {dev:'phone', scene:'p3', tap:null, badge:'Telefon → Zegarek', txt:'Mecz sam ląduje na zegarku. Odkładasz telefon.'},
+  {dev:'watch', scene:'w1', tap:'w1', badge:'Zegarek', txt:'Na zegarku naciśnij <b>Graj</b> — wynik startuje.'},
+  {dev:'watch', scene:'w2', tap:'w2', badge:'Zegarek', txt:'Wygrałeś wymianę? <b>Tapnij swój wynik</b> kciukiem.'},
+  {dev:'watch', scene:'w3', tap:'w3', badge:'Zegarek', txt:'Zaznacz, kto zdobył punkt. Opcjonalne — masz 10 s.'},
+  {dev:'phone', scene:'f1', tap:null, badge:'Karta meczu', txt:'Koniec meczu → <b>karta meczu</b> i profil „jak grasz".'},
+];
+const DUR = 2800;
+let i = 0, playing = true, timer = null, progRAF = null, progStart = 0;
+
+const devPhone=document.getElementById('devPhone'), devWatch=document.getElementById('devWatch');
+const phoneGlass=document.getElementById('phoneGlass'), watchGlass=document.getElementById('watchGlass');
+const tap=document.getElementById('tap'), stage=document.getElementById('stage');
+const capBadge=document.getElementById('capBadge'), capTxt=document.getElementById('capTxt');
+const prog=document.getElementById('prog'), dotsEl=document.getElementById('dots');
+const playBtn=document.getElementById('playBtn');
+const myNum=document.getElementById('myNum'), wpop=document.getElementById('wpop');
+
+// build dots
+STEPS.forEach((_,n)=>{const b=document.createElement('button');b.onclick=()=>{go(n);};dotsEl.appendChild(b);});
+const dots=[...dotsEl.children];
+
+function showScene(glass, scene){
+  glass.querySelectorAll('[data-scene]').forEach(s=>s.classList.toggle('show', s.dataset.scene===scene));
+}
+function placeTap(sel){
+  if(!sel){tap.classList.remove('on');return;}
+  const container = (STEPS[i].dev==='phone') ? phoneGlass : watchGlass;
+  const el = container.querySelector('[data-tap="'+sel+'"]');
+  if(!el){tap.classList.remove('on');return;}
+  const r=el.getBoundingClientRect(), sr=stage.getBoundingClientRect();
+  tap.style.left=(r.left-sr.left+r.width/2)+'px';
+  tap.style.top =(r.top -sr.top +r.height/2)+'px';
+  tap.classList.add('on');
+}
+function startProg(){
+  cancelAnimationFrame(progRAF); progStart=null;
+  function frame(t){
+    if(progStart===null) progStart=t;
+    const p=Math.min(1,(t-progStart)/DUR); prog.style.width=(p*100)+'%';
+    if(p<1 && playing) progRAF=requestAnimationFrame(frame);
+  }
+  progRAF=requestAnimationFrame(frame);
+}
+function render(){
+  const s=STEPS[i];
+  devPhone.classList.toggle('on', s.dev==='phone'); devPhone.classList.toggle('dim', s.dev!=='phone');
+  devWatch.classList.toggle('on', s.dev==='watch'); devWatch.classList.toggle('dim', s.dev!=='watch');
+  if(s.dev==='phone') showScene(phoneGlass, s.scene); else showScene(watchGlass, s.scene);
+  // reset watch score anim
+  myNum.textContent='0'; wpop.style.animation='none';
+  capBadge.textContent='Krok '+(i+1)+' / '+STEPS.length+' · '+s.badge;
+  capTxt.style.opacity=0;
+  setTimeout(()=>{capTxt.innerHTML=s.txt; capTxt.style.opacity=1;},150);
+  dots.forEach((d,n)=>d.classList.toggle('act',n===i));
+  tap.classList.remove('on');
+  setTimeout(()=>placeTap(s.tap), 580);
+  // scene-specific micro-anim: watch point tick
+  if(s.scene==='w2'){ setTimeout(()=>{ myNum.textContent='1'; myNum.style.transform='scale(1.25)';
+    wpop.style.animation='none'; void wpop.offsetWidth; wpop.style.animation='pop 1s ease-out';
+    setTimeout(()=>myNum.style.transform='scale(1)',300); }, 1300); }
+  startProg();
+}
+function go(n){ i=(n+STEPS.length)%STEPS.length; render(); schedule(); }
+function next(){ go(i+1); }
+function schedule(){ clearTimeout(timer); if(playing) timer=setTimeout(next, DUR); }
+function setPlaying(p){ playing=p; playBtn.textContent=p?'⏸ Pauza':'▶ Odtwórz'; if(p){schedule();startProg();} else {clearTimeout(timer);cancelAnimationFrame(progRAF);} }
+
+playBtn.onclick=()=>setPlaying(!playing);
+document.getElementById('restartBtn').onclick=()=>{setPlaying(true);go(0);};
+window.addEventListener('resize',()=>placeTap(STEPS[i].tap));
+
+// theme toggle
+const tb=document.getElementById('themeBtn');
+tb.onclick=()=>{const d=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme', d?'light':'dark'); tb.textContent=d?'☀️':'🌙';
+  placeTap(STEPS[i].tap);};
+
+// pop keyframe (injected so it can restart)
+const st=document.createElement('style');
+st.textContent='@keyframes pop{0%{opacity:0;transform:translate(-50%,-40%) scale(.6)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,-120%) scale(1)}}';
+document.head.appendChild(st);
+
+render(); schedule();
+</script>
+</body>
+</html>

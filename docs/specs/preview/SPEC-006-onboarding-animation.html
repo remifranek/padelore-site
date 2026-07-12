@@ -102,6 +102,7 @@ body{font-family:var(--font);color:var(--ink);background:
         <img data-i="1" src="/assets/demo/demo-2.png" alt="Gracze 2v2">
         <img data-i="2" src="/assets/demo/demo-3.png" alt="Ustawienia — punktacja">
         <img data-i="3" src="/assets/demo/demo-5.png" alt="Karta meczu">
+        <img data-i="4" src="/assets/demo/demo-6.png" alt="Statystyki po meczu — Twoje ciało">
       </div></div>
     </div>
     <!-- WATCH -->
@@ -136,7 +137,8 @@ const STEPS = [
   {dev:'phone', img:2, tap:[50,90], badge:'Telefon',        txt:'Wybierz punktację (np. <b>21</b>) i <b>Rozpocznij mecz</b>.'},
   {dev:'watch',        tap:[50,78], badge:'Zegarek',        txt:'Wynik zapisujesz <b>na nadgarstku</b> — tapnij swoją stronę (MY) na zegarku.'},
   {dev:'fence',        tap:null,    badge:'Tablica',        txt:'Telefon zawieszasz na kracie — <b>wielki wynik</b> widoczny z drugiego końca kortu.'},
-  {dev:'phone', img:3, tap:null,    badge:'Telefon',        txt:'Koniec meczu → <b>karta meczu</b> z całą historią.'},
+  {dev:'phone', img:3, tap:null,    badge:'Telefon',        txt:'Koniec meczu → <b>karta meczu</b>: wynik, sety, kluczowe momenty.'},
+  {dev:'phone', img:4, tap:null,    badge:'Statystyki',     txt:'Zjeżdżasz niżej → <b>ile Cię kosztował</b>: wysiłek, strefy tętna, regeneracja.'},
 ];
 const DUR = 3400;
 let i=0, playing=true, timer=null, progRAF=null, progStart=0;

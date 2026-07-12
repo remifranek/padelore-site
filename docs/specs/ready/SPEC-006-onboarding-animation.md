@@ -4,7 +4,7 @@
 **Priorytet:** P1 (główny hero-enhancer pod 1.13.0 — pokazuje wartość zamiast opisywać)
 **Utworzony:** 2026-07-12
 **Origin:** prośba Remiego 2026-07-12 — „mało to wszystko sexi. A jakby na pierwszej stronie była animacja krok po kroku co nacisnąć — najpierw telefon, potem to samo na zegarku z podpisem co się dzieje na ekranie".
-**Decyzje Remiego:** flow = „szybki mecz → zegarek → karta"; ekrany = odbudowane w HTML/CSS (nie zrzuty).
+**Decyzje Remiego:** flow = „szybki mecz → zegarek → tablica → karta → statystyki"; ekrany = REALNE zrzuty z produkcji (nie odbudowane w HTML — feedback Remiego 2026-07-12: „ekran home to nie jest ekran home z produkcji", „mockupy nie są zgodne z produkcją"). Zrzuty łapane rig-iem XCUITest (`ScreenshotTests`).
 **Preview:** `docs/specs/preview/SPEC-006-onboarding-animation.html` (live: `padelore.app/docs/specs/preview/SPEC-006-onboarding-animation.html`)
 
 ---
@@ -15,28 +15,29 @@ Prowadzony pokaz „jak używać Padelore" — od pustego ekranu do karty meczu.
 widz **widzi dokładnie co nacisnąć**: pulsujący wskaźnik tapnięcia na konkretnym przycisku,
 podpis „co się dzieje", i płynne przejście telefon → zegarek. 7 kroków, ~20 s pętli.
 
-## Koncept (zweryfikowany w preview)
+## Koncept (v5 — zweryfikowany w preview)
 
-- **Dwie ramki naraz** — telefon (lewo) + zegarek (prawo). Aktywne urządzenie świeci
-  (pełna jasność, skala 1), drugie przygaszone (opacity .34, skala .82). Przejście do aktu
-  zegarka = zegarek się rozjaśnia → wizualny „handoff", bez słów.
-- **Ekrany odbudowane w HTML/CSS** z design-tokenów landingu (spójne z resztą, aktualizowalne).
-- **Wskaźnik tapnięcia** — pulsujący lime ring + kropka, pozycjonowany na docelowym elemencie.
-- **Pasek podpisu** — badge „Krok N/7 · Telefon/Zegarek" + zdanie „co robisz".
-- **Sterowanie** — autoplay (pętla, 2,8 s/krok), klikalne kropki kroków, pauza, „od nowa".
-- Dark + light (przełącznik w preview), responsywne (mobile: urządzenia jedno pod drugim).
+- **Trzy urządzenia, jedno naraz w kadrze** — telefon (portrait), zegarek (Apple Watch z koroną
+  + przyciskiem), telefon-poziomo (tablica na kracie). Aktywne świeci, przejście = crossfade.
+- **REALNE zrzuty z produkcji** — nie odbudowa w HTML. Home, gracze, konfiguracja, zegarek,
+  tablica, karta meczu, statystyki „Twoje ciało" — wszystkie łapane rig-iem (`ScreenshotTests`
+  w padelwatch-pro, `--seed`), downscale do 294×640 (telefon) / 416×496 (zegarek) / 1000×460 (tablica).
+- **Wskaźnik tapnięcia** — pulsujący lime ring + kropka na docelowym elemencie (kroki 1–4).
+- **Pasek podpisu** — badge „Krok N/7 · Telefon/Zegarek/Tablica/Statystyki" + zdanie „co robisz".
+- **Sterowanie** — autoplay (pętla, 3,4 s/krok), klikalne kropki, pauza, „od nowa".
+- Dark + light (przełącznik w preview), responsywne.
 
 ### Flow (7 kroków)
 
-| # | Urządzenie | Ekran | Tap | Podpis |
+| # | Urządzenie | Ekran (realny zrzut) | Tap | Podpis |
 |---|---|---|---|---|
-| 1 | Telefon | Home | „Nowy mecz" | Otwórz Padelore i wybierz Nowy mecz |
-| 2 | Telefon | Kto gra? (MY/ONI + format) | „Start" | Ustaw pary i naciśnij Start |
-| 3 | Telefon→Zegarek | Handoff | — | Mecz sam ląduje na zegarku |
-| 4 | Zegarek | Graj | „Graj" | Na zegarku naciśnij Graj |
-| 5 | Zegarek | Wynik 0:0 → tap MY → 1 | strefa MY | Tapnij swój wynik kciukiem |
-| 6 | Zegarek | Kto zdobył punkt? | „Ja" | Zaznacz źródło punktu (opcjonalne, 10 s) |
-| 7 | Telefon | Karta meczu 21:8 + Match Effort | — | Koniec → karta meczu i profil „jak grasz" |
+| 1 | Telefon | Home (`demo-1`) | Pojedynczy mecz | Otwórz Padelore → Pojedynczy mecz |
+| 2 | Telefon | Gracze 2v2 (`demo-2`) | Dalej · konfiguracja | Ustaw pary — Ty, partner, rywale |
+| 3 | Telefon | Ustawienia/punktacja (`demo-3`) | Rozpocznij mecz | Wybierz punktację (np. 21) i start |
+| 4 | Zegarek | Wynik na nadgarstku (`demo-watch`) | strefa MY | Wynik zapisujesz na nadgarstku — tapnij MY |
+| 5 | Tablica | Wynik na kracie (`demo-fence`) | — | Telefon na kracie → wielki wynik z drugiego końca kortu |
+| 6 | Telefon | Karta meczu (`demo-5`) | — | Koniec → karta meczu: wynik, sety, kluczowe momenty |
+| 7 | Statystyki | Twoje ciało (`demo-6`) | — | Zjeżdżasz niżej → ile Cię kosztował: wysiłek, strefy tętna, regeneracja |
 
 ## Zakres integracji (po akceptacji)
 

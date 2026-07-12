@@ -5,6 +5,9 @@ Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze s
 ## [Unreleased]
 
 ### Added
+- **Drugi uchwyt w `#uchwyt` — A2C** (SPEC-005, prośba Remiego): elastyczny uchwyt (ramię aluminium+silikon
+  owijające słupek krat, ~46 zł, MagSafe/iPhone 12-16) obok GIMADD. Zdjęcie lokalnie (`assets/mounts/a2c.jpg`,
+  389×500, 18 KB), klucz `acc.a2c_desc` × 8 języków (natywne), link `amazon.pl/dp/B0F1CVJWYZ` (czysty, bez trackerów).
 - **Wybór języka przez URL (`?lang=xx`)** (prośba Remiego): parametr `?lang=en` (lub `pl/es/it/de/ru/uk/pt`)
   wymusza język niezależnie od localStorage i języka przeglądarki — deterministyczny link do
   udostępniania (np. `padelore.app/?lang=en` pokaże angielski nawet polskiemu odbiorcy). Priorytet:

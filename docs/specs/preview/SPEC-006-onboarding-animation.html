@@ -54,17 +54,28 @@ body{font-family:var(--font);color:var(--ink);background:
 .phone{width:272px;border-radius:40px;background:var(--chassis);padding:10px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong);position:relative}
 .phone .glass{border-radius:31px;overflow:hidden;background:var(--scr);position:relative;height:562px}
 .phone .notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:92px;height:23px;background:var(--chassis);border-radius:0 0 14px 14px;z-index:8}
-/* watch */
-.watch{width:200px}
-.watch .case{border-radius:54px;background:var(--chassis);padding:12px 10px;box-shadow:var(--shadow-l);border:1px solid var(--sep-strong)}
-.watch .glass{border-radius:44px;overflow:hidden;background:#000;position:relative;height:242px}
-.watch .band-top,.watch .band-bot{height:24px;margin:0 auto;width:118px;background:linear-gradient(180deg,#1a2c4d,#0f1d36);border-radius:14px}
-.watch .band-top{margin-bottom:-5px}.watch .band-bot{margin-top:-5px}
+/* watch — proporcje realnego Apple Watch (ekran ~0.82, korona + przycisk boczny) */
+.watch{width:188px;position:relative}
+.watch .case{border-radius:52px;background:linear-gradient(145deg,#33383f,#0b0d11 62%);padding:11px 10px;
+  box-shadow:var(--shadow-l),inset 0 1px 1px rgba(255,255,255,.10),inset 0 0 0 1px rgba(0,0,0,.6);position:relative}
+.watch .glass{border-radius:41px;overflow:hidden;background:#000;position:relative;height:203px}  /* 166×203 ≈ 0.82 */
+.watch .crown{position:absolute;right:-3px;top:33%;width:6px;height:24px;border-radius:3px;
+  background:linear-gradient(90deg,#4a4f57,#181b20);box-shadow:1px 0 2px rgba(0,0,0,.5)}
+.watch .sbtn{position:absolute;right:-2px;top:53%;width:4px;height:30px;border-radius:3px;background:linear-gradient(90deg,#31353b,#15171b)}
+.watch .band-top,.watch .band-bot{height:22px;margin:0 auto;width:108px;background:linear-gradient(180deg,#26292e,#111316);border-radius:0 0 12px 12px}
+.watch .band-top{margin-bottom:-4px;border-radius:12px 12px 0 0}.watch .band-bot{margin-top:-4px}
 
 .scene{position:absolute;inset:0;opacity:0;transition:opacity .4s;display:flex;flex-direction:column}
 .scene.show{opacity:1}
-.statusbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px 0;font-size:12px;font-weight:700;color:var(--ink)}
-.statusbar .r{display:flex;gap:5px;align-items:center;font-size:11px}
+.statusbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px 0;font-size:13px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.statusbar .r{display:flex;gap:6px;align-items:center}
+.sb-cell{display:flex;align-items:flex-end;gap:1.5px;height:10px}
+.sb-cell i{width:2.4px;background:var(--ink);border-radius:1px}
+.sb-cell i:nth-child(1){height:4px}.sb-cell i:nth-child(2){height:6px}.sb-cell i:nth-child(3){height:8px}.sb-cell i:nth-child(4){height:10px}
+.sb-wifi{font-size:12px;line-height:1;color:var(--ink)}
+.sb-batt{width:22px;height:11px;border:1.3px solid var(--ink);border-radius:3px;position:relative;opacity:.95}
+.sb-batt::after{content:"";position:absolute;right:-3px;top:3px;width:1.6px;height:5px;background:var(--ink);border-radius:0 1px 1px 0}
+.sb-batt i{position:absolute;left:1.5px;top:1.5px;bottom:1.5px;width:68%;background:var(--ink);border-radius:1.5px}
 
 /* ---- phone: HOME (01-home) ---- */
 .home-body{padding:10px 12px;flex:1;display:flex;flex-direction:column;gap:9px;overflow:hidden}
@@ -198,7 +209,7 @@ body{font-family:var(--font);color:var(--ink);background:
 
         <!-- HOME -->
         <div class="scene show" data-scene="home">
-          <div class="statusbar"><span>18:44</span><span class="r">•••• 📶 🔋</span></div>
+          <div class="statusbar"><span>18:44</span><span class="r"><span class="sb-cell"><i></i><i></i><i></i><i></i></span><span class="sb-batt"><i></i></span></span></div>
           <div class="home-body">
             <div class="tcard">
               <span class="trophy">🏆</span>
@@ -226,7 +237,7 @@ body{font-family:var(--font);color:var(--ink);background:
 
         <!-- MATCH CARD -->
         <div class="scene" data-scene="card">
-          <div class="statusbar"><span>19:48</span><span class="r">•••• 📶 🔋</span></div>
+          <div class="statusbar"><span>19:48</span><span class="r"><span class="sb-cell"><i></i><i></i><i></i><i></i></span><span class="sb-batt"><i></i></span></span></div>
           <div class="mc-body">
             <div class="mc-nav"><span class="bk">‹</span><span class="ttl">Mecz 1</span><span class="sh">↑</span></div>
             <div class="mc-players"><span class="a">Ty<br>Kuba</span><span class="vs">vs</span><span class="b">Adam<br>Piotr</span></div>
@@ -253,7 +264,7 @@ body{font-family:var(--font);color:var(--ink);background:
     <!-- WATCH -->
     <div class="dev watch dim" id="devWatch">
       <div class="dev-label">Zegarek</div>
-      <div class="case"><div class="band-top"></div><div class="glass" id="watchGlass">
+      <div class="case"><div class="crown"></div><div class="sbtn"></div><div class="band-top"></div><div class="glass" id="watchGlass">
 
         <!-- PLAY -->
         <div class="w-scene show" data-scene="play">

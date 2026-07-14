@@ -4,6 +4,14 @@
 window.I18N = {
 
 pl: {
+  "getapp.title": "Padelore — pobierz aplikację",
+  "getapp.h1_t": "Masz zaproszenie do turnieju",
+  "getapp.p_t": "Ktoś chce, żebyś dołączył do turnieju w Padelore. Zainstaluj apkę, a potem otwórz ten link jeszcze raz.",
+  "getapp.h1_m": "Czeka na Ciebie wynik meczu",
+  "getapp.p_m": "Znajomy podzielił się z Tobą meczem z Padelore. Zainstaluj apkę i otwórz ten link jeszcze raz — wynik wskoczy do Twojej historii.",
+  "getapp.h1_d": "Ten link otwiera się w aplikacji",
+  "getapp.p_d": "Zainstaluj Padelore na iPhonie, a potem otwórz link jeszcze raz.",
+  "getapp.note": "Masz już apkę? Otwórz ten link ponownie — wskoczy prosto do Padelore.",
   "cta.whatsapp": "Grupa WhatsApp",
   "cta.beta": "Chcesz testować wersje beta przez TestFlight i zgłaszać uwagi oraz błędy? Dołącz do naszej grupy na WhatsApp.",
   "acc.kicker": "Akcesoria · na kort",
@@ -226,6 +234,14 @@ pl: {
 },
 
 en: {
+  "getapp.title": "Padelore — get the app",
+  "getapp.h1_t": "You're invited to a tournament",
+  "getapp.p_t": "Someone wants you to join a tournament in Padelore. Install the app, then open this link again.",
+  "getapp.h1_m": "A match result is waiting for you",
+  "getapp.p_m": "A friend shared a Padelore match with you. Install the app and open this link again — the result will land in your history.",
+  "getapp.h1_d": "This link opens in the app",
+  "getapp.p_d": "Install Padelore on your iPhone, then open the link again.",
+  "getapp.note": "Already have the app? Open this link again — it will jump straight into Padelore.",
   "cta.whatsapp": "WhatsApp group",
   "cta.beta": "Want to test beta builds via TestFlight and report feedback and bugs? Join our WhatsApp group.",
   "acc.kicker": "Accessories · on court",
@@ -458,6 +474,14 @@ en: {
 },
 
 es: {
+  "getapp.title": "Padelore — descarga la app",
+  "getapp.h1_t": "Tienes una invitación a un torneo",
+  "getapp.p_t": "Alguien quiere que te unas a un torneo en Padelore. Instala la app y vuelve a abrir este enlace.",
+  "getapp.h1_m": "Te espera el resultado de un partido",
+  "getapp.p_m": "Un amigo compartió contigo un partido de Padelore. Instala la app y vuelve a abrir este enlace — el resultado entrará en tu historial.",
+  "getapp.h1_d": "Este enlace se abre en la app",
+  "getapp.p_d": "Instala Padelore en tu iPhone y vuelve a abrir el enlace.",
+  "getapp.note": "¿Ya tienes la app? Vuelve a abrir este enlace — irá directo a Padelore.",
   "cta.whatsapp": "Grupo de WhatsApp",
   "cta.beta": "¿Quieres probar las betas por TestFlight y enviarnos comentarios y reportar fallos? Únete a nuestro grupo de WhatsApp.",
   "acc.kicker": "Accesorios · en pista",
@@ -690,6 +714,14 @@ es: {
 },
 
 it: {
+  "getapp.title": "Padelore — scarica l'app",
+  "getapp.h1_t": "Hai un invito a un torneo",
+  "getapp.p_t": "Qualcuno ti invita a un torneo su Padelore. Installa l'app e riapri questo link.",
+  "getapp.h1_m": "Ti aspetta il risultato di una partita",
+  "getapp.p_m": "Un amico ha condiviso con te una partita di Padelore. Installa l'app e riapri questo link — il risultato finirà nella tua cronologia.",
+  "getapp.h1_d": "Questo link si apre nell'app",
+  "getapp.p_d": "Installa Padelore sul tuo iPhone e riapri il link.",
+  "getapp.note": "Hai già l'app? Riapri questo link — andrà dritto in Padelore.",
   "cta.whatsapp": "Gruppo WhatsApp",
   "cta.beta": "Vuoi provare le beta su TestFlight e segnalare feedback e bug? Unisciti al nostro gruppo WhatsApp.",
   "acc.kicker": "Accessori · in campo",
@@ -922,6 +954,14 @@ it: {
 },
 
 de: {
+  "getapp.title": "Padelore — hol dir die App",
+  "getapp.h1_t": "Du hast eine Turnier-Einladung",
+  "getapp.p_t": "Jemand lädt dich zu einem Turnier in Padelore ein. Installiere die App und öffne diesen Link erneut.",
+  "getapp.h1_m": "Ein Matchergebnis wartet auf dich",
+  "getapp.p_m": "Ein Freund hat ein Padelore-Match mit dir geteilt. Installiere die App und öffne diesen Link erneut — das Ergebnis landet in deiner Historie.",
+  "getapp.h1_d": "Dieser Link öffnet sich in der App",
+  "getapp.p_d": "Installiere Padelore auf deinem iPhone und öffne den Link erneut.",
+  "getapp.note": "Hast du die App schon? Öffne diesen Link erneut — er springt direkt in Padelore.",
   "cta.whatsapp": "WhatsApp-Gruppe",
   "cta.beta": "Willst du Beta-Versionen über TestFlight testen und Feedback und Bugs melden? Komm in unsere WhatsApp-Gruppe.",
   "acc.kicker": "Zubehör · auf dem Platz",
@@ -1202,6 +1242,14 @@ de: {
   },
 
 ru: {
+  "getapp.title": "Padelore — скачай приложение",
+  "getapp.h1_t": "Тебя приглашают на турнир",
+  "getapp.p_t": "Кто-то зовёт тебя на турнир в Padelore. Установи приложение и открой эту ссылку ещё раз.",
+  "getapp.h1_m": "Тебя ждёт результат матча",
+  "getapp.p_m": "Друг поделился с тобой матчем из Padelore. Установи приложение и открой эту ссылку ещё раз — результат попадёт в твою историю.",
+  "getapp.h1_d": "Эта ссылка открывается в приложении",
+  "getapp.p_d": "Установи Padelore на iPhone и открой ссылку ещё раз.",
+  "getapp.note": "Приложение уже есть? Открой эту ссылку ещё раз — она сразу откроется в Padelore.",
   "cta.whatsapp": "Группа в WhatsApp",
   "cta.beta": "Хочешь тестировать бету через TestFlight и присылать отзывы и баги? Вступай в нашу группу в WhatsApp.",
   "acc.kicker": "Аксессуары · на корте",
@@ -1434,6 +1482,14 @@ ru: {
 },
 
 uk: {
+  "getapp.title": "Padelore — завантаж застосунок",
+  "getapp.h1_t": "Тебе запрошують на турнір",
+  "getapp.p_t": "Хтось кличе тебе на турнір у Padelore. Установи застосунок і відкрий це посилання ще раз.",
+  "getapp.h1_m": "На тебе чекає результат матчу",
+  "getapp.p_m": "Друг поділився з тобою матчем із Padelore. Установи застосунок і відкрий це посилання ще раз — результат потрапить до твоєї історії.",
+  "getapp.h1_d": "Це посилання відкривається в застосунку",
+  "getapp.p_d": "Установи Padelore на iPhone і відкрий посилання ще раз.",
+  "getapp.note": "Уже маєш застосунок? Відкрий це посилання ще раз — воно одразу відкриється в Padelore.",
   "cta.whatsapp": "Група в WhatsApp",
   "cta.beta": "Хочеш тестувати бету через TestFlight і надсилати відгуки та баги? Долучайся до нашої групи у WhatsApp.",
   "acc.kicker": "Аксесуари · на корті",
@@ -1666,6 +1722,14 @@ uk: {
 },
 
 pt: {
+  "getapp.title": "Padelore — descarrega a app",
+  "getapp.h1_t": "Tens um convite para um torneio",
+  "getapp.p_t": "Alguém quer que te juntes a um torneio no Padelore. Instala a app e volta a abrir esta ligação.",
+  "getapp.h1_m": "Há um resultado de jogo à tua espera",
+  "getapp.p_m": "Um amigo partilhou contigo um jogo do Padelore. Instala a app e volta a abrir esta ligação — o resultado entra no teu histórico.",
+  "getapp.h1_d": "Esta ligação abre-se na app",
+  "getapp.p_d": "Instala o Padelore no teu iPhone e volta a abrir a ligação.",
+  "getapp.note": "Já tens a app? Volta a abrir esta ligação — vai direta para o Padelore.",
   "cta.whatsapp": "Grupo de WhatsApp",
   "cta.beta": "Queres testar as versões beta pelo TestFlight e enviar comentários e erros? Junta-te ao nosso grupo de WhatsApp.",
   "acc.kicker": "Acessórios · no court",

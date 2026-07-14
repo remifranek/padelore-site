@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padelore — pobierz aplikację</title>
+<meta name="description" content="Ten link otwiera się w aplikacji Padelore. Pobierz apkę na iPhone i Apple Watch z App Store.">
+<meta name="robots" content="noindex">
+<!-- Smart App Banner: samo app-id — app-argument wymagałby meta w źródle per-URL, a strona jest statyczna.
+     Universal link i tak niesie pełny URL do apki, gdy jest zainstalowana. -->
+<meta name="apple-itunes-app" content="app-id=6778968043">
+<link rel="icon" href="/assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ds.css?v=22">
+<style>
+  .getapp{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px 20px}
+  .getapp-card{max-width:520px;width:100%;padding:44px 36px;border-radius:28px;text-align:center;
+    background:var(--card);border:1px solid var(--card-border);box-shadow:var(--shadow-l)}
+  .getapp-icon{width:88px;height:88px;border-radius:22px;margin:0 auto 22px;box-shadow:var(--shadow-s)}
+  .getapp-card h1{font-size:clamp(24px,5vw,32px);margin:14px 0 12px}
+  .getapp-card .lead{font-size:16px;color:var(--ink-soft);line-height:1.6;margin-bottom:26px}
+  .getapp-note{margin-top:20px;font-size:13px;color:var(--ink-faint)}
+  .getapp-home{display:inline-block;margin-top:26px;font-size:13.5px;font-weight:700;color:var(--primary-2)}
+  .getapp-home:hover{color:var(--ink)}
+  @media(max-width:420px){.getapp-card{padding:34px 22px}}
+</style>
+</head>
+<body>
+<div class="bgfield"></div>
+
+<main class="getapp">
+  <div class="getapp-card">
+    <img class="getapp-icon" src="/assets/app-icon.png" alt="Padelore">
+    <span class="kicker">Padelore</span>
+    <h1 id="gaH1" data-i18n="getapp.h1_d">Ten link otwiera się w aplikacji</h1>
+    <p class="lead" id="gaP" data-i18n="getapp.p_d">Zainstaluj Padelore na iPhonie, a potem otwórz link jeszcze raz.</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/app/id6778968043">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7 2-1.1 2.7-2.1c.8-1.2 1.2-2.4 1.2-2.4s-2.3-.9-2.3-3.5zM14.2 5.9c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.2z"/></svg>
+      <span data-i18n="hero.cta_download">Pobierz na App Store</span>
+    </a>
+    <p class="getapp-note" data-i18n="getapp.note">Masz już apkę? Otwórz ten link ponownie — wskoczy prosto do Padelore.</p>
+    <a class="getapp-home" href="/">padelore.app →</a>
+  </div>
+</main>
+
+<script src="/i18n.js"></script>
+<script>
+(function(){
+  /* theme — ten sam klucz co index.html */
+  var saved=localStorage.getItem('padelore.theme');
+  if(saved) document.documentElement.setAttribute('data-theme',saved);
+
+  /* wariant copy wg ścieżki (rewrites /t/* i /m/* → ta strona) */
+  var p=location.pathname, kind='d';
+  if(p.indexOf('/t/')===0) kind='t';
+  else if(p.indexOf('/m/')===0) kind='m';
+  document.getElementById('gaH1').setAttribute('data-i18n','getapp.h1_'+kind);
+  document.getElementById('gaP').setAttribute('data-i18n','getapp.p_'+kind);
+
+  /* i18n — ten sam mechanizm i klucz localStorage co index.html */
+  var LANGS=['pl','en','es','it','de','ru','uk','pt'], LKEY='padelore.lang';
+  function pick(){
+    var q=((location.search.match(/[?&]lang=([a-z]{2})/i)||[])[1]||'').toLowerCase();
+    if(q&&LANGS.indexOf(q)>-1)return q;
+    var s=localStorage.getItem(LKEY);
+    if(s&&LANGS.indexOf(s)>-1)return s;
+    var n=(navigator.language||'en').slice(0,2).toLowerCase();
+    return LANGS.indexOf(n)>-1?n:'en';
+  }
+  function T(l,k){ var d=window.I18N; return (d[l]&&d[l][k]!=null)?d[l][k] : (d.en[k]!=null?d.en[k]:d.pl[k]); }
+  var lang=pick();
+  document.documentElement.lang=lang;
+  document.title=T(lang,'getapp.title');
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var v=T(lang,el.getAttribute('data-i18n')); if(v!=null)el.textContent=v;
+  });
+})();
+</script>
+</body>
+</html>

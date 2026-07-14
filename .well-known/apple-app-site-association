@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["GDK8A962M9.app.padelore.ios"],
+        "components": [
+          { "/": "/m/*", "comment": "Shared match card payload" },
+          { "/": "/t/*", "comment": "Tournament spectator code" }
+        ]
+      }
+    ]
+  }
+}

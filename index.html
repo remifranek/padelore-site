@@ -338,13 +338,13 @@ html[data-theme="light"] .lframe{background:#0B1730}
 
       <div class="reveal in d1 hero-stage">
         <div class="device floaty"><img src="assets/01-home.png" data-i18n-alt="hero.alt_home" alt="Ekran główny Padelore" loading="eager"></div>
-        <div class="wframe floaty" style="animation-delay:.7s"><img src="assets/watch-home.png" data-i18n-alt="hero.alt_watch" alt="Padelore na Apple Watch — ekran główny: Graj i Historia"></div>
+        <div class="wframe floaty" style="animation-delay:.7s"><img src="assets/watch/home-en.png" data-i18n-src="assets/watch/home-{lang}.png" data-i18n-alt="hero.alt_watch" alt="Padelore na Apple Watch — ekran główny: Graj i Historia"></div>
         <div class="hero-fence floaty" style="animation-delay:1.1s"><div class="lframe"><div class="fenceboard">
           <div class="fb-wmark"><span class="fb-wdot"></span>PADELORE</div>
           <div class="fb-top"><span class="fb-pill"><span class="fb-pdot"></span><span data-i18n="mock.fb_round">Runda 2 z 3</span></span></div>
           <div class="fb-cols">
-            <div class="fb-col my"><span class="fb-lbl">MY</span><span class="fb-ball"></span><span class="fb-score">15</span></div>
-            <div class="fb-col oni"><span class="fb-lbl">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>
+            <div class="fb-col my"><span class="fb-lbl" data-i18n="watch.wface_my">MY</span><span class="fb-ball"></span><span class="fb-score">15</span></div>
+            <div class="fb-col oni"><span class="fb-lbl" data-i18n="watch.wface_oni">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>
           </div>
         </div></div></div>
       </div>
@@ -493,7 +493,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <p data-i18n="watch.s2_p">Nie musisz otwierać „Nowego meczu” na zegarku. Wystartuj mecz na iPhonie — Apple Watch sam wykrywa, że mecz trwa, i wchodzi w liczenie. Potwierdzasz „Scoruj mecz z telefonu” i dobijasz punkty.</p>
             <span class="hint" data-i18n="watch.s2_hint">⌚ „Scoruj mecz z telefonu”</span>
           </div>
-          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch-home.png" data-i18n-alt="watch.s2_alt" alt="Apple Watch wykrywa aktywny mecz z telefonu"></div></div>
+          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch/home-en.png" data-i18n-src="assets/watch/home-{lang}.png" data-i18n-alt="watch.s2_alt" alt="Apple Watch wykrywa aktywny mecz z telefonu"></div></div>
         </div>
         <!-- 3 klikanie na zegarku (real screenshot) -->
         <div class="fl-slide" data-i="2">
@@ -503,7 +503,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <p data-i18n="watch.s3_p">Wielkie cyfry, wielkie pola dotyku. Kciukiem dobijasz punkt MY albo ONI. Tętno w czasie rzeczywistym, czas do końca gema, serw oznaczony piłką — wszystko na nadgarstku.</p>
             <span class="hint" data-i18n="watch.s3_hint">👍 Liczysz na nadgarstku · tętno live</span>
           </div>
-          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch-scoring.png" data-i18n-alt="watch.s3_alt" alt="Apple Watch live scoring — 14:12, tętno 142 bpm"></div></div>
+          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch/score-en.png" data-i18n-src="assets/watch/score-{lang}.png" data-i18n-alt="watch.s3_alt" alt="Apple Watch live scoring — 14:12, tętno 142 bpm"></div></div>
         </div>
         <!-- 4 fence -->
         <div class="fl-slide land" data-i="3">
@@ -560,7 +560,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     </div>
     <div class="scn flip reveal">
       <div class="scn-media">
-        <div class="wframe" style="width:250px"><img src="assets/watch-scoring.png" alt="Apple Watch — punktowanie meczu na żywo"></div>
+        <div class="wframe" style="width:250px"><img src="assets/watch/score-en.png" data-i18n-src="assets/watch/score-{lang}.png" alt="Apple Watch — punktowanie meczu na żywo"></div>
       </div>
       <div>
         <div class="scn-num" data-i18n="twatch.num">NA ZEGARKU · 1 TAP</div>
@@ -832,6 +832,17 @@ html[data-theme="light"] .lframe{background:#0B1730}
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-html'));if(v!=null)el.innerHTML=v;});
     document.querySelectorAll('[data-i18n-alt]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-alt'));if(v!=null)el.setAttribute('alt',v);});
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-aria'));if(v!=null)el.setAttribute('aria-label',v);});
+    // Zrzuty zegarka istnieją w 11 wersjach językowych (rig PadelMatchProWatchUITests).
+    // Wzorzec w data-i18n-src, {lang} podmieniane na aktywny język — dzięki temu Hiszpan
+    // widzi hiszpański zegarek, nie angielski. Fallback na en, gdy pliku brak.
+    document.querySelectorAll('[data-i18n-src]').forEach(function(el){
+      var pat=el.getAttribute('data-i18n-src');
+      var next=pat.replace('{lang}', l);
+      if(el.getAttribute('src')!==next){
+        el.onerror=function(){ el.onerror=null; el.src=pat.replace('{lang}','en'); };
+        el.src=next;
+      }
+    });
   }
   var CODE={pl:'PL',en:'EN',es:'ES',it:'IT',de:'DE',ru:'RU',uk:'UA',pt:'PT',sv:'SV',fr:'FR',nl:'NL'};
   var lang=pick();

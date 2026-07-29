@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Walidator parzystości i18n (SPEC-003). Uruchom: node scripts/validate-i18n.mjs
-// Bramka: (a) i18n.js parsuje się, (b) każdy klucz z HTML istnieje w 8 blokach,
+// Bramka: (a) i18n.js parsuje się, (b) każdy klucz z HTML istnieje we WSZYSTKICH blokach,
 // (c) wszystkie bloki mają identyczny zestaw kluczy (źródło prawdy: pl).
 // Exit 1 przy jakimkolwiek naruszeniu — nadaje się do pre-commit / Vercel build.
 import { readFileSync } from "node:fs";
@@ -49,4 +49,4 @@ if (fail.length) {
   fail.forEach((f) => console.error("  - " + f));
   process.exit(1);
 }
-console.log("✅ WALIDACJA i18n: parsuje, komplet kluczy z HTML, parzystość 8 języków.");
+console.log(`✅ WALIDACJA i18n: parsuje, komplet kluczy z HTML, parzystość ${langs.length} języków.`);

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickleball scorekeeper on Apple Watch — Padelore</title>
+<meta name="description" content="Score pickleball from your wrist. Side-out or rally, games to 11, win by 2. Your phone leans on the fence as a scoreboard everyone can read. Free.">
+<meta name="apple-itunes-app" content="app-id=6778968043">
+<link rel="canonical" href="https://padelore.app/pickleball">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Padelore">
+<meta property="og:url" content="https://padelore.app/pickleball">
+<meta property="og:title" content="Pickleball scorekeeper on Apple Watch">
+<meta property="og:description" content="Tap the score on your wrist. Prop the phone on the fence so the whole court can read it. Side-out or rally, games to 11, win by 2.">
+<meta property="og:image" content="https://padelore.app/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pickleball scorekeeper on Apple Watch">
+<meta name="twitter:description" content="Tap the score on your wrist. Prop the phone on the fence so the whole court can read it.">
+<meta name="twitter:image" content="https://padelore.app/assets/og-cover.png">
+<link rel="icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css?v=22">
+<style>
+  /* Strona kampanijna US (GTM pickleball, 2026-07-28). EN-only, bez i18n —
+     słownik pickleballowy i padlowy wykluczają się, więc jedna strona nie obsłuży obu.
+     Linki do App Store niosą ct= (Apple App Analytics campaign), nie UTM. */
+  .pb-hero{padding:104px 0 56px;position:relative;overflow:hidden}
+  .pb-hero:before{content:"";position:absolute;inset:0;
+    background:radial-gradient(900px 520px at 78% 8%,rgba(240,130,79,.20),transparent 62%),
+               radial-gradient(700px 460px at 6% 92%,rgba(212,243,74,.10),transparent 60%);
+    pointer-events:none}
+  .pb-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative}
+  @media(max-width:900px){.pb-grid{grid-template-columns:1fr;gap:30px}}
+  .pb-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;color:#F0824F;margin-bottom:16px}
+  .pb-eyebrow i{width:9px;height:9px;border-radius:50%;background:#F0824F;display:inline-block}
+  .pb-h1{font-size:clamp(38px,5.4vw,62px);line-height:1.03;font-weight:800;letter-spacing:-.028em;margin-bottom:18px}
+  .pb-h1 span{color:var(--accent)}
+  .pb-lead{font-size:clamp(16px,1.7vw,19px);color:var(--ink-soft);line-height:1.55;max-width:56ch}
+  .pb-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;align-items:center}
+  .pb-free{font-size:13.5px;color:var(--ink-soft)}
+  .pb-watch{width:230px;margin:0 auto;border-radius:44px;padding:11px;background:#000;
+    border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 70px rgba(0,0,0,.55)}
+  .pb-watch img{width:100%;display:block;border-radius:33px}
+  .pb-hooks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:880px){.pb-hooks{grid-template-columns:1fr}}
+  .pb-hook{background:var(--card);border:1px solid var(--card-border);border-radius:18px;padding:26px 24px}
+  .pb-hook .n{font-size:11px;font-weight:800;letter-spacing:.1em;color:#F0824F;text-transform:uppercase}
+  .pb-hook h3{font-size:20px;font-weight:800;margin:10px 0 10px;letter-spacing:-.01em}
+  .pb-hook p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  .pb-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  @media(max-width:880px){.pb-steps{grid-template-columns:1fr}}
+  .pb-step{padding:22px 0 0;border-top:2px solid rgba(240,130,79,.35);counter-increment:s}
+  .pb-step:before{content:counter(s);font-family:Nunito,sans-serif;font-size:13px;font-weight:900;
+    color:#0b0f16;background:#F0824F;width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .pb-step h4{font-size:17px;font-weight:800;margin-bottom:7px}
+  .pb-step p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  .pb-honest{background:var(--card);border:1px solid var(--card-border);border-radius:18px;padding:26px 26px 22px}
+  .pb-honest h3{font-size:18px;font-weight:800;margin-bottom:12px}
+  .pb-honest ul{list-style:none;padding:0;margin:0}
+  .pb-honest li{font-size:14.5px;color:var(--ink-soft);padding:8px 0;border-top:1px solid var(--card-border);line-height:1.5}
+  .pb-honest li:first-child{border-top:0}
+  .pb-rules{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+  .pb-rule{font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;
+    border:1px solid var(--card-border);background:var(--card);color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Padelore">Padel<span class="brand-ball" aria-hidden="true"></span>re</a>
+    <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6778968043?ct=pickleball_us&amp;mt=8">Get it free</a>
+  </div>
+</nav>
+
+<header class="pb-hero">
+  <div class="wrap pb-grid">
+    <div>
+      <div class="pb-eyebrow"><i></i>Pickleball · Apple Watch</div>
+      <h1 class="pb-h1">Your phone,<br>against the fence.<br><span>Your score, on your wrist.</span></h1>
+      <p class="pb-lead">Nobody wants to hold a phone during open play. Tap the score on your Apple Watch between serves, and let your phone lean on the fence as a scoreboard the whole court can read from the baseline.</p>
+      <div class="pb-cta">
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6778968043?ct=pickleball_us&amp;mt=8">Get it free on the App Store</a>
+        <span class="pb-free">Free. No account, no sign-up.</span>
+      </div>
+      <div class="pb-rules">
+        <span class="pb-rule">Side-out from “0-0-2”</span>
+        <span class="pb-rule">Rally scoring</span>
+        <span class="pb-rule">Games to 11, win by 2</span>
+        <span class="pb-rule">Best of 3</span>
+      </div>
+    </div>
+    <div><div class="pb-watch"><img src="assets/watch-en/watch-home-pickleball-en.png" alt="Apple Watch home screen in pickleball mode, games to 11"></div></div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="pb-hooks">
+      <div class="pb-hook">
+        <div class="n">On court</div>
+        <h3>Everyone can see the score</h3>
+        <p>Prop the phone against the fence and the score turns into a board with digits big enough to read from the far baseline. No more “what was it?” three rallies later, no more arguing about whose serve it is.</p>
+      </div>
+      <div class="pb-hook">
+        <div class="n">Open play</div>
+        <h3>Your rotation runs itself</h3>
+        <p>Set up a mixer for four to sixteen players and the app builds every round: who plays whom, on which court, who sits out. Standings update as games finish. One organiser, a whole session that runs on rails.</p>
+      </div>
+      <div class="pb-hook">
+        <div class="n">After the game</div>
+        <h3>See who actually won the rallies</h3>
+        <p>Tag a point in one tap and you find out what the score never tells you: your winners, your unforced errors, the ones your opponents handed over. With heart rate on top, so you know what the session really cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:linear-gradient(180deg,var(--bg),var(--bg-2))">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">How it works</span>
+      <h2 class="h2">Three taps and you are playing.</h2>
+    </div>
+    <div class="pb-steps">
+      <div class="pb-step">
+        <h4>Pick pickleball on the watch</h4>
+        <p>Sport lives on your wrist, so you never dig the phone out of the bag. Side-out is the default; switch to rally scoring if that is how your club plays.</p>
+      </div>
+      <div class="pb-step">
+        <h4>Score with your thumb</h4>
+        <p>Two big zones, us and them. Tap between serves, with a sweaty hand, in a glove. Undo is one tap away when someone calls it back.</p>
+      </div>
+      <div class="pb-step">
+        <h4>Send the game to your partner</h4>
+        <p>One link after the game. They open it and see it from their own side — even without the app installed, and it lands in their history if they have it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap" style="max-width:760px">
+    <div class="pb-honest">
+      <h3>What it does not do — yet</h3>
+      <ul>
+        <li><b>No DUPR sync.</b> Your rating there is not affected, and we are not pretending otherwise.</li>
+        <li><b>No partner watch sync.</b> One watch scores the game; everyone else reads the phone on the fence.</li>
+        <li><b>It will not find you a court or a game.</b> Use whatever app your club already uses for that.</li>
+        <li><b>Apple Watch does the scoring.</b> Without one you can still receive and read games your partners send you.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="padding-bottom:76px">
+  <div class="wrap" style="text-align:center">
+    <h2 class="h2" style="margin-bottom:14px">Stop keeping score in your head.</h2>
+    <p class="lead" style="margin:0 auto 24px">Free on iPhone and Apple Watch. Nothing to sign up for.</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/app/id6778968043?ct=pickleball_us&amp;mt=8">Get it free on the App Store</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="/" aria-label="Padelore">Padel<span class="brand-ball" aria-hidden="true"></span>re</a>
+    <div class="foot-links">
+      <a href="/">Padel &amp; more</a>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <small>© 2026 Padelore · the match counts itself</small>
+  </div>
+</footer>
+
+</body>
+</html>

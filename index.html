@@ -6,6 +6,36 @@
 <title>Padelore — poznaj swoją grę w padla</title>
 <meta name="description" content="Towarzysz do padla obok apki do rezerwacji. Padelore liczy mecz z Apple Watch (wynik na żywo) i pokazuje, jak grasz — karta meczu, tętno i ruch, profil gracza. Americano, Mexicano, singiel, turniej.">
 <meta name="apple-itunes-app" content="app-id=6778968043">
+<link rel="canonical" href="https://padelore.app/">
+<!-- hreflang: 11 języków = parytet z aplikacją i App Store (dodane 2026-07-28) -->
+<link rel="alternate" hreflang="x-default" href="https://padelore.app/">
+<link rel="alternate" hreflang="pl" href="https://padelore.app/?lang=pl">
+<link rel="alternate" hreflang="en" href="https://padelore.app/?lang=en">
+<link rel="alternate" hreflang="es" href="https://padelore.app/?lang=es">
+<link rel="alternate" hreflang="it" href="https://padelore.app/?lang=it">
+<link rel="alternate" hreflang="de" href="https://padelore.app/?lang=de">
+<link rel="alternate" hreflang="ru" href="https://padelore.app/?lang=ru">
+<link rel="alternate" hreflang="uk" href="https://padelore.app/?lang=uk">
+<link rel="alternate" hreflang="pt" href="https://padelore.app/?lang=pt">
+<link rel="alternate" hreflang="sv" href="https://padelore.app/?lang=sv">
+<link rel="alternate" hreflang="fr" href="https://padelore.app/?lang=fr">
+<link rel="alternate" hreflang="nl" href="https://padelore.app/?lang=nl">
+<!-- Podgląd linku (WhatsApp / Slack / LinkedIn). WARTOŚCI STATYCZNE SĄ PO ANGIELSKU
+     ŚWIADOMIE: scrapery OG nie wykonują JavaScriptu, więc podmiana w apply() ich nie
+     dotyczy — widzą dokładnie to, co stoi w HTML. Angielski = najszerszy zasięg
+     (kampania US, influencerzy). apply() podmienia je dla Google, który JS wykonuje. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Padelore">
+<meta property="og:url" content="https://padelore.app/">
+<meta property="og:title" content="Padelore — match scorekeeper on Apple Watch">
+<meta property="og:description" content="Pickleball, padel, tennis, squash and badminton on Apple Watch. Tap points on your wrist, let the phone show the score on the fence.">
+<meta property="og:image" content="https://padelore.app/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Padelore — match scorekeeper on Apple Watch">
+<meta name="twitter:description" content="Pickleball, padel, tennis, squash and badminton on Apple Watch. Tap points on your wrist, let the phone show the score on the fence.">
+<meta name="twitter:image" content="https://padelore.app/assets/og-cover.png">
 <link rel="icon" href="assets/app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,6 +160,10 @@ html[data-theme="light"] .lframe{background:#0B1730}
 
 /* condensed benefits */
 .bstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.bstrip.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1100px){.bstrip.five{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.bstrip.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.bstrip.five{grid-template-columns:1fr}}
 @media(max-width:900px){.bstrip{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.bstrip{grid-template-columns:1fr}}
 .bmini{padding:22px 20px;border-radius:18px;background:var(--card);border:1px solid var(--card-border)}
@@ -227,6 +261,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <a class="brand" href="#top" aria-label="Padelore">Padel<span class="brand-ball" aria-hidden="true"></span>re</a>
     <div class="nav-links">
       <a href="#vs" data-i18n="nav.vs">Po co druga apka?</a>
+      <a href="#sporty" data-i18n="nav.sports">Sporty</a>
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
       <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
@@ -249,6 +284,9 @@ html[data-theme="light"] .lframe{background:#0B1730}
           <button class="lang-opt" role="option" data-l="ru">Русский<span class="code">RU</span></button>
           <button class="lang-opt" role="option" data-l="uk">Українська<span class="code">UA</span></button>
           <button class="lang-opt" role="option" data-l="pt">Português<span class="code">PT</span></button>
+          <button class="lang-opt" role="option" data-l="sv">Svenska<span class="code">SV</span></button>
+          <button class="lang-opt" role="option" data-l="fr">Français<span class="code">FR</span></button>
+          <button class="lang-opt" role="option" data-l="nl">Nederlands<span class="code">NL</span></button>
         </div>
       </div>
       <button class="theme-btn" id="theme" data-i18n-aria="nav.theme" aria-label="Przełącz motyw">
@@ -260,6 +298,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
       </button>
       <div class="nav-menu" id="navMenu" role="menu">
         <a href="#vs" role="menuitem" data-i18n="nav.vs">Po co druga apka?</a>
+        <a href="#sporty" role="menuitem" data-i18n="nav.sports">Sporty</a>
         <a href="#watch" role="menuitem" data-i18n="nav.watch">Apple Watch</a>
         <a href="#mecz" role="menuitem" data-i18n="nav.match">Karta meczu</a>
         <a href="#turniej" role="menuitem" data-i18n="nav.tournament">Turniej</a>
@@ -298,14 +337,14 @@ html[data-theme="light"] .lframe{background:#0B1730}
       </div>
 
       <div class="reveal in d1 hero-stage">
-        <div class="device floaty"><img src="assets/01-home.png" data-i18n-alt="hero.alt_home" alt="Ekran główny Padelore" loading="eager"></div>
-        <div class="wframe floaty" style="animation-delay:.7s"><img src="assets/watch-home.png" data-i18n-alt="hero.alt_watch" alt="Padelore na Apple Watch — ekran główny: Graj i Historia"></div>
+        <div class="device floaty"><img src="assets/phone/home-en.png" data-i18n-src="assets/phone/home-{lang}.png" data-i18n-alt="hero.alt_home" alt="Ekran główny Padelore" loading="eager"></div>
+        <div class="wframe floaty" style="animation-delay:.7s"><img src="assets/watch/home-en.png" data-i18n-src="assets/watch/home-{lang}.png" data-i18n-alt="hero.alt_watch" alt="Padelore na Apple Watch — ekran główny: Graj i Historia"></div>
         <div class="hero-fence floaty" style="animation-delay:1.1s"><div class="lframe"><div class="fenceboard">
           <div class="fb-wmark"><span class="fb-wdot"></span>PADELORE</div>
           <div class="fb-top"><span class="fb-pill"><span class="fb-pdot"></span><span data-i18n="mock.fb_round">Runda 2 z 3</span></span></div>
           <div class="fb-cols">
-            <div class="fb-col my"><span class="fb-lbl">MY</span><span class="fb-ball"></span><span class="fb-score">15</span></div>
-            <div class="fb-col oni"><span class="fb-lbl">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>
+            <div class="fb-col my"><span class="fb-lbl" data-i18n="watch.wface_my">MY</span><span class="fb-ball"></span><span class="fb-score">15</span></div>
+            <div class="fb-col oni"><span class="fb-lbl" data-i18n="watch.wface_oni">ONI</span><span class="fb-ball"></span><span class="fb-score">12</span></div>
           </div>
         </div></div></div>
       </div>
@@ -351,6 +390,52 @@ html[data-theme="light"] .lframe{background:#0B1730}
   </div>
 </section>
 
+<!-- FIVE SPORTS — dodane 2026-07-28 wraz z aktualizacją do 1.13.2.
+     Kolory tintów 1:1 z AppTheme.swift (sportAccent, wariant dark), żeby landing
+     zgadzał się kolorystycznie z aplikacją. Kolejność kart = kolejność pickera
+     w apce (Sport.swift: padel, pickleball, badminton, squash, tennis).
+     Różnicowanie per rynek (padel-forward pl/es/it/pt, pickleball-forward en)
+     idzie przez hero.eyebrow i osobną stronę /pickleball, nie przez kolejność DOM. -->
+<section class="sec" id="sporty">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="sport.kicker">Pięć sportów</span>
+      <h2 class="h2" data-i18n-html="sport.h2_html">Jeden licznik. <span style="color:var(--accent)">Pięć kompletów zasad.</span></h2>
+      <p class="lead" data-i18n="sport.lead">Nie jedna punktacja przemalowana pięć razy. Każdy sport liczy się po swojemu i ma swój kort na tablicy.</p>
+    </div>
+
+    <div class="bstrip five">
+      <div class="bmini reveal" style="--tint:#D4F34A">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 7.5c4 1.5 11 1.5 15 0M4.5 16.5c4-1.5 11-1.5 15 0"/></svg></div>
+        <h4 data-i18n="sport.padel_h">Padel</h4>
+        <p data-i18n="sport.padel_p">Punkty albo sety, złoty punkt, limit przewag. Americano i Mexicano dla ekipy.</p>
+      </div>
+      <div class="bmini reveal d1" style="--tint:#F0824F">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1.1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+        <h4 data-i18n="sport.pickle_h">Pickleball</h4>
+        <p data-i18n="sport.pickle_p">Side-out od „0-0-2” albo rally. Do 11, przewagą dwóch.</p>
+      </div>
+      <div class="bmini reveal d2" style="--tint:#2FC4A8">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="17.5" r="3"/><path d="M9.6 15.7L6 5.5M14.4 15.7L18 5.5M6 5.5h12"/></svg></div>
+        <h4 data-i18n="sport.badm_h">Badminton</h4>
+        <p data-i18n="sport.badm_p">Do 21, przewagą dwóch, cap 30 wg BWF. Stronę serwisu liczy sama.</p>
+      </div>
+      <div class="bmini reveal d3" style="--tint:#9B7BE8">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 16h16"/><circle cx="12" cy="10" r="1.6" fill="currentColor" stroke="none"/></svg></div>
+        <h4 data-i18n="sport.squash_h">Squash</h4>
+        <p data-i18n="sport.squash_p">Do 11 bez capu, do trzech wygranych setów. Kort z tinem.</p>
+      </div>
+      <div class="bmini reveal d3" style="--tint:#5FBE63">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3.4 3 14.2 0 18M12 3c-3 3.4-3 14.2 0 18"/></svg></div>
+        <h4 data-i18n="sport.tennis_h">Tenis</h4>
+        <p data-i18n="sport.tennis_p">Gemy, sety, tie-break. Domyślnie singiel.</p>
+      </div>
+    </div>
+
+    <p class="honest reveal" data-i18n="sport.note" style="margin-top:22px">Sport wybierasz na zegarku — bez sięgania po telefon.</p>
+  </div>
+</section>
+
 <!-- HOW TO START (entry point - new section) -->
 <section class="sec" id="start" style="background:linear-gradient(180deg,var(--bg),var(--bg-2))">
   <div class="wrap">
@@ -362,7 +447,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
 
     <div class="scn reveal">
       <div class="scn-media">
-        <div class="device"><img src="assets/01-home.png" data-i18n-alt="start.alt" alt="Ekran główny Padelore — hero JAK GRAM"></div>
+        <div class="device"><img src="assets/phone/home-en.png" data-i18n-src="assets/phone/home-{lang}.png" data-i18n-alt="start.alt" alt="Ekran główny Padelore — hero JAK GRAM"></div>
       </div>
       <div>
         <div class="scn-num" data-i18n="start.num">KROK 0 · WEJŚCIE</div>
@@ -398,7 +483,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <p data-i18n="watch.s1_p">„Pojedynczy mecz" 2v2 — Drużyna A i B. Wpisz graczy z listy, kontaktów albo ręcznie, dodaj punktację. Sekundy, nie minuty.</p>
             <span class="hint" data-i18n="watch.s1_hint">📱 Ekran „Gracze" 2v2</span>
           </div>
-          <div class="fl-media"><div class="device"><img src="assets/02-single-players.png" data-i18n-alt="watch.s1_alt" alt="Konfiguracja meczu 2v2 — dwie pary"></div></div>
+          <div class="fl-media"><div class="device"><img src="assets/phone/players-en.png" data-i18n-src="assets/phone/players-{lang}.png" data-i18n-alt="watch.s1_alt" alt="Konfiguracja meczu 2v2 — dwie pary"></div></div>
         </div>
         <!-- 2 wybór zegarka -->
         <div class="fl-slide" data-i="1">
@@ -408,7 +493,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <p data-i18n="watch.s2_p">Nie musisz otwierać „Nowego meczu” na zegarku. Wystartuj mecz na iPhonie — Apple Watch sam wykrywa, że mecz trwa, i wchodzi w liczenie. Potwierdzasz „Scoruj mecz z telefonu” i dobijasz punkty.</p>
             <span class="hint" data-i18n="watch.s2_hint">⌚ „Scoruj mecz z telefonu”</span>
           </div>
-          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch-home.png" data-i18n-alt="watch.s2_alt" alt="Apple Watch wykrywa aktywny mecz z telefonu"></div></div>
+          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch/home-en.png" data-i18n-src="assets/watch/home-{lang}.png" data-i18n-alt="watch.s2_alt" alt="Apple Watch wykrywa aktywny mecz z telefonu"></div></div>
         </div>
         <!-- 3 klikanie na zegarku (real screenshot) -->
         <div class="fl-slide" data-i="2">
@@ -418,7 +503,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
             <p data-i18n="watch.s3_p">Wielkie cyfry, wielkie pola dotyku. Kciukiem dobijasz punkt MY albo ONI. Tętno w czasie rzeczywistym, czas do końca gema, serw oznaczony piłką — wszystko na nadgarstku.</p>
             <span class="hint" data-i18n="watch.s3_hint">👍 Liczysz na nadgarstku · tętno live</span>
           </div>
-          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch-scoring.png" data-i18n-alt="watch.s3_alt" alt="Apple Watch live scoring — 14:12, tętno 142 bpm"></div></div>
+          <div class="fl-media"><div class="wframe" style="width:228px"><img src="assets/watch/score-en.png" data-i18n-src="assets/watch/score-{lang}.png" data-i18n-alt="watch.s3_alt" alt="Apple Watch live scoring — 14:12, tętno 142 bpm"></div></div>
         </div>
         <!-- 4 fence -->
         <div class="fl-slide land" data-i="3">
@@ -475,7 +560,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     </div>
     <div class="scn flip reveal">
       <div class="scn-media">
-        <div class="wframe" style="width:250px"><img src="assets/watch-scoring.png" alt="Apple Watch — punktowanie meczu na żywo"></div>
+        <div class="wframe" style="width:250px"><img src="assets/watch/result-en.png" data-i18n-src="assets/watch/result-{lang}.png" data-i18n-alt="mecz.watch_alt" alt="Apple Watch — koniec meczu, wynik zapisany"></div>
       </div>
       <div>
         <div class="scn-num" data-i18n="twatch.num">NA ZEGARKU · 1 TAP</div>
@@ -494,6 +579,31 @@ html[data-theme="light"] .lframe{background:#0B1730}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SEND A MATCH — dodane 2026-07-28 (1.13.2). Pętla wzrostu: odbiorca dostaje
+     mecz do WŁASNEJ historii, a link działa też bez zainstalowanej apki
+     (Universal Links + get-app.html; cold-launch naprawiony w buildzie 249). -->
+<section class="sec" id="wyslij" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="share.kicker">Po meczu</span>
+      <h2 class="h2" data-i18n-html="share.h2_html">Wyślij mecz. <span style="color:var(--accent)">Zadziała bez apki.</span></h2>
+      <p class="lead" data-i18n="share.lead">Po ostatniej piłce wysyłasz link. Znajomy otwiera i widzi mecz ze swojej strony — swoje winnery, swoje błędy, przebieg punkt po punkcie.</p>
+    </div>
+
+    <div class="split reveal">
+      <div class="splitcol add" style="grid-column:1 / -1">
+        <ul class="sclist">
+          <li data-i18n-html="share.li1_html"><b>Trafia do jego historii</b> — to nie jest podgląd na jeden raz.</li>
+          <li data-i18n-html="share.li2_html"><b>Sam wskazuje, którym był graczem</b> — apka podpowiada, jeśli go rozpozna.</li>
+          <li data-i18n-html="share.li3_html"><b>Do rankingu liczy tylko autorowi</b> — jeden mecz nie wpada do tabeli dwa razy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="honest reveal" data-i18n="share.note">Nie ma Padelore? Link otworzy stronę z wynikiem i podpowie, skąd wziąć apkę.</p>
   </div>
 </section>
 
@@ -521,7 +631,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <!-- 1: Option C (format + tryb z singlem) -->
     <div class="scn reveal">
       <div class="scn-media">
-        <div class="device"><img src="assets/screens-19/03-wizard-format.png" alt="Kreator turnieju — Format i tryb (Americano/Mexicano, singiel)"></div>
+        <div class="device"><img src="assets/phone/wizard-en.png" data-i18n-src="assets/phone/wizard-{lang}.png" alt="Kreator turnieju — Format i tryb (Americano/Mexicano, singiel)"></div>
       </div>
       <div>
         <div class="scn-num" data-i18n="tour.s1_num">KROK 1 · KONFIGURACJA</div>
@@ -537,7 +647,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
 
     <!-- 2: real live board (tboard) -->
     <div class="scn flip reveal">
-      <div class="scn-media"><div class="device"><img src="assets/screens-19/05-tournament.png" alt="Turniej na żywo — korty, wyniki, wynik z Apple Watch"></div></div>
+      <div class="scn-media"><div class="device"><img src="assets/phone/tournament-en.png" data-i18n-src="assets/phone/tournament-{lang}.png" alt="Turniej na żywo — korty, wyniki, wynik z Apple Watch"></div></div>
       <div>
         <div class="scn-num" data-i18n="tour.s2_num">W TRAKCIE · TABLICA</div>
         <h3 data-i18n="tour.s2_h">Graj — apka liczy rundy</h3>
@@ -588,7 +698,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
         </ul>
       </div>
       <div style="display:flex;justify-content:center">
-        <div class="device"><img src="assets/screens-19/06-stats.png" alt="Statystyki — Jak gram, Impact Rating, archetyp"></div>
+        <div class="device"><img src="assets/phone/stats-en.png" data-i18n-src="assets/phone/stats-{lang}.png" alt="Statystyki — Jak gram, Impact Rating, archetyp"></div>
       </div>
     </div>
   </div>
@@ -610,7 +720,7 @@ html[data-theme="light"] .lframe{background:#0B1730}
         <p class="muted" style="font-size:13.5px;margin-top:16px" data-i18n="akt.privacy">Dane zdrowotne zostają na Twoim urządzeniu.</p>
       </div>
       <div style="display:flex;justify-content:center">
-        <div class="device"><img src="assets/screens-19/09-activity.png" alt="Aktywność — czas na korcie, rytm tygodni, obciążenie z Apple Health"></div>
+        <div class="device"><img src="assets/phone/activity-en.png" data-i18n-src="assets/phone/activity-{lang}.png" alt="Aktywność — czas na korcie, rytm tygodni, obciążenie z Apple Health"></div>
       </div>
     </div>
   </div>
@@ -678,12 +788,14 @@ html[data-theme="light"] .lframe{background:#0B1730}
     <a class="brand" href="#top" aria-label="Padelore">Padel<span class="brand-ball" aria-hidden="true"></span>re</a>
     <div class="foot-links">
       <a href="#vs" data-i18n="nav.vs">Po co druga apka?</a>
+      <a href="#sporty" data-i18n="nav.sports">Sporty</a>
       <a href="#watch" data-i18n="nav.watch">Apple Watch</a>
       <a href="#mecz" data-i18n="nav.match">Karta meczu</a>
       <a href="#turniej" data-i18n="nav.tournament">Turniej</a>
       <a href="#liga" data-i18n="nav.league">Liga</a>
       <a href="#ja" data-i18n="nav.you">Ja</a>
       <a href="#aktywnosc" data-i18n="nav.activity">Aktywność</a>
+      <a href="#wyslij" data-i18n="nav.share">Wyślij mecz</a>
     </div>
     <small data-i18n="footer.copy">© 2026 Padelore · padel, który liczy się sam</small>
   </div>
@@ -706,12 +818,33 @@ html[data-theme="light"] .lframe{background:#0B1730}
   function apply(l){
     document.documentElement.lang=l;
     document.title=T(l,'meta.title');
+    // Opis i podgląd linku też muszą iść za językiem — do 2026-07-28 polski opis
+    // z HTML szedł na wszystkie wersje, co kosztowało w wynikach na ES/IT.
+    var _d=T(l,'meta.desc'), _t=T(l,'meta.title');
+    [['meta[name="description"]','content',_d],
+     ['meta[property="og:description"]','content',_d],
+     ['meta[name="twitter:description"]','content',_d],
+     ['meta[property="og:title"]','content',_t],
+     ['meta[name="twitter:title"]','content',_t]].forEach(function(x){
+       var el=document.querySelector(x[0]); if(el&&x[2]!=null) el.setAttribute(x[1],x[2]);
+     });
     document.querySelectorAll('[data-i18n]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n'));if(v!=null)el.textContent=v;});
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-html'));if(v!=null)el.innerHTML=v;});
     document.querySelectorAll('[data-i18n-alt]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-alt'));if(v!=null)el.setAttribute('alt',v);});
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el){var v=T(l,el.getAttribute('data-i18n-aria'));if(v!=null)el.setAttribute('aria-label',v);});
+    // Zrzuty zegarka istnieją w 11 wersjach językowych (rig PadelMatchProWatchUITests).
+    // Wzorzec w data-i18n-src, {lang} podmieniane na aktywny język — dzięki temu Hiszpan
+    // widzi hiszpański zegarek, nie angielski. Fallback na en, gdy pliku brak.
+    document.querySelectorAll('[data-i18n-src]').forEach(function(el){
+      var pat=el.getAttribute('data-i18n-src');
+      var next=pat.replace('{lang}', l);
+      if(el.getAttribute('src')!==next){
+        el.onerror=function(){ el.onerror=null; el.src=pat.replace('{lang}','en'); };
+        el.src=next;
+      }
+    });
   }
-  var CODE={pl:'PL',en:'EN',es:'ES',it:'IT',ru:'RU',uk:'UA',pt:'PT'};
+  var CODE={pl:'PL',en:'EN',es:'ES',it:'IT',de:'DE',ru:'RU',uk:'UA',pt:'PT',sv:'SV',fr:'FR',nl:'NL'};
   var lang=pick();
   var lbtn=document.getElementById('langBtn'), lmenu=document.getElementById('langMenu'),
       lcode=document.getElementById('langCode'), lopts=[].slice.call(document.querySelectorAll('.lang-opt'));

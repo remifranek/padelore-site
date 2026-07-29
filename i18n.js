@@ -4,6 +4,7 @@
 window.I18N = {
 
 pl: {
+  "mecz.watch_alt": "Apple Watch — koniec meczu, wynik zapisany",
   "meta.desc": "Padel, pickleball, tenis, squash i badminton na Apple Watch. Stukasz punkty na zegarku, telefon pokazuje wynik na kracie. Po meczu karta z winnerami, błędami i tętnem.",
   "nav.sports": "Sporty",
   "nav.share": "Wyślij mecz",
@@ -258,6 +259,7 @@ pl: {
 },
 
 en: {
+  "mecz.watch_alt": "Apple Watch — match finished, score saved",
   "meta.desc": "Pickleball, padel, tennis, squash and badminton on Apple Watch. Tap points on your wrist, let the phone show the score on the fence. After the match: winners, errors and heart rate.",
   "nav.sports": "Sports",
   "nav.share": "Send a match",
@@ -522,6 +524,7 @@ en: {
 },
 
 es: {
+  "mecz.watch_alt": "Apple Watch — partido terminado, resultado guardado",
   "share.note": "¿No tiene Padelore? El enlace abre una página con el resultado y le dice de dónde bajar la app.",
   "share.li3_html": "<b>Al ranking solo le suma al autor</b> — un partido no entra dos veces en la tabla.",
   "share.li2_html": "<b>Elige él mismo qué jugador era</b> — la app se lo sugiere si lo reconoce.",
@@ -786,6 +789,7 @@ es: {
 },
 
 it: {
+  "mecz.watch_alt": "Apple Watch — partita finita, punteggio salvato",
   "share.note": "Non hai Padelore? Il link apre comunque una pagina con il punteggio e ti dice dove prendere l'app.",
   "share.li3_html": "<b>In classifica conta solo all'autore</b> — la stessa partita non entra due volte in tabella.",
   "share.li2_html": "<b>Sceglie lui quale giocatore era</b> — l'app glielo suggerisce se lo riconosce.",
@@ -1050,6 +1054,7 @@ it: {
 },
 
 de: {
+  "mecz.watch_alt": "Apple Watch — Match beendet, Ergebnis gespeichert",
   "share.note": "Kein Padelore? Der Link öffnet trotzdem eine Seite mit dem Ergebnis und zeigt, wo es die App gibt.",
   "share.li3_html": "<b>Für die Rangliste zählt es nur beim Ersteller</b> — ein Match landet nie zweimal in der Tabelle.",
   "share.li2_html": "<b>Er wählt selbst, welcher Spieler er war</b> — die App schlägt es vor, wenn sie ihn erkennt.",
@@ -1362,6 +1367,7 @@ de: {
   },
 
 ru: {
+  "mecz.watch_alt": "Apple Watch — матч завершён, счёт сохранён",
   "share.note": "Нет Padelore? Ссылка откроет страницу со счётом и подскажет, где взять приложение.",
   "share.li3_html": "<b>В рейтинг матч идёт только автору</b> — один матч не попадает в таблицу дважды.",
   "share.li2_html": "<b>Сам выбирает, каким игроком он был</b> — приложение подскажет, если узнает его.",
@@ -1626,6 +1632,7 @@ ru: {
 },
 
 uk: {
+  "mecz.watch_alt": "Apple Watch — матч завершено, рахунок збережено",
   "share.note": "Немає Padelore? Посилання відкриє сторінку з рахунком і підкаже, де взяти застосунок.",
   "share.li3_html": "<b>У рейтинг іде тільки автору</b> — один матч не потрапляє в таблицю двічі.",
   "share.li2_html": "<b>Сам вказує, яким гравцем був</b> — застосунок підкаже, якщо впізнає.",
@@ -1890,6 +1897,7 @@ uk: {
 },
 
 pt: {
+  "mecz.watch_alt": "Apple Watch — jogo terminado, resultado guardado",
   "share.note": "Não tens o Padelore? O link abre uma página com o resultado e diz-te onde ir buscar a app.",
   "share.li3_html": "<b>Para o ranking, só conta ao autor</b> — o mesmo jogo nunca entra duas vezes na tabela.",
   "share.li2_html": "<b>É ele que escolhe que jogador foi</b> — a app sugere, se o reconhecer.",
@@ -2214,6 +2222,7 @@ pt: {
 },
 
 sv: {
+  "mecz.watch_alt": "Apple Watch — matchen slut, resultatet sparat",
   "meta.desc": "Padel, pickleball, tennis, squash, badminton på Apple Watch. Knappa poäng på klockan, telefonen visar ställningen. Efter matchen: winners, fel, puls.",
   "nav.sports": "Sporter",
   "nav.share": "Skicka match",
@@ -2539,6 +2548,7 @@ sv: {
 },
 
 fr: {
+  "mecz.watch_alt": "Apple Watch — match terminé, score enregistré",
   "meta.desc": "Padel, pickleball, tennis, squash et badminton sur Apple Watch. Les points au poignet, le score sur le grillage. Après le match : winners, fautes et cardio.",
   "nav.sports": "Sports",
   "nav.share": "Envoyer le match",
@@ -2864,6 +2874,7 @@ fr: {
 },
 
 nl: {
+  "mecz.watch_alt": "Apple Watch — match afgelopen, score opgeslagen",
   "meta.desc": "Padel, pickleball, tennis, squash en badminton op Apple Watch. Tik punten op je pols, de telefoon toont de stand aan het hek. Daarna: winners, fouten, hartslag.",
   "nav.sports": "Sporten",
   "nav.share": "Match sturen",

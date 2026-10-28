@@ -30,9 +30,9 @@
 <!-- ============ POLSKI ============ -->
 <section id="pl">
 <h1>Polityka prywatności Padelore</h1>
-<p class="meta">Obowiązuje od: 3 czerwca 2026</p>
+<p class="meta">Obowiązuje od: 28 października 2026</p>
 
-<p>Padelore to aplikacja na iPhone i Apple Watch do prowadzenia turniejów padla. Ten dokument opisuje, jakie dane aplikacja przetwarza i jak. Krótko: Padelore nie zbiera danych na własne serwery, nie śledzi użytkowników i nie sprzedaje danych. Nie ma reklam, analityki ani zewnętrznych SDK.</p>
+<p>Padelore to aplikacja na iPhone, iPada i Apple Watch do liczenia meczów i prowadzenia turniejów w padla, pickleballa, tenisa, squasha i badmintona. Ten dokument opisuje, jakie dane aplikacja przetwarza i jak. Krótko: Padelore nie śledzi użytkowników, nie pokazuje reklam i nie sprzedaje danych. Do dewelopera trafiają wyłącznie anonimowe raporty awarii i anonimowe statystyki użycia, opisane niżej.</p>
 
 <h2>Kto odpowiada za dane</h2>
 <p>Aplikacja jest tworzona i wydawana przez Remigiusza Franka (deweloper indywidualny). Kontakt: <a href="mailto:support@padelore.app">support@padelore.app</a>.</p>
@@ -46,30 +46,38 @@
 <p>Jeśli świadomie dołączysz do rankingu globalnego (Mój profil → „Dołącz do rankingu"), do publicznej bazy CloudKit zapisywane są:</p>
 <ul>
   <li>wybrana przez Ciebie <strong>nazwa wyświetlana</strong> (displayName),</li>
-  <li>Twój <strong>rating</strong> (wynik TrueSkill) oraz statystyki meczów.</li>
+  <li>Twój <strong>rating</strong> (wynik TrueSkill) oraz statystyki meczów,</li>
+  <li>losowy <strong>identyfikator gracza</strong> nadany przez aplikację.</li>
 </ul>
 <p>Numer telefonu ani żadne dane kontaktowe <strong>nigdy</strong> nie są wysyłane do chmury. Ranking jest domyślnie wyłączony. W każdej chwili możesz się wypisać (opt-out) — wtedy Twój wpis w rankingu zostaje usunięty z chmury.</p>
 
-<h3>Dane zdrowotne (Apple Watch)</h3>
-<p>Podczas meczu na Apple Watch aplikacja może odczytywać tętno i kalorie z HealthKit oraz zapisywać trening. Te dane pozostają na Twoim urządzeniu i w HealthKit. <strong>Nie są wysyłane do dewelopera ani nikogo innego.</strong> Nie są używane do reklam ani sprzedawane.</p>
+<h3>Dane zdrowotne (Apple Health)</h3>
+<p>Podczas meczu na Apple Watch aplikacja może odczytywać tętno i kalorie z HealthKit oraz zapisywać mecz jako trening. Na iPhonie aplikacja może odczytać wydolność (VO2max), wiek i płeć, żeby pokazać Twoją wydolność na tle rocznika. Te dane pozostają na Twoich urządzeniach i w HealthKit. <strong>Nie są wysyłane do dewelopera ani nikogo innego.</strong> Nie są używane do reklam ani sprzedawane. Tętno opuszcza urządzenie tylko wtedy, gdy sam udostępnisz kartę meczu, która je pokazuje.</p>
 
-<h3>Kamera</h3>
-<p>Kamera jest używana wyłącznie do skanowania kodów QR zaproszenia do turnieju. Obraz nie jest zapisywany ani wysyłany.</p>
+<h3>Raporty awarii (Sentry)</h3>
+<p>Aplikacja wysyła do usługi Sentry raporty awarii (miejsce w kodzie, w którym wystąpił błąd, model urządzenia i wersję systemu) oraz informację o rozpoczęciu i zakończeniu sesji, z której liczymy, jak często aplikacja działa bez awarii. Te dane nie zawierają imion, wyników, numerów telefonów ani identyfikatora użytkownika. Służy wyłącznie do naprawiania błędów.</p>
+
+<h3>Anonimowe statystyki użycia (TelemetryDeck)</h3>
+<p>Aplikacja wysyła do usługi TelemetryDeck anonimowe sygnały o użyciu, na przykład że rozpoczęto lub zakończono mecz, w jakim sporcie i formacie oraz jak długo trwał (w przedziałach czasu). Sygnały nie zawierają imion, nazw turniejów, wyników ani numerów telefonów. Identyfikator instalacji jest haszowany, więc nie da się go powiązać z Tobą. Statystyki wyłączysz w Ustawieniach przełącznikiem „Anonimowe statystyki użycia”.</p>
+
+<h3>Kamera, zdjęcia i kontakty</h3>
+<p>Kamera służy wyłącznie do skanowania kodów QR: zaproszenia do turnieju i kodu połączenia z partnerem. Obraz nie jest zapisywany ani wysyłany. Do biblioteki zdjęć aplikacja tylko dodaje kartę meczu, gdy sam ją zapiszesz, i nie czyta zdjęć, które już tam masz. Gracza z kontaktów wybierasz w systemowym oknie, a aplikacja zapisuje tylko wybraną osobę.</p>
 
 <h2>Czego NIE robimy</h2>
 <ul>
   <li>Nie śledzimy Cię (brak App Tracking Transparency, brak identyfikatorów reklamowych).</li>
-  <li>Nie używamy reklam, analityki ani zewnętrznych SDK marketingowych.</li>
+  <li>Nie pokazujemy reklam i nie używamy SDK reklamowych ani marketingowych.</li>
   <li>Nie sprzedajemy i nie udostępniamy danych osobom trzecim.</li>
 </ul>
 
 <h2>Infrastruktura</h2>
-<p>Synchronizacja opiera się na <strong>Apple iCloud / CloudKit</strong>. Dane podlegają polityce prywatności Apple. Padelore nie korzysta z innych serwerów ani dostawców chmury.</p>
+<p>Synchronizacja opiera się na <strong>Apple iCloud / CloudKit</strong>. Dane podlegają polityce prywatności Apple. Poza CloudKit aplikacja łączy się tylko z <strong>Sentry</strong> (raporty awarii) i <strong>TelemetryDeck</strong> (anonimowe statystyki użycia).</p>
 
 <h2>Twoje prawa</h2>
 <ul>
-  <li><strong>Usunięcie danych lokalnych:</strong> Ustawienia → „Usuń wszystkie dane" kasuje wszystko z urządzenia i przywraca stan jak po świeżej instalacji.</li>
+  <li><strong>Usunięcie danych lokalnych:</strong> Ustawienia → „Wyczyść wszystkie dane” kasuje wszystko z urządzenia i przywraca stan jak po świeżej instalacji.</li>
   <li><strong>Usunięcie z rankingu:</strong> opt-out w „Mój profil" usuwa Twój publiczny wpis.</li>
+  <li><strong>Statystyki użycia:</strong> wyłączasz je w Ustawieniach („Anonimowe statystyki użycia”).</li>
   <li><strong>Dane w prywatnym iCloud:</strong> kontrolujesz je przez ustawienia iCloud swojego konta Apple.</li>
 </ul>
 
@@ -87,9 +95,9 @@
 <!-- ============ ENGLISH ============ -->
 <section id="en">
 <h1>Padelore Privacy Policy</h1>
-<p class="meta">Effective: June 3, 2026</p>
+<p class="meta">Effective: October 28, 2026</p>
 
-<p>Padelore is an iPhone and Apple Watch app for running padel tournaments. This document explains what data the app handles and how. In short: Padelore collects no data on its own servers, does not track users, and does not sell data. No ads, no analytics, no third-party SDKs.</p>
+<p>Padelore is an iPhone, iPad and Apple Watch app for scoring matches and running tournaments in padel, pickleball, tennis, squash and badminton. This document explains what data the app handles and how. In short: Padelore does not track users, shows no ads and does not sell data. The only data that reaches the developer is anonymous crash reports and anonymous usage statistics, described below.</p>
 
 <h2>Who is responsible</h2>
 <p>The app is built and published by Remigiusz Franek (independent developer). Contact: <a href="mailto:support@padelore.app">support@padelore.app</a>.</p>
@@ -103,30 +111,38 @@
 <p>If you deliberately join the global ranking (My Profile → "Join ranking"), the following is written to the public CloudKit database:</p>
 <ul>
   <li>your chosen <strong>display name</strong>,</li>
-  <li>your <strong>rating</strong> (TrueSkill score) and match statistics.</li>
+  <li>your <strong>rating</strong> (TrueSkill score) and match statistics,</li>
+  <li>a random <strong>player ID</strong> generated by the app.</li>
 </ul>
 <p>Phone numbers and contact details are <strong>never</strong> sent to the cloud. Ranking is off by default. You can opt out at any time, which deletes your ranking entry from the cloud.</p>
 
-<h3>Health data (Apple Watch)</h3>
-<p>During a match on Apple Watch the app may read heart rate and calories from HealthKit and save a workout. This data stays on your device and in HealthKit. <strong>It is never sent to the developer or anyone else.</strong> It is not used for ads or sold.</p>
+<h3>Health data (Apple Health)</h3>
+<p>During a match on Apple Watch the app may read heart rate and calories from HealthKit and save the match as a workout. On iPhone the app may read your cardio fitness (VO2max), age and sex to show your fitness against your age group. This data stays on your devices and in HealthKit. <strong>It is never sent to the developer or anyone else.</strong> It is not used for ads or sold. Heart rate leaves your device only if you share a match card that shows it.</p>
 
-<h3>Camera</h3>
-<p>The camera is used only to scan tournament invitation QR codes. No image is stored or transmitted.</p>
+<h3>Crash reports (Sentry)</h3>
+<p>The app sends crash reports to Sentry (where in the code the error happened, the device model and the OS version) and a note when a session starts and ends, which tells us how often the app runs without crashing. This data contains no names, scores, phone numbers or user ID. It is used only to fix bugs.</p>
+
+<h3>Anonymous usage statistics (TelemetryDeck)</h3>
+<p>The app sends anonymous usage signals to TelemetryDeck, for example that a match started or ended, in which sport and format, and how long it lasted (in time ranges). Signals contain no names, tournament names, scores or phone numbers. The install identifier is hashed, so it cannot be linked to you. You can turn the statistics off in Settings with the “Anonymous usage statistics” switch.</p>
+
+<h3>Camera, photos and contacts</h3>
+<p>The camera is used only to scan QR codes: tournament invitations and the partner connection code. No image is stored or transmitted. The app only adds a match card to your photo library when you choose to save it, and it never reads the photos already there. You pick a player from your contacts in the system picker, and the app stores only the person you picked.</p>
 
 <h2>What we do NOT do</h2>
 <ul>
   <li>We do not track you (no App Tracking Transparency prompt, no advertising identifiers).</li>
-  <li>We use no ads, no analytics, and no third-party marketing SDKs.</li>
+  <li>We show no ads and use no advertising or marketing SDKs.</li>
   <li>We do not sell or share data with third parties.</li>
 </ul>
 
 <h2>Infrastructure</h2>
-<p>Sync relies on <strong>Apple iCloud / CloudKit</strong> and is subject to Apple's privacy policy. Padelore uses no other servers or cloud providers.</p>
+<p>Sync relies on <strong>Apple iCloud / CloudKit</strong> and is subject to Apple's privacy policy. Apart from CloudKit, the app connects only to <strong>Sentry</strong> (crash reports) and <strong>TelemetryDeck</strong> (anonymous usage statistics).</p>
 
 <h2>Your rights</h2>
 <ul>
-  <li><strong>Delete local data:</strong> Settings → "Delete all data" wipes everything from the device and restores a fresh-install state.</li>
+  <li><strong>Delete local data:</strong> Settings → "Reset all data" wipes everything from the device and restores a fresh-install state.</li>
   <li><strong>Remove from ranking:</strong> opting out in "My Profile" deletes your public entry.</li>
+  <li><strong>Usage statistics:</strong> turn them off in Settings ("Anonymous usage statistics").</li>
   <li><strong>Private iCloud data:</strong> controlled through your Apple account's iCloud settings.</li>
 </ul>
 

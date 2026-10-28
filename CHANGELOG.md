@@ -2,6 +2,30 @@
 
 Format: [Keep a Changelog](https://keepachangelog.com). Wpisy wiążą się ze specami w `docs/specs/`.
 
+## [2026-10-28] Landing pod aplikację 1.13.20
+
+### Fixed
+- **Szwedzki, francuski i niderlandzki wracały do angielskiego.** `index.html` i `get-app.html` miały
+  w `LANGS` 8 języków przy 11 blokach `i18n.js`, więc `?lang=sv|fr|nl` (także linki hreflang),
+  zapamiętany wybór po przeładowaniu i język przeglądarki sv/fr/nl dawały wersję angielską.
+  Walidator `scripts/validate-i18n.mjs` sprawdza teraz listy `LANGS` obu stron (kontrola negatywna:
+  stara lista z `main` daje exit 1).
+- **`privacy.html` przeczyło binarce.** Polityka mówiła „brak analityki i zewnętrznych SDK”, a aplikacja
+  od TASK-562/563 ma Sentry (raporty awarii) i TelemetryDeck (anonimowe statystyki, wyłącznik w Ustawieniach).
+  Dopisane oba, odczyt VO2max/wieku/płci na iPhonie, zdjęcia (tylko zapis), kontakty, kod partnera w QR,
+  pięć sportów i iPad. Data obowiązywania 28 października 2026.
+- **„Link otworzy stronę z wynikiem”** (`share.note`, 11 języków) i „even without the app installed”
+  (`pickleball.html`): strona `/m/*` pokazuje tylko odesłanie do App Store, bez wyniku.
+- **`support.html`:** ścieżka do turnieju („Więcej sposobów gry” → Turniej zamiast „+”), nazwa
+  „Wyczyść wszystkie dane” / „Reset all data”, ranking w Ustawieniach → „Mój profil”.
+- **`pickleball.html`:** mixer od 4 do 24 graczy (limit kreatora), nie do 16.
+
+### Changed
+- Treść pod 1.13.3–1.13.20 w 11 językach: skład dopisywany po meczu z zegarka (`start.li1_html`),
+  tablica fence ze źródłami punktów i tętnem (`watch.s4_p`), nowy generator Americano, poprawianie
+  zamkniętej rundy, statystyki turnieju jako obrazy (`tour.s2_li1..3`), iPad w `cta.p`.
+  Skrypt: `scripts/apply-1.13.20-copy.py`. FAQ „Jak dopisać imiona do meczu z zegarka?” w `support.html`.
+
 ## [Unreleased]
 
 ### Added

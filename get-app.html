@@ -60,7 +60,7 @@
   document.getElementById('gaP').setAttribute('data-i18n','getapp.p_'+kind);
 
   /* i18n — ten sam mechanizm i klucz localStorage co index.html */
-  var LANGS=['pl','en','es','it','de','ru','uk','pt'], LKEY='padelore.lang';
+  var LANGS=['pl','en','es','it','de','ru','uk','pt','sv','fr','nl'], LKEY='padelore.lang';
   function pick(){
     var q=((location.search.match(/[?&]lang=([a-z]{2})/i)||[])[1]||'').toLowerCase();
     if(q&&LANGS.indexOf(q)>-1)return q;

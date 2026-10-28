@@ -42,6 +42,20 @@ for (const l of langs) {
   if (extra.length) fail.push(`[${l}] nadmiar vs pl (${extra.length}): ${extra.join(", ")}`);
 }
 
+// (d) listy LANGS w skryptach stron = komplet bloków i18n.js. Do 2026-10-28 index.html i get-app.html
+// miały 8 języków przy 11 blokach, więc ?lang=sv|fr|nl, zapamiętany wybór i język przeglądarki
+// sv/fr/nl dawały wersję angielską, a walidator świecił na zielono.
+for (const page of ["index.html", "get-app.html"]) {
+  const src = readFileSync(join(ROOT, page), "utf8");
+  const m = src.match(/var LANGS=\[([^\]]*)\]/);
+  if (!m) { fail.push(`[${page}] brak tablicy LANGS`); continue; }
+  const list = [...m[1].matchAll(/'([a-z]{2})'/g)].map((x) => x[1]);
+  const miss = langs.filter((l) => !list.includes(l));
+  const extra = list.filter((l) => !langs.includes(l));
+  if (miss.length) fail.push(`[${page}] LANGS bez języków z i18n.js: ${miss.join(", ")}`);
+  if (extra.length) fail.push(`[${page}] LANGS z językami spoza i18n.js: ${extra.join(", ")}`);
+}
+
 // raport
 console.log(`Języki: ${langs.join(", ")} | klucze/HTML: ${need.length} | klucze/pl: ${ref.size}`);
 if (fail.length) {

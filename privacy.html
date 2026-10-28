@@ -63,6 +63,9 @@
 <h3>Kamera, zdjęcia i kontakty</h3>
 <p>Kamera służy wyłącznie do skanowania kodów QR: zaproszenia do turnieju i kodu połączenia z partnerem. Obraz nie jest zapisywany ani wysyłany. Do biblioteki zdjęć aplikacja tylko dodaje kartę meczu, gdy sam ją zapiszesz, i nie czyta zdjęć, które już tam masz. Gracza z kontaktów wybierasz w systemowym oknie, a aplikacja zapisuje tylko wybraną osobę.</p>
 
+<h3>Link do meczu</h3>
+<p>Gdy udostępnisz mecz linkiem, adres zawiera wynik, przebieg punktów, imiona graczy i ich identyfikatory rankingowe. Dane są w adresie zakodowane, ale nie zaszyfrowane, więc odczyta je każdy, kto dostanie link. Jeśli odbiorca otworzy link bez aplikacji, adres trafia na serwer strony padelore.app w Vercel, który może go zapisać w logach technicznych. Te dane nie trafiają do żadnej naszej bazy.</p>
+
 <h2>Czego NIE robimy</h2>
 <ul>
   <li>Nie śledzimy Cię (brak App Tracking Transparency, brak identyfikatorów reklamowych).</li>
@@ -127,6 +130,9 @@
 
 <h3>Camera, photos and contacts</h3>
 <p>The camera is used only to scan QR codes: tournament invitations and the partner connection code. No image is stored or transmitted. The app only adds a match card to your photo library when you choose to save it, and it never reads the photos already there. You pick a player from your contacts in the system picker, and the app stores only the person you picked.</p>
+
+<h3>Match link</h3>
+<p>When you share a match as a link, the address contains the score, the point-by-point log, the player names and their ranking IDs. The data is encoded in the address, not encrypted, so anyone who receives the link can read it. If the recipient opens the link without the app, the address reaches the padelore.app web server on Vercel, which may record it in technical logs. This data is not stored in any database of ours.</p>
 
 <h2>What we do NOT do</h2>
 <ul>

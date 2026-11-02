@@ -30,7 +30,7 @@
 <!-- ============ POLSKI ============ -->
 <section id="pl">
 <h1>Polityka prywatności Padelore</h1>
-<p class="meta">Obowiązuje od: 28 października 2026</p>
+<p class="meta">Obowiązuje od: 2 listopada 2026</p>
 
 <p>Padelore to aplikacja na iPhone, iPada i Apple Watch do liczenia meczów i prowadzenia turniejów w padla, pickleballa, tenisa, squasha i badmintona. Ten dokument opisuje, jakie dane aplikacja przetwarza i jak. Krótko: Padelore nie śledzi użytkowników, nie pokazuje reklam i nie sprzedaje danych. Do dewelopera trafiają wyłącznie anonimowe raporty awarii i anonimowe statystyki użycia, opisane niżej.</p>
 
@@ -41,6 +41,9 @@
 
 <h3>Dane turniejowe (na Twoim urządzeniu i w Twoim iCloud)</h3>
 <p>Nazwy graczy, wyniki, ustawienia turniejów i historia są zapisywane lokalnie na urządzeniu oraz — jeśli masz włączony iCloud — synchronizowane przez prywatną bazę CloudKit w ramach Twojego konta Apple. Te dane są dostępne wyłącznie dla Ciebie. Deweloper nie ma do nich dostępu.</p>
+
+<h3>Ocena poziomu rywali i partnera</h3>
+<p>Po meczu z zegarka możesz ocenić, czy rywale i partner byli słabsi, podobni czy lepsi od Ciebie. Ocenę możesz też dodać lub zmienić później na karcie meczu w telefonie. Aplikacja zapisuje ją razem z wynikiem i liczbą punktów meczu na urządzeniu oraz, przy włączonym iCloud, w tej samej prywatnej bazie CloudKit co historia meczów. Jeśli do meczu dopisałeś skład, ocena dotyczy konkretnych osób, ale nadal widzisz ją tylko Ty. Oceny nie trafiają do rankingu globalnego, na karty meczu do udostępniania ani do linku do meczu, a deweloper ich nie widzi.</p>
 
 <h3>Ranking globalny (opcjonalny, włączany ręcznie)</h3>
 <p>Jeśli świadomie dołączysz do rankingu globalnego (Mój profil → „Dołącz do rankingu"), do publicznej bazy CloudKit zapisywane są:</p>
@@ -53,6 +56,7 @@
 
 <h3>Dane zdrowotne (Apple Health)</h3>
 <p>Podczas meczu na Apple Watch aplikacja może odczytywać tętno i kalorie z HealthKit oraz zapisywać mecz jako trening. Na iPhonie aplikacja może odczytać wydolność (VO2max), wiek i płeć, żeby pokazać Twoją wydolność na tle rocznika. Te dane pozostają na Twoich urządzeniach i w HealthKit. <strong>Nie są wysyłane do dewelopera ani nikogo innego.</strong> Nie są używane do reklam ani sprzedawane. Tętno opuszcza urządzenie tylko wtedy, gdy sam udostępnisz kartę meczu, która je pokazuje.</p>
+<p>Karta meczu w telefonie może pokazać, czy Twoje tętno w tym meczu było wyższe, typowe czy niższe niż w pozostałych meczach tego dnia. Aplikacja liczy to porównanie na bieżąco z przebiegu tętna zapisanego podczas meczu na zegarku i przesłanego do sparowanego iPhone’a. Przebieg tętna nie jest synchronizowany przez iCloud, więc na innym urządzeniu ta linia się nie pojawi. Samo porównanie nie jest nigdzie zapisywane ani wysyłane.</p>
 
 <h3>Raporty awarii (Sentry)</h3>
 <p>Aplikacja wysyła do usługi Sentry raporty awarii (miejsce w kodzie, w którym wystąpił błąd, model urządzenia i wersję systemu) oraz informację o rozpoczęciu i zakończeniu sesji, z której liczymy, jak często aplikacja działa bez awarii. Te dane nie zawierają imion, wyników, numerów telefonów ani identyfikatora użytkownika. Służy wyłącznie do naprawiania błędów.</p>
@@ -98,7 +102,7 @@
 <!-- ============ ENGLISH ============ -->
 <section id="en">
 <h1>Padelore Privacy Policy</h1>
-<p class="meta">Effective: October 28, 2026</p>
+<p class="meta">Effective: 2 November 2026</p>
 
 <p>Padelore is an iPhone, iPad and Apple Watch app for scoring matches and running tournaments in padel, pickleball, tennis, squash and badminton. This document explains what data the app handles and how. In short: Padelore does not track users, shows no ads and does not sell data. The only data that reaches the developer is anonymous crash reports and anonymous usage statistics, described below.</p>
 
@@ -109,6 +113,9 @@
 
 <h3>Tournament data (on your device and in your iCloud)</h3>
 <p>Player names, scores, tournament settings, and history are stored locally and — if iCloud is enabled — synced through the private CloudKit database under your own Apple account. This data is accessible only to you. The developer cannot access it.</p>
+
+<h3>Rating your opponents and partner</h3>
+<p>After a match on the watch you can rate whether your opponents and your partner were weaker than, similar to or stronger than you. You can also add or change the rating later on the match card on your iPhone. The app stores it together with the score and the match point count on the device and, if iCloud is enabled, in the same private CloudKit database as your match history. If you have added the line-up to a match, the rating refers to specific people, but it remains visible only to you. Ratings are not sent to the global ranking, not included in shareable match cards or match links, and not visible to the developer.</p>
 
 <h3>Global ranking (optional, opt-in)</h3>
 <p>If you deliberately join the global ranking (My Profile → "Join ranking"), the following is written to the public CloudKit database:</p>
@@ -121,6 +128,7 @@
 
 <h3>Health data (Apple Health)</h3>
 <p>During a match on Apple Watch the app may read heart rate and calories from HealthKit and save the match as a workout. On iPhone the app may read your cardio fitness (VO2max), age and sex to show your fitness against your age group. This data stays on your devices and in HealthKit. <strong>It is never sent to the developer or anyone else.</strong> It is not used for ads or sold. Heart rate leaves your device only if you share a match card that shows it.</p>
+<p>The match card on your iPhone may show whether your heart rate in a match was higher than, typical of or lower than your other matches that day. The app calculates this comparison on the fly from the heart-rate trace recorded on the watch during the match and transferred to the paired iPhone. The trace is not synced through iCloud, so the line does not appear on another device. The comparison itself is never stored or sent anywhere.</p>
 
 <h3>Crash reports (Sentry)</h3>
 <p>The app sends crash reports to Sentry (where in the code the error happened, the device model and the OS version) and a note when a session starts and ends, which tells us how often the app runs without crashing. This data contains no names, scores, phone numbers or user ID. It is used only to fix bugs.</p>
